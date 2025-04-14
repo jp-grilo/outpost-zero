@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Texture2D" uid="uid://d05t0nrgj35gx" path="res://assets/sprites/world_tileset.png" id="2_6rkfg"]
 [ext_resource type="PackedScene" uid="uid://drm2lorpy2l4n" path="res://Scenes/kill_zone.tscn" id="3_y846i"]
-[ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="4_qljh0"]
+[ext_resource type="PackedScene" uid="uid://0qjr82hbx7kf" path="res://Scenes/spawner.tscn" id="4_qljh0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
 texture = ExtResource("2_6rkfg")
@@ -162,5 +162,8 @@ position = Vector2(0, -23)
 position = Vector2(0, 116)
 shape = SubResource("WorldBoundaryShape2D_qljh0")
 
-[node name="slime" parent="." instance=ExtResource("4_qljh0")]
-position = Vector2(-154, -31)
+[node name="Spawner" parent="." instance=ExtResource("4_qljh0")]
+position = Vector2(-450, -47)
+
+[node name="Spawner2" parent="." instance=ExtResource("4_qljh0")]
+position = Vector2(392, -56)
