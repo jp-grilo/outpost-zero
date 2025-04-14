@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://n5ahi31egcfj"]
+
+[ext_resource type="Texture2D" uid="uid://u1js61nlqa58" path="res://assets/sprites/Arrows_pack.png" id="1_2u0bd"]
+[ext_resource type="Script" uid="uid://c1nx8cf6xesbw" path="res://Scripts/arrow.gd" id="1_h5x2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88kja"]
+atlas = ExtResource("1_2u0bd")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it8n0"]
+atlas = ExtResource("1_2u0bd")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbyq6"]
+atlas = ExtResource("1_2u0bd")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbq55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88kja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it8n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbyq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t38ji"]
+size = Vector2(11.75, 4.75)
+
+[node name="arrow" type="CharacterBody2D" groups=["arrow"]]
+script = ExtResource("1_h5x2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+sprite_frames = SubResource("SpriteFrames_pbq55")
+autoplay = "default"
+frame = 2
+frame_progress = 0.657684
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.125, -0.375)
+shape = SubResource("RectangleShape2D_t38ji")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1.125, -0.375)
+shape = SubResource("RectangleShape2D_t38ji")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
