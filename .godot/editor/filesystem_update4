@@ -1,12 +1,1 @@
 res://Scenes/outpost_zero.tscn
-res://Scenes/player.tscn
-res://Scenes/Scripts/player.gd
-res://Scenes/kill_zone.tscn
-res://Scripts/kill_zone.gd
-res://Scenes/slime.tscn
-res://collision_shape_2d.gd
-res://Scripts/player.gd
-res://Scenes/arrow.tscn
-res://Scenes/helth_system.gd
-res://Scripts/arrow.gd
-res://Scripts/slime.gd
