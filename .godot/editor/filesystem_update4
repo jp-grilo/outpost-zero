@@ -1,1 +1,7 @@
 res://Scenes/outpost_zero.tscn
+res://Scenes/WaveManager.gd
+res://Scenes/OutpostZero.gd
+res://Scripts/spawner.gd
+res://Scripts/slime.gd
+res://Scenes/slime.tscn
+res://Scenes/HUD.gd
