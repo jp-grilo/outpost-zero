@@ -1,81 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfqiik6sj0uxm"]
+[gd_scene load_steps=7 format=3 uid="uid://bfqiik6sj0uxm"]
 
 [ext_resource type="Script" uid="uid://cvpqpdh7aay78" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bv1mukv70qe7q" path="res://assets/sprites/knight.png" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://domvjn3fjvkuy" path="res://assets/CENARIO_OZ/Outpost_zero.png" id="4_fkybt"]
 [ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_vgqql"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
-atlas = ExtResource("1_v0iea")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
-atlas = ExtResource("1_v0iea")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
-atlas = ExtResource("1_v0iea")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
-atlas = ExtResource("1_v0iea")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x3wgy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cvnsp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6t5aa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vgqql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fkybt")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 8.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(75, 47)
+size = Vector2(67.6667, 35.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
-size = Vector2(78, 45)
+size = Vector2(7.66667, 3.85185)
 
 [node name="player" type="StaticBody2D"]
 z_index = 5
+scale = Vector2(3, 3)
 script = ExtResource("1_cvnsp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-20, -28)
-scale = Vector2(2.64063, 2.3125)
-sprite_frames = SubResource("SpriteFrames_x3wgy")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.657438
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(21, -28)
-scale = Vector2(2.64063, 2.3125)
-sprite_frames = SubResource("SpriteFrames_x3wgy")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.657438
+[node name="OutpostZero" type="Sprite2D" parent="."]
+position = Vector2(-4.33333, -57)
+scale = Vector2(0.029, 0.028)
+texture = ExtResource("4_fkybt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-0.5, -25.5)
+position = Vector2(4.16667, -18.6667)
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
+scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, -23.5)
+position = Vector2(1.38889, -6.44444)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_fkybt")
 
 [node name="Timer" type="Timer" parent="."]
@@ -85,9 +42,11 @@ script = ExtResource("3_6t5aa")
 max_health = 10.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -31.0
-offset_top = -78.0
-offset_right = 33.0
-offset_bottom = -51.0
+offset_left = -13.6667
+offset_top = -54.6667
+offset_right = 50.3333
+offset_bottom = -27.6667
+scale = Vector2(0.5, 0.5)
 value = 50.0
 script = ExtResource("4_vgqql")
+metadata/_edit_use_anchors_ = true

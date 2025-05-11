@@ -144,7 +144,7 @@ script = ExtResource("1_qljh0")
 spawner_path = NodePath("Spawner")
 
 [node name="player" parent="." instance=ExtResource("1_gtyw5")]
-position = Vector2(0, 2)
+position = Vector2(-25, 6)
 
 [node name="MapCamera" type="Camera2D" parent="."]
 visible = false
@@ -215,6 +215,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Inimigos: 0"
 
 [node name="Background" type="Parallax2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
 
