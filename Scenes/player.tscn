@@ -21,6 +21,27 @@ position = Vector2(-4.33333, -57)
 scale = Vector2(0.029, 0.028)
 texture = ExtResource("4_fkybt")
 
+[node name="HealthSystem" type="Node" parent="OutpostZero"]
+script = ExtResource("3_6t5aa")
+max_health = 10.0
+
+[node name="HealthBar" type="ProgressBar" parent="OutpostZero"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3293.0
+offset_top = -2438.5
+offset_right = -3229.0
+offset_bottom = -2411.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15, 15)
+value = 50.0
+script = ExtResource("4_vgqql")
+metadata/_edit_use_anchors_ = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(4.16667, -18.6667)
@@ -36,17 +57,3 @@ scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_fkybt")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="HealthSystem" type="Node" parent="."]
-script = ExtResource("3_6t5aa")
-max_health = 10.0
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -13.6667
-offset_top = -54.6667
-offset_right = 50.3333
-offset_bottom = -27.6667
-scale = Vector2(0.5, 0.5)
-value = 50.0
-script = ExtResource("4_vgqql")
-metadata/_edit_use_anchors_ = true

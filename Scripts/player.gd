@@ -1,8 +1,8 @@
 extends StaticBody2D
 
 # Referências aos nós filhos
-@onready var health_system: HealthSystem = $HealthSystem  # Sistema de saúde da base
-@onready var health_bar: ProgressBar = $HealthBar         # Barra de vida visual
+@onready var health_system: HealthSystem = $OutpostZero/HealthSystem  # Sistema de saúde da base
+@onready var health_bar: ProgressBar = $OutpostZero/HealthBar         # Barra de vida visual
 var show_health_timer: Timer                             # Timer para esconder a barra de vida
 
 func _ready():

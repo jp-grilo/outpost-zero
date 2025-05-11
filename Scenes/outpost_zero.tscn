@@ -145,11 +145,11 @@ spawner_path = NodePath("Spawner")
 
 [node name="player" parent="." instance=ExtResource("1_gtyw5")]
 position = Vector2(-25, 6)
+scale = Vector2(2, 2)
 
 [node name="MapCamera" type="Camera2D" parent="."]
 visible = false
 position = Vector2(0, -23)
-zoom = Vector2(3.975, 3.975)
 limit_left = -3000
 limit_top = -2000
 limit_right = 3000
@@ -220,21 +220,24 @@ scale = Vector2(0.5, 0.5)
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
 
 [node name="Montanha1" type="Sprite2D" parent="Background/ParallaxLayer3"]
-position = Vector2(0, -2425)
+position = Vector2(0, -1209)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_xe5w2")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
 position = Vector2(0, -1)
 
 [node name="Montanha2" type="Sprite2D" parent="Background/ParallaxLayer2"]
-position = Vector2(0, -2425)
+position = Vector2(0, -1209)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_immmw")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="Background"]
 position = Vector2(0, -1)
 
 [node name="Solo" type="Sprite2D" parent="Background/ParallaxLayer1"]
-position = Vector2(0, -2425)
+position = Vector2(0, -1209)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_wedwb")
 
 [node name="Spawner" parent="." instance=ExtResource("4_qljh0")]

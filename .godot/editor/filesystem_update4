@@ -1,6 +1,8 @@
-res://Scenes/slime.tscn
-res://Scripts/health_bar.gd
+res://Scenes/startScreen.tscn
 res://Scenes/outpost_zero.tscn
 res://Scenes/player.tscn
-res://Scripts/slime.gd
+res://Scenes/slime.tscn
+res://Scenes/spawner.tscn
+res://Scenes/kill_zone.tscn
+res://Scenes/arrow.tscn
 res://Scripts/player.gd
