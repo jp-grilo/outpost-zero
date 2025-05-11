@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=14 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0qjr82hbx7kf" path="res://Scenes/spawner.tscn" id="4_qljh0"]
 [ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="5_ld1ho"]
 [ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
+[ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
 [ext_resource type="Texture2D" uid="uid://dng6w335tt6wq" path="res://assets/CENARIO_OZ/Montanha_1.png" id="8_xe5w2"]
 [ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
 [ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
@@ -213,6 +214,54 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Inimigos: 0"
+
+[node name="PauseMenu" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_immmw")
+
+[node name="ColorRect" type="ColorRect" parent="HUD/PauseMenu"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -23.5
+offset_right = 20.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JogoPause" type="Label" parent="HUD/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Pause Menu"
+
+[node name="ContinueButton" type="Button" parent="HUD/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Continuar
+"
+
+[node name="QuitButton" type="Button" parent="HUD/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Menu Inicial
+"
 
 [node name="Background" type="Parallax2D" parent="."]
 scale = Vector2(0.5, 0.5)

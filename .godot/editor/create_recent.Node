@@ -1,3 +1,8 @@
+Button
+Label
+VBoxContainer
+ColorRect
+Control
 Parallax2D
 ParallaxBackground
 Sprite2D
@@ -8,7 +13,3 @@ StaticBody2D
 ProgressBar
 Node
 TextureProgressBar
-HBoxContainer
-MarginContainer
-Control
-Label

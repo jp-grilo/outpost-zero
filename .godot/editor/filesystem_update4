@@ -6,3 +6,4 @@ res://Scenes/spawner.tscn
 res://Scenes/kill_zone.tscn
 res://Scenes/arrow.tscn
 res://Scripts/player.gd
+res://Scripts/pause_menu.gd
