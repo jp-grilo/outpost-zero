@@ -1,42 +1,41 @@
-extends CharacterBody2D
+extends StaticBody2D
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_system: HealthSystem = $HealthSystem
+@onready var health_bar: ProgressBar = $HealthBar
+var show_health_timer: Timer
 
-const ARROW = preload("res://Scenes/arrow.tscn")
-const ARROW_SPEED = 300.0
-const ARROW_OFFSET = Vector2(25, -10) 
-
-var shoot_timer = 0.0
-
-func _physics_process(delta: float) -> void:
-
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-		animated_sprite.flip_h = direction < 0
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-
-	# --- Sistema de disparo automático adicionado ---
-	shoot_timer -= delta
-	if shoot_timer <= 0:
-		shoot_arrow()
-		shoot_timer = 1.0
-
-func shoot_arrow():
-	var arrow = ARROW.instantiate()
-	get_parent().add_child(arrow)
+func _ready():
+	# Configuração idêntica à dos inimigos
+	health_bar.visible = false
+	health_bar.max_value = health_system.max_health
+	health_bar.value = health_system.current_health
 	
-	var direction = -1 if animated_sprite.flip_h else 1
-	arrow.position = position + Vector2(ARROW_OFFSET.x * direction, ARROW_OFFSET.y)
-	arrow.set_direction(direction, ARROW_SPEED)
+	# Timer com mesmos parâmetros dos inimigos
+	show_health_timer = Timer.new()
+	add_child(show_health_timer)
+	show_health_timer.timeout.connect(_hide_health_bar)
+	show_health_timer.wait_time = 2.0  # 2 segundos como nos inimigos
+	show_health_timer.one_shot = true
+	
+	health_system.health_changed.connect(_on_health_changed)
+	health_system.died.connect(_on_death)
+
+func take_damage(amount: int):
+	health_system.take_damage(amount)
+	_show_health_bar_temp()  # Mesma função dos inimigos
+
+func _on_health_changed(current: float, max: float):
+	health_bar.value = current
+	if current < max:  # Só mostra se não estiver com vida cheia
+		_show_health_bar_temp()
+
+func _show_health_bar_temp():
+	health_bar.visible = true
+	show_health_timer.start()  # Usa o tempo configurado (2s)
+
+func _hide_health_bar():
+	health_bar.visible = false
+
+func _on_death():
+	print("Base destruída - Fim de jogo")
+	get_tree().reload_current_scene()  # Ou sua lógica de game over

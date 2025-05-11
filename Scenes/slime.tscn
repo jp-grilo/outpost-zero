@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://kjiib22xqmnh"]
+[gd_scene load_steps=13 format=3 uid="uid://kjiib22xqmnh"]
 
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="1_aiwxb"]
 [ext_resource type="Texture2D" uid="uid://rsv0dc4762ac" path="res://assets/sprites/slime_green.png" id="1_jokqx"]
 [ext_resource type="Script" uid="uid://dkpgvwods1apy" path="res://Scripts/slime.gd" id="3_aiwxb"]
+[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_paq7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swwnm"]
 atlas = ExtResource("1_jokqx")
@@ -61,11 +63,23 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_swwnm")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 4.375)
 shape = SubResource("RectangleShape2D_vblni")
 script = SubResource("GDScript_swwnm")
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource("1_aiwxb")
+max_health = 2.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -35.0
+offset_top = -37.0
+offset_right = 36.0
+offset_bottom = -10.0
+script = ExtResource("4_paq7w")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]

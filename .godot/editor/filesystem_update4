@@ -1,0 +1,6 @@
+res://Scenes/slime.tscn
+res://Scripts/health_bar.gd
+res://Scenes/outpost_zero.tscn
+res://Scenes/player.tscn
+res://Scripts/slime.gd
+res://Scripts/player.gd

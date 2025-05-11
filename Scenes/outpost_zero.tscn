@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=10 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
-[ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scenes/OutpostZero.gd" id="1_qljh0"]
+[ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
 [ext_resource type="Texture2D" uid="uid://d05t0nrgj35gx" path="res://assets/sprites/world_tileset.png" id="2_6rkfg"]
+[ext_resource type="Script" uid="uid://cyacmwsm4vsa3" path="res://Scripts/map_camera.gd" id="3_0kjhj"]
 [ext_resource type="PackedScene" uid="uid://0qjr82hbx7kf" path="res://Scenes/spawner.tscn" id="4_qljh0"]
 [ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="5_ld1ho"]
-[ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scenes/HUD.gd" id="6_gh8l2"]
+[ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
 texture = ExtResource("2_6rkfg")
@@ -140,14 +141,18 @@ script = ExtResource("1_qljh0")
 spawner_path = NodePath("Spawner")
 
 [node name="player" parent="." instance=ExtResource("1_gtyw5")]
-position = Vector2(0, -12)
+position = Vector2(0, 2)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(0, -11)
-zoom = Vector2(3, 3)
-limit_left = -588
-limit_right = 588
-limit_bottom = 78
+[node name="MapCamera" type="Camera2D" parent="."]
+position = Vector2(0, -23)
+zoom = Vector2(3.975, 3.975)
+limit_left = -600
+limit_top = -150
+limit_right = 600
+limit_bottom = 50
+script = ExtResource("3_0kjhj")
+min_zoom = 2.8
+max_zoom = 5.035
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qljh0")
