@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746888215
+::res://::1746919767
 icon.svg::CompressedTexture2D/CompressedTexture2D::3496982998616095378::1746831771::1746833108::1::::<><><>0<>0<>bb738a097d6a96cd9bcd2fa723b1b54a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1746831771
 ::res://assets/fonts/::1746833108
@@ -14,30 +14,42 @@ hurt.wav::AudioStreamWAV/AudioStreamWAV::2830043160447702084::1746831771::174683
 jump.wav::AudioStreamWAV/AudioStreamWAV::4937336998804812512::1746831771::1746833110::1::::<><><>0<>0<>81a40886900e1a784fbe03800a57155f<>res://.godot/imported/jump.wav-395b727cde98999423d5c020c9c3492f.sample::
 power_up.wav::AudioStreamWAV/AudioStreamWAV::7903818243505984762::1746831771::1746833110::1::::<><><>0<>0<>3fdafa236378b8b36ceecb5ee7e50b8a<>res://.godot/imported/power_up.wav-8349ffe570559470036ebff4b80f7fc0.sample::
 tap.wav::AudioStreamWAV/AudioStreamWAV::7487417984468034015::1746831771::1746833110::1::::<><><>0<>0<>39733f3679fb27dc78e02dfb73d64e5b<>res://.godot/imported/tap.wav-78d4c5a48b21a853d89bec74f20510e7.sample::
-::res://assets/sprites/::1746833110
+::res://assets/sprites/::1746930269
 Arrows_pack.png::CompressedTexture2D/CompressedTexture2D::1458030960586147565::1746831771::1746833109::1::::<><><>0<>0<>d3876085289f3040960c5e861417e1db<>res://.godot/imported/Arrows_pack.png-366ae0e4c86b5090091352b36302d882.ctex::
 Arrow_impact_pack.png::CompressedTexture2D/CompressedTexture2D::5150773587235855770::1746831771::1746833110::1::::<><><>0<>0<>76a831f25e26b207142baff9cd1369dd<>res://.godot/imported/Arrow_impact_pack.png-bd27a0f5e6e5f2af3309e1b87dee8e62.ctex::
 coin.png::CompressedTexture2D/CompressedTexture2D::1795942867565580605::1746831771::1746833108::1::::<><><>0<>0<>9b2a327a7052adcd51ad4a95117dd7a1<>res://.godot/imported/coin.png-c8309bf0f8fb5f3a7d1e96a4eb3f02ce.ctex::
+exit-Photoroom.png::CompressedTexture2D::8817765470161849498::1746930269::1746930270::1::::<><><>0<>0<>60fc2b239878de84fdb3e908d9c1bcb4<>res://.godot/imported/exit-Photoroom.png-adc934cd7dffe35d800927a7c5d6957e.ctex::
 fruit.png::CompressedTexture2D/CompressedTexture2D::6206952963333052473::1746831771::1746833108::1::::<><><>0<>0<>4492aac656c894527aecc1ad31a044c3<>res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex::
+jogar-Photoroom.png::CompressedTexture2D::2383521895440763765::1746930267::1746930268::1::::<><><>0<>0<>68c9ab45731faec805ea00b07be42161<>res://.godot/imported/jogar-Photoroom.png-720cfd25e32163615db713cde17d072f.ctex::
 knight.png::CompressedTexture2D/CompressedTexture2D::3914825100651001520::1746831771::1746833108::1::::<><><>0<>0<>6655576858438fff51d2601e42582de5<>res://.godot/imported/knight.png-7c67c83d34932624952797d9e971a644.ctex::
+logo_jogo-Photoroom.png::CompressedTexture2D::3025636775684184155::1746921543::1746921544::1::::<><><>0<>0<>9d8fbb83999231694ab95ee30e9761a4<>res://.godot/imported/logo_jogo-Photoroom.png-9b86f1eeedb103db1b8e3e51a8554d83.ctex::
+options-Photoroom.png::CompressedTexture2D::5293737026667362570::1746930029::1746930030::1::::<><><>0<>0<>9bb20de3e31dbd38d19ba8ae5b0a6ed5<>res://.godot/imported/options-Photoroom.png-368881a5eb8e47cc0d39e18dbf919ce1.ctex::
 platforms.png::CompressedTexture2D/CompressedTexture2D::7797889848480945581::1746831771::1746833108::1::::<><><>0<>0<>fe93f2f247efe0b4a5ad4c4efc12ad4e<>res://.godot/imported/platforms.png-3869606db457611ed4193d705dc364e4.ctex::
 slime_green.png::CompressedTexture2D/CompressedTexture2D::1231689005136643590::1746831771::1746833108::1::::<><><>0<>0<>f71ba16a26b76326505cf6579811fe88<>res://.godot/imported/slime_green.png-f6349164bf3a0f5189bb927b97af9c58.ctex::
 slime_purple.png::CompressedTexture2D/CompressedTexture2D::5012068764292464486::1746831771::1746833108::1::::<><><>0<>0<>5b52bb36694ed0befe9ba9c0ab5d5b32<>res://.godot/imported/slime_purple.png-26dc5ddef235ce6a400e78e0d532b050.ctex::
+WhatsApp Image 2025-05-10 at 20.38.36 (1).jpeg::CompressedTexture2D::5525817709315039991::1746921047::1746921048::1::::<><><>0<>0<>89d5fde91c104c2deccf0701b2469027<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.36 (1).jpeg-6a2749cd95aa8d8627d74f492d6b67b3.ctex::
+WhatsApp Image 2025-05-10 at 20.38.36 (2).jpeg::CompressedTexture2D::4881325694819056274::1746921047::1746921048::1::::<><><>0<>0<>ca77501a6bb5bdcbc5c3e63f6c6a8364<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.36 (2).jpeg-de927893e54f0f9bd9cc52a142e1437b.ctex::
+WhatsApp Image 2025-05-10 at 20.38.36 (3).jpeg::CompressedTexture2D::4146387116028984244::1746921047::1746921048::1::::<><><>0<>0<>266a6b1194c8391dd5821e71fcc87659<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.36 (3).jpeg-199a9fa0c776e527feca6b5dbdfb14e2.ctex::
+WhatsApp Image 2025-05-10 at 20.38.36.jpeg::CompressedTexture2D::3284261118365161395::1746921047::1746921048::1::::<><><>0<>0<>a275d6faa641d8cb92cc081d2f8eff68<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.36.jpeg-228ef5ba4d67324d81b34869aed8da6c.ctex::
+WhatsApp Image 2025-05-10 at 20.38.37 (1).jpeg::CompressedTexture2D::346841224143660064::1746921047::1746921048::1::::<><><>0<>0<>8a0273b2a52849a03627e1736606256b<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.37 (1).jpeg-a2a2dc3fde91431f5829b138f9da2cf2.ctex::
+WhatsApp Image 2025-05-10 at 20.38.37 (2).jpeg::CompressedTexture2D::8784547810292621435::1746921047::1746921048::1::::<><><>0<>0<>2a3831fa7739d0cd80a3272622188343<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.37 (2).jpeg-eecf467a597dc0cd4fd5d6122c0d9724.ctex::
+WhatsApp Image 2025-05-10 at 20.38.37.jpeg::CompressedTexture2D::3610749198878200451::1746921047::1746921048::1::::<><><>0<>0<>48591021df4938bcd95cf77702ac87da<>res://.godot/imported/WhatsApp Image 2025-05-10 at 20.38.37.jpeg-e4c64fde8c8166fd28e99f58e29ac336.ctex::
 world_tileset.png::CompressedTexture2D/CompressedTexture2D::8977113451713093195::1746831771::1746833108::1::::<><><>0<>0<>ad321b4a2d3b117374930cf0cc218417<>res://.godot/imported/world_tileset.png-61a32465f33c3d9d3bfecb75b6485009.ctex::
-::res://Scenes/::1746841919
+zero-Photoroom.png::CompressedTexture2D::6995735880029108398::1746930265::1746930266::1::::<><><>0<>0<>e6b7d515b9eb034c28a5bc6e46f1e933<>res://.godot/imported/zero-Photoroom.png-ce71fbda52d076a4a48c1f90454dd1af.ctex::
+::res://Scenes/::1746920987
 arrow.tscn::PackedScene/PackedScene::974399265101778027::1746831771::0::1::::<><><>0<>0<><>::uid://u1js61nlqa58::::res://assets/sprites/Arrows_pack.png<>uid://c1nx8cf6xesbw::::res://Scripts/arrow.gd
 helth_system.gd::GDScript/GDScript::4648505069000207948::1746831771::0::1::::<>Node2D<><>0<>0<><>::
-HUD.gd::GDScript::4329882506013704540::1746841200::0::1::::<>CanvasLayer<><>0<>0<><>::
+HUD.gd::GDScript/GDScript::4329882506013704540::1746841200::0::1::::<>CanvasLayer<><>0<>0<><>::
 kill_zone.tscn::PackedScene/PackedScene::8378904690815474827::1746831771::0::1::::<><><>0<>0<><>::uid://djyj3sjaomhjj::::res://Scripts/kill_zone.gd
-OutpostZero.gd::GDScript::1983813532204187729::1746839962::0::1::::<>Node2D<><>0<>0<><>::
-outpost_zero.tscn::PackedScene::3989638554293409628::1746841919::0::1::::<><><>0<>0<><>::uid://bfqiik6sj0uxm::::res://Scenes/player.tscn<>uid://3i8ebuu6ib2h::::res://Scenes/OutpostZero.gd<>uid://d05t0nrgj35gx::::res://assets/sprites/world_tileset.png<>uid://0qjr82hbx7kf::::res://Scenes/spawner.tscn<>uid://kjiib22xqmnh::::res://Scenes/slime.tscn<>uid://b2xosdkl7rrya::::res://Scenes/HUD.gd
+OutpostZero.gd::GDScript/GDScript::1983813532204187729::1746839962::0::1::::<>Node2D<><>0<>0<><>::
+outpost_zero.tscn::PackedScene/PackedScene::3989638554293409628::1746841919::0::1::::<><><>0<>0<><>::uid://bfqiik6sj0uxm::::res://Scenes/player.tscn<>uid://3i8ebuu6ib2h::::res://Scenes/OutpostZero.gd<>uid://d05t0nrgj35gx::::res://assets/sprites/world_tileset.png<>uid://0qjr82hbx7kf::::res://Scenes/spawner.tscn<>uid://kjiib22xqmnh::::res://Scenes/slime.tscn<>uid://b2xosdkl7rrya::::res://Scenes/HUD.gd
 player.tscn::PackedScene/PackedScene::2770895542194899778::1746831771::0::1::::<><><>0<>0<><>::uid://cvpqpdh7aay78::::res://Scripts/player.gd<>uid://bv1mukv70qe7q::::res://assets/sprites/knight.png
-slime.tscn::PackedScene::720967953951437441::1746841516::0::1::::<><><>0<>0<><>::uid://rsv0dc4762ac::::res://assets/sprites/slime_green.png<>uid://dkpgvwods1apy::::res://Scripts/slime.gd
+startScreen.tscn::PackedScene::461643689148146854::1746920987::0::1::::<><><>0<>0<><>::
+slime.tscn::PackedScene/PackedScene::720967953951437441::1746841516::0::1::::<><><>0<>0<><>::uid://rsv0dc4762ac::::res://assets/sprites/slime_green.png<>uid://dkpgvwods1apy::::res://Scripts/slime.gd
 spawner.tscn::PackedScene/PackedScene::1788329721747647041::1746831771::0::1::::<><><>0<>0<><>::uid://c5hujtbgjy4vl::::res://Scripts/spawner.gd
-WaveManager.gd::GDScript::3900891452856810832::1746835816::0::1::::<>Node<><>0<>0<><>::
 ::res://Scripts/::1746839579
 arrow.gd::GDScript/GDScript::6626043749020445744::1746831771::0::1::::<>CharacterBody2D<><>0<>0<><>::
 kill_zone.gd::GDScript/GDScript::7841104124425995607::1746831771::0::1::::<>Area2D<><>0<>0<><>::
 player.gd::GDScript/GDScript::6278771178726259457::1746831771::0::1::::<>CharacterBody2D<><>0<>0<><>::
-slime.gd::GDScript::7892519134701472998::1746839579::0::1::::<>CharacterBody2D<><>0<>0<><>::
-spawner.gd::GDScript::6894188732580139673::1746839546::0::1::::<>Node2D<><>0<>0<><>::
+slime.gd::GDScript/GDScript::7892519134701472998::1746839579::0::1::::<>CharacterBody2D<><>0<>0<><>::
+spawner.gd::GDScript/GDScript::6894188732580139673::1746839546::0::1::::<>Node2D<><>0<>0<><>::

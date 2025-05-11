@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Outpost Zero"
-run/main_scene="uid://bw3u08kavh4c3"
+run/main_scene="uid://gtvg67p6s1r3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

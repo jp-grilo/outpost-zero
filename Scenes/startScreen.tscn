@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://gtvg67p6s1r3"]
+
+[ext_resource type="Script" uid="uid://b20o1d0fv4c51" path="res://Scenes/loginScreen.gd" id="1_a8hbt"]
+[ext_resource type="Texture2D" uid="uid://bm16khx8bqssx" path="res://assets/sprites/WhatsApp Image 2025-05-10 at 20.38.36.jpeg" id="2_5pd68"]
+[ext_resource type="Texture2D" uid="uid://bjdv2b1aldbtj" path="res://assets/sprites/logo_jogo-Photoroom.png" id="3_g2xlm"]
+[ext_resource type="Texture2D" uid="uid://87ui0sdq75tx" path="res://assets/sprites/jogar-Photoroom.png" id="4_xsiu8"]
+[ext_resource type="Texture2D" uid="uid://cholctfx22u5w" path="res://assets/sprites/options-Photoroom.png" id="5_ajqwh"]
+[ext_resource type="Texture2D" uid="uid://dxvnkrhamxira" path="res://assets/sprites/exit-Photoroom.png" id="6_ycdae"]
+[ext_resource type="Texture2D" uid="uid://c6w10orwud575" path="res://assets/sprites/zero-Photoroom.png" id="7_5pd68"]
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8hbt")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -0.918823
+offset_top = -2.69012
+offset_right = 1599.08
+offset_bottom = 1186.31
+scale = Vector2(0.72368, 0.555442)
+size_flags_horizontal = 4
+texture = ExtResource("2_5pd68")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00816, 1.00468)
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = -60
+
+[node name="MenuButtons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/MenuButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("3_g2xlm")
+
+[node name="ButtonPlay" type="TextureButton" parent="MarginContainer/MenuButtons"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_xsiu8")
+texture_pressed = ExtResource("4_xsiu8")
+texture_hover = ExtResource("4_xsiu8")
+
+[node name="ButtonOptions" type="TextureButton" parent="MarginContainer/MenuButtons"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("5_ajqwh")
+texture_pressed = ExtResource("5_ajqwh")
+texture_hover = ExtResource("5_ajqwh")
+
+[node name="ButtonExit" type="TextureButton" parent="MarginContainer/MenuButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("6_ycdae")
+texture_pressed = ExtResource("6_ycdae")
+texture_hover = ExtResource("6_ycdae")
+
+[node name="ZeroGravity" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+scale = Vector2(1.00647, 1.08427)
+texture = ExtResource("7_5pd68")
