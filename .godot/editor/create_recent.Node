@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 StaticBody2D
 ProgressBar
 Node
@@ -11,5 +13,3 @@ VBoxContainer
 CanvasLayer
 Timer
 Marker2D
-Node2D
-CollisionShape2D
