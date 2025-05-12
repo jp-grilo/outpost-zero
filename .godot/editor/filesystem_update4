@@ -1,9 +1,12 @@
-res://Scenes/startScreen.tscn
+res://Scenes/slime.tscn
+res://Scenes/slimeVoador.tscn
+res://Scripts/slime.gd
+res://Scripts/spawner.gd
 res://Scenes/outpost_zero.tscn
 res://Scenes/player.tscn
-res://Scenes/slime.tscn
 res://Scenes/spawner.tscn
 res://Scenes/kill_zone.tscn
 res://Scenes/arrow.tscn
-res://Scripts/player.gd
-res://Scripts/pause_menu.gd
+res://Scenes/startScreen.tscn
+res://Scripts/HealthSystem.gd
+res://Scripts/slime_voador.gd

@@ -23,6 +23,7 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 enemies=""
+flying_enemies=""
 
 [input]
 

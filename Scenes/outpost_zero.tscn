@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=15 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dng6w335tt6wq" path="res://assets/CENARIO_OZ/Montanha_1.png" id="8_xe5w2"]
 [ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
 [ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
+[ext_resource type="PackedScene" uid="uid://b68iv11s7a68k" path="res://Scenes/slimeVoador.tscn" id="12_wedwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
 texture = ExtResource("2_6rkfg")
@@ -292,6 +293,7 @@ texture = ExtResource("10_wedwb")
 [node name="Spawner" parent="." instance=ExtResource("4_qljh0")]
 position = Vector2(-1.01555, -50.015)
 enemy_scene = ExtResource("5_ld1ho")
+flying_enemy_scene = ExtResource("12_wedwb")
 
 [node name="LeftSpawn" type="Marker2D" parent="Spawner"]
 position = Vector2(-462.812, 24.5977)

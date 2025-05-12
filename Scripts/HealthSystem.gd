@@ -4,7 +4,7 @@ class_name HealthSystem
 signal health_changed(current_health, max_health)
 signal died()
 
-@export var max_health := 100.0  # Valor padrão que pode ser sobrescrito no inspector
+@export var max_health := 10.0  # Valor padrão que pode ser sobrescrito no inspector
 var current_health : float = max_health
 
 func _ready():

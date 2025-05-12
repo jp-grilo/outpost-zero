@@ -1,0 +1,141 @@
+[gd_scene load_steps=21 format=3 uid="uid://b68iv11s7a68k"]
+
+[ext_resource type="Script" uid="uid://xf15u7hciort" path="res://Scripts/slime_voador.gd" id="1_pkvpv"]
+[ext_resource type="Texture2D" uid="uid://cdn5bms8t1xg5" path="res://assets/sprites/slime_purple.png" id="2_pkvpv"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_uluyl"]
+[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_6g6d1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfjf2"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uluyl"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g6d1"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a52c"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab7cl"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3401"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljywh"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhvrr"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmn5r"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvula"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prdma"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x1b6"]
+atlas = ExtResource("2_pkvpv")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tygpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfjf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uluyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g6d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a52c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab7cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3401")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljywh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhvrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmn5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvula")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prdma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x1b6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
+size = Vector2(12, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vblni"]
+size = Vector2(14, 14.75)
+
+[sub_resource type="GDScript" id="GDScript_swwnm"]
+
+[node name="slimeVoador" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
+script = ExtResource("1_pkvpv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tygpv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.230954
+
+[node name="colisaoInimigo" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_swwnm")
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 4.375)
+shape = SubResource("RectangleShape2D_vblni")
+script = SubResource("GDScript_swwnm")
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource("3_uluyl")
+max_health = 2.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -35.0
+offset_top = -37.0
+offset_right = 36.0
+offset_bottom = -10.0
+script = ExtResource("4_6g6d1")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
