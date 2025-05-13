@@ -1,15 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://im5ktgxtw46a"]
+[gd_scene load_steps=10 format=3 uid="uid://im5ktgxtw46a"]
 
 [ext_resource type="Script" uid="uid://uo3a4j074ovg" path="res://Scripts/TowerRT1.gd" id="1_2eijs"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="1_5wtso"]
 [ext_resource type="Texture2D" uid="uid://cm2utvqinxlr6" path="res://assets/sprites/armas/turret_01_mk1.PNG" id="2_2eijs"]
+[ext_resource type="Texture2D" uid="uid://b8fnb8ateqxep" path="res://assets/sprites/armas/shotThin.png" id="4_mlg3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlg3v"]
+size = Vector2(31.1111, 35.5556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eijs"]
 size = Vector2(534.444, 988.889)
 
+[sub_resource type="Animation" id="Animation_rvb35"]
+resource_name = "Shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tower/Muzzle/MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nsuto"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tower/Muzzle/MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nstbv"]
+_data = {
+&"RESET": SubResource("Animation_nsuto"),
+&"Shoot": SubResource("Animation_rvb35")
+}
+
 [node name="TowerRT1" type="Node2D"]
 scale = Vector2(0.45, 0.45)
 script = ExtResource("1_2eijs")
+build_cost = 10
+tower_name = "Torre Direita"
+
+[node name="BuyOrUpgrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
+position = Vector2(5.29819e-08, 0)
+shape = SubResource("RectangleShape2D_mlg3v")
 
 [node name="Base" type="Sprite2D" parent="."]
 scale = Vector2(0.45, 0.45)
@@ -23,10 +72,21 @@ texture = ExtResource("2_2eijs")
 position = Vector2(0, -40.965)
 scale = Vector2(0.45, 0.45)
 
+[node name="MuzzleFlash" type="Sprite2D" parent="Tower/Muzzle"]
+position = Vector2(0, -10.374)
+texture = ExtResource("4_mlg3v")
+
 [node name="Range" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 position = Vector2(257.222, -72.2222)
 shape = SubResource("RectangleShape2D_2eijs")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nstbv")
+}
+
+[connection signal="mouse_entered" from="BuyOrUpgrade" to="." method="_on_buy_or_upgrade_mouse_entered"]
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

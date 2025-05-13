@@ -10,3 +10,10 @@ res://Scenes/TowerLT1.tres.gd
 res://Scripts/TowerRT1.gd
 res://Scenes/slime.tscn
 res://Scripts/slime.gd
+res://Scripts/slime_voador.gd
+res://Scenes/slimeVoador.tscn
+res://Scenes/spawner.tscn
+res://Scripts/GameEconomy.gd
+res://Scenes/UICoins.tscn
+res://Scripts/ui_coins.gd
+res://Scripts/OutpostZero.gd

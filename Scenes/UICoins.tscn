@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cob0t5tbsmdfj"]
+
+[ext_resource type="Script" uid="uid://rsu1rw66tq0" path="res://Scripts/ui_coins.gd" id="1_60imq"]
+[ext_resource type="Texture2D" uid="uid://cc27f6njr8y7a" path="res://assets/sprites/Unicos/coin.PNG" id="2_jhehd"]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_60imq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Moeda" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_jhehd")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
