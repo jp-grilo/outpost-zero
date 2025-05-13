@@ -9,6 +9,8 @@ class_name TowerRT1
 # Referências aos nós
 @onready var base_sprite: Sprite2D = $Base
 @onready var tower_sprite: Sprite2D = $Tower
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var muzzle_flash: Sprite2D = $Tower/Muzzle/MuzzleFlash
 #@onready var buy_area: Area2D = $BuyOrUpgrade  # [COMPRA] Área de compra - DESATIVADO
 @onready var range_area: Area2D = $Range
 
@@ -23,6 +25,7 @@ func _ready():
 	# Configuração inicial
 	tower_sprite.visible = true  # Torre sempre ativa
 	base_sprite.visible = true   # Base sempre visível
+	muzzle_flash.visible = false # Flash do cano da arma desligado inicialmente
 	
 	# Configura timer de dano
 	damage_timer = Timer.new()
@@ -93,6 +96,7 @@ func _aim_tower():
 
 func _apply_damage():
 	if current_target and current_target.has_method("take_damage"):
+		animation_player.play("Shoot")
 		current_target.take_damage(damage)
 
 # --- Detecção de Inimigos ---
