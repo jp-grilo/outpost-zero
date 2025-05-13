@@ -2,82 +2,80 @@ extends Node2D
 class_name TowerRT1
 
 # Configurações exportáveis (ajustáveis no Inspector)
-@export var build_cost: int = 50          # Custo para construir
+#@export var build_cost: int = 50          # [COMPRA] Custo para construir - DESATIVADO
 @export var damage: float = 1.0           # Dano por segundo
 @export var tower_name: String = "Torre"  # Nome para exibição
 
 # Referências aos nós
 @onready var base_sprite: Sprite2D = $Base
 @onready var tower_sprite: Sprite2D = $Tower
-@onready var buy_area: Area2D = $BuyOrUpgrade
+#@onready var buy_area: Area2D = $BuyOrUpgrade  # [COMPRA] Área de compra - DESATIVADO
 @onready var range_area: Area2D = $Range
 
 # Variáveis de estado
-var is_built: bool = false
-var hovered: bool = false
+#var is_built: bool = false  # [COMPRA] Estado de construção - DESATIVADO
+#var hovered: bool = false   # [COMPRA] Mouse sobre a base - DESATIVADO
 var enemy_array: Array = []
 var current_target: Node2D = null
 var damage_timer: Timer
 
 func _ready():
 	# Configuração inicial
-	tower_sprite.visible = false  # Torre começa invisível
-	base_sprite.visible = true    # Base sempre visível
+	tower_sprite.visible = true  # Torre sempre ativa
+	base_sprite.visible = true   # Base sempre visível
 	
 	# Configura timer de dano
 	damage_timer = Timer.new()
 	add_child(damage_timer)
 	damage_timer.wait_time = 1.0
 	damage_timer.timeout.connect(_apply_damage)
+	damage_timer.start()  # Inicia imediatamente
 	
-	# Conecta sinais da área de compra
-	buy_area.input_event.connect(_on_buy_area_clicked)
-	buy_area.mouse_entered.connect(_on_buy_area_hover)
-	buy_area.mouse_exited.connect(_on_buy_area_unhover)
-	
-	# Configura colisão
-	var shape = CircleShape2D.new()
-	shape.radius = 50  # Ajuste conforme tamanho da base
-	buy_area.get_node("CollisionShape2D").shape = shape
+	# [COMPRA] Código de compra comentado
+	#buy_area.input_event.connect(_on_buy_area_clicked)
+	#buy_area.mouse_entered.connect(_on_buy_area_hover)
+	#buy_area.mouse_exited.connect(_on_buy_area_unhover)
+	#
+	#var shape = CircleShape2D.new()
+	#shape.radius = 50
+	#buy_area.get_node("CollisionShape2D").shape = shape
 
 func _process(delta):
-	# Mostra/oculta texto de hover
-	if hovered and not is_built:
-		_show_hover_info()
+	pass  # [COMPRA] Removido o processamento de hover
+	#if hovered and not is_built:
+	#    _show_hover_info()
 
 func _physics_process(delta):
-	if is_built:
-		_update_combat()
+	# Sem verificação de is_built - sempre ativo
+	_update_combat()
 
-# --- Lógica de Construção ---
-func _on_buy_area_clicked(viewport, event, shape_idx):
-	if (event is InputEventMouseButton and 
-		event.button_index == MOUSE_BUTTON_LEFT and 
-		event.pressed):
-		
-		_try_build_tower()
-
-func _try_build_tower():
-	if is_built: return
-	
-	if Economy.spend_coins(build_cost):
-		_complete_build()
-	else:
-		_show_feedback("Moedas insuficientes!")
-
-func _complete_build():
-	is_built = true
-	tower_sprite.visible = true
-	damage_timer.start()
-	
-	# Remove texto de hover
-	if has_node("HoverText"):
-		$HoverText.queue_free()
-	
-	# Animação de construção
-	var tween = create_tween()
-	tower_sprite.scale = Vector2(0.5, 0.5)
-	tween.tween_property(tower_sprite, "scale", Vector2.ONE, 0.3)
+# --- [COMPRA] Lógica de Construção COMENTADA ---
+#func _on_buy_area_clicked(viewport, event, shape_idx):
+#    if (event is InputEventMouseButton and 
+#        event.button_index == MOUSE_BUTTON_LEFT and 
+#        event.pressed):
+#        
+#        _try_build_tower()
+#
+#func _try_build_tower():
+#    if is_built: return
+#    
+#    if Economy.spend_coins(build_cost):
+#        _complete_build()
+#    else:
+#        _show_feedback("Moedas insuficientes!")
+#
+#func _complete_build():
+#    is_built = true
+#    tower_sprite.visible = true
+#    damage_timer.start()
+#    
+#    if has_node("HoverText"):
+#        $HoverText.queue_free()
+#    
+#    var tween = create_tween()
+#    tower_sprite.scale = Vector2(0.5, 0.5)
+#    tween.tween_property(tower_sprite, "scale", Vector2.ONE, 0.3)
 
 # --- Lógica de Combate ---
 func _update_combat():
@@ -110,30 +108,30 @@ func _on_range_body_exited(body):
 func _sort_by_distance(a, b):
 	return a.global_position.distance_to(global_position) < b.global_position.distance_to(global_position)
 
-# --- Feedback Visual ---
-func _on_buy_area_hover():
-	if not is_built:
-		hovered = true
-
-func _on_buy_area_unhover():
-	hovered = false
-	if has_node("HoverText"):
-		$HoverText.queue_free()
-
-func _show_hover_info():
-	if has_node("HoverText"):
-		$HoverText.queue_free()
-	
-	var text = Label.new()
-	text.name = "HoverText"
-	text.text = "%s\nCusto: %d" % [tower_name, build_cost]
-	text.position = Vector2(0, -60)
-	add_child(text)
-
-func _show_feedback(message):
-	var feedback = Label.new()
-	feedback.text = message
-	feedback.position = Vector2(0, -80)
-	add_child(feedback)
-	await get_tree().create_timer(1.5).timeout
-	feedback.queue_free()
+# --- [COMPRA] Feedback Visual COMENTADO ---
+#func _on_buy_area_hover():
+#    if not is_built:
+#        hovered = true
+#
+#func _on_buy_area_unhover():
+#    hovered = false
+#    if has_node("HoverText"):
+#        $HoverText.queue_free()
+#
+#func _show_hover_info():
+#    if has_node("HoverText"):
+#        $HoverText.queue_free()
+#    
+#    var text = Label.new()
+#    text.name = "HoverText"
+#    text.text = "%s\nCusto: %d" % [tower_name, build_cost]
+#    text.position = Vector2(0, -60)
+#    add_child(text)
+#
+#func _show_feedback(message):
+#    var feedback = Label.new()
+#    feedback.text = message
+#    feedback.position = Vector2(0, -80)
+#    add_child(feedback)
+#    await get_tree().create_timer(1.5).timeout
+#    feedback.queue_free()
