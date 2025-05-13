@@ -97,6 +97,13 @@ func _on_health_changed(current_health: float, max_health: float):
 func _hide_health_bar():
 	health_bar.visible = false
 
+# Adicione junto com os outros métodos do inimigo
+func take_damage(amount: int):
+	health_system.take_damage(amount)
+	# Mostra a barra de vida ao receber dano
+	health_bar.visible = true
+	show_health_timer.start(2.0)  # Mostra por 2 segundos
+
 # Chamado quando o inimigo morre
 func _on_death():
 	remove_from_group("inimigo")  # Remove do grupo

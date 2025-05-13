@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c67i11n7nsofm"]
+
+[ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="1_38njn"]
+[ext_resource type="Texture2D" uid="uid://cdtg0rnuxlwgx" path="res://assets/sprites/armas/turret_01_mk2.PNG" id="1_ok62y"]
+
+[node name="Tower1T2" type="Node2D"]
+
+[node name="TowerBase" type="Sprite2D" parent="."]
+position = Vector2(-14, 0)
+rotation = 1.5708
+scale = Vector2(0.94, 0.94)
+texture = ExtResource("1_38njn")
+
+[node name="TowerVisual" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_ok62y")
+
+[node name="Muzzle" type="Marker2D" parent="TowerVisual"]
+position = Vector2(0, -41)

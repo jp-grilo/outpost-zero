@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://u0qw7kqjmxr4"]
+
+[ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="1_0f3f3"]
+[ext_resource type="Script" uid="uid://cpe7jb83wxfxs" path="res://Scenes/TowerLT1.tres.gd" id="1_m3nqc"]
+[ext_resource type="Texture2D" uid="uid://cm2utvqinxlr6" path="res://assets/sprites/armas/turret_01_mk1.PNG" id="1_w0u0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3nqc"]
+size = Vector2(341.111, 720)
+
+[node name="TowerLT1" type="Node2D"]
+scale = Vector2(0.45, 0.45)
+script = ExtResource("1_m3nqc")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_0f3f3")
+
+[node name="Tower" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_w0u0g")
+
+[node name="Muzzle" type="Marker2D" parent="Tower"]
+position = Vector2(0, -41)
+scale = Vector2(0.45, 0.45)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(-160.556, 22.2222)
+shape = SubResource("RectangleShape2D_m3nqc")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
