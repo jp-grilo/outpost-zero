@@ -5,4 +5,5 @@ res://Scenes/slime.tscn
 res://Scenes/slimeVoador.tscn
 res://Scenes/spawner.tscn
 res://Scenes/UICoins.tscn
-res://Scripts/Turrets.gd
+res://Scenes/player.tscn
+res://Scenes/startScreen.tscn

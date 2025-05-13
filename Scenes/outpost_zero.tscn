@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=18 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="5_ld1ho"]
 [ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
+[ext_resource type="Texture2D" uid="uid://5tjl0f50ltgf" path="res://assets/CENARIO_OZ/Céu.png" id="7_ciofq"]
 [ext_resource type="Texture2D" uid="uid://dng6w335tt6wq" path="res://assets/CENARIO_OZ/Montanha_1.png" id="8_xe5w2"]
 [ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
 [ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
@@ -148,8 +149,7 @@ script = ExtResource("1_qljh0")
 spawner_path = NodePath("Spawner")
 
 [node name="player" parent="." instance=ExtResource("1_gtyw5")]
-position = Vector2(-25, 6)
-scale = Vector2(2, 2)
+position = Vector2(-30, 13)
 
 [node name="MapCamera" type="Camera2D" parent="."]
 visible = false
@@ -185,6 +185,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="container" type="MarginContainer" parent="HUD/HUDRoot"]
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,6 +270,13 @@ text = "Menu Inicial
 [node name="Background" type="Parallax2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+
+[node name="Céu" type="Sprite2D" parent="Background/ParallaxLayer4"]
+position = Vector2(3.00007, -776)
+scale = Vector2(0.501993, 0.318351)
+texture = ExtResource("7_ciofq")
+
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
 
 [node name="Montanha1" type="Sprite2D" parent="Background/ParallaxLayer3"]
@@ -298,13 +306,13 @@ enemy_scene = ExtResource("5_ld1ho")
 flying_enemy_scene = ExtResource("12_wedwb")
 
 [node name="LeftSpawn" type="Marker2D" parent="Spawner"]
-position = Vector2(-462.812, 24.5977)
+position = Vector2(-437.604, 31.0024)
 
 [node name="RightSpawn" type="Marker2D" parent="Spawner"]
-position = Vector2(415.98, 23.7495)
+position = Vector2(281.18, 32.0287)
 
 [node name="AirSpawn" type="Marker2D" parent="Spawner"]
-position = Vector2(248.885, -19.0844)
+position = Vector2(255.009, -50.5898)
 
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
 wait_time = 0.5
@@ -312,9 +320,9 @@ wait_time = 0.5
 [node name="Turrets" type="Node2D" parent="."]
 
 [node name="LeftTower" parent="Turrets" instance=ExtResource("13_gjb8k")]
-position = Vector2(-98, -59)
+position = Vector2(-127, -101)
 
 [node name="TowerRT1" parent="Turrets" instance=ExtResource("14_5yvy5")]
-position = Vector2(67, -58)
+position = Vector2(90.5599, -100.232)
 
 [connection signal="timeout" from="Spawner/EnemySpawnTimer" to="Spawner" method="_on_enemy_spawn_timer_timeout"]
