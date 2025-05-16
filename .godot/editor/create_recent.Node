@@ -1,3 +1,5 @@
+Node2D
+Button
 CollisionShape2D
 Area2D
 Label
@@ -7,8 +9,6 @@ CanvasLayer
 AnimationPlayer
 Sprite2D
 Marker2D
-Node2D
-Button
 VBoxContainer
 ColorRect
 Control

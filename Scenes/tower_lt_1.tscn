@@ -8,6 +8,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3nqc"]
 size = Vector2(341.111, 720)
 
+[sub_resource type="Animation" id="Animation_nsuto"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tower/Muzzle/MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_rvb35"]
 resource_name = "Shoot"
 length = 0.5
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_nsuto"]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tower/Muzzle/MuzzleFlash:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nstbv"]
@@ -82,10 +82,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_nstbv")
 }
 
-[node name="BuyOrUpgrade" type="Area2D" parent="."]
+[node name="BuyOrUpgrade" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
-position = Vector2(5.29819e-07, 0)
 shape = SubResource("RectangleShape2D_rvb35")
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

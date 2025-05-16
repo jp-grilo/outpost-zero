@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=14 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -8,9 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="5_ld1ho"]
 [ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
-[ext_resource type="Texture2D" uid="uid://dng6w335tt6wq" path="res://assets/CENARIO_OZ/Montanha_1.png" id="8_xe5w2"]
-[ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
-[ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
 [ext_resource type="PackedScene" uid="uid://b68iv11s7a68k" path="res://Scenes/slimeVoador.tscn" id="12_wedwb"]
 [ext_resource type="PackedScene" uid="uid://u0qw7kqjmxr4" path="res://Scenes/tower_lt_1.tscn" id="13_gjb8k"]
 [ext_resource type="PackedScene" uid="uid://im5ktgxtw46a" path="res://Scenes/tower_rt_1.tscn" id="14_5yvy5"]
@@ -147,6 +144,15 @@ sources/0 = SubResource("TileSetAtlasSource_y846i")
 script = ExtResource("1_qljh0")
 spawner_path = NodePath("Spawner")
 
+[node name="Turrets" type="Node2D" parent="."]
+visibility_layer = 513
+
+[node name="LeftTower" parent="Turrets" instance=ExtResource("13_gjb8k")]
+position = Vector2(-98, -59)
+
+[node name="TowerRT1" parent="Turrets" instance=ExtResource("14_5yvy5")]
+position = Vector2(67, -58)
+
 [node name="player" parent="." instance=ExtResource("1_gtyw5")]
 position = Vector2(-25, 6)
 scale = Vector2(2, 2)
@@ -266,32 +272,6 @@ layout_mode = 2
 text = "Menu Inicial
 "
 
-[node name="Background" type="Parallax2D" parent="."]
-scale = Vector2(0.5, 0.5)
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
-
-[node name="Montanha1" type="Sprite2D" parent="Background/ParallaxLayer3"]
-position = Vector2(0, -1209)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_xe5w2")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
-position = Vector2(0, -1)
-
-[node name="Montanha2" type="Sprite2D" parent="Background/ParallaxLayer2"]
-position = Vector2(0, -1209)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_immmw")
-
-[node name="ParallaxLayer1" type="ParallaxLayer" parent="Background"]
-position = Vector2(0, -1)
-
-[node name="Solo" type="Sprite2D" parent="Background/ParallaxLayer1"]
-position = Vector2(0, -1209)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_wedwb")
-
 [node name="Spawner" parent="." instance=ExtResource("4_qljh0")]
 position = Vector2(-1.01555, -50.015)
 enemy_scene = ExtResource("5_ld1ho")
@@ -308,13 +288,5 @@ position = Vector2(248.885, -19.0844)
 
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
 wait_time = 0.5
-
-[node name="Turrets" type="Node2D" parent="."]
-
-[node name="LeftTower" parent="Turrets" instance=ExtResource("13_gjb8k")]
-position = Vector2(-98, -59)
-
-[node name="TowerRT1" parent="Turrets" instance=ExtResource("14_5yvy5")]
-position = Vector2(67, -58)
 
 [connection signal="timeout" from="Spawner/EnemySpawnTimer" to="Spawner" method="_on_enemy_spawn_timer_timeout"]

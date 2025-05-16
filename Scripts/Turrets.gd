@@ -7,9 +7,10 @@ class_name TowerRT1
 @export var tower_name: String = "Torre"  # Nome para exibição
 
 # Referências aos nós
+@onready var buyorupgrade = $BuyOrUpgrade
 @onready var base_sprite: Sprite2D = $Base
 @onready var tower_sprite: Sprite2D = $Tower
-@onready var buy_area: Area2D = $BuyOrUpgrade
+#@onready var buy_area: Area2D = $BuyOrUpgrade
 @onready var range_area: Area2D = $Range
 
 # Variáveis de estado
@@ -21,6 +22,7 @@ var damage_timer: Timer
 
 func _ready():
 	# Configuração inicial
+	buyorupgrade.pressed.connect(_on_buy_area_clicked)
 	tower_sprite.visible = false  # Torre começa invisível
 	base_sprite.visible = true    # Base sempre visível
 	
@@ -31,15 +33,16 @@ func _ready():
 	damage_timer.timeout.connect(_apply_damage)
 	
 	# Conecta sinais da área de compra
-	buy_area.input_event.connect(_on_buy_area_clicked)
-	buy_area.mouse_entered.connect(_on_buy_area_hover)
-	buy_area.mouse_exited.connect(_on_buy_area_unhover)
-	
+	#buy_area.input_event.connect(_on_buy_area_clicked)
+	#buy_area.mouse_entered.connect(_on_buy_area_hover)
+	#buy_area.mouse_exited.connect(_on_buy_area_unhover)
+	#_complete_build()
 	# Configura colisão
+	#_complete_build()
 	var shape = CircleShape2D.new()
 	shape.radius = 50  # Ajuste conforme tamanho da base
-	buy_area.get_node("CollisionShape2D").shape = shape
-
+	#buy_area.get_node("CollisionShape2D").shape = shape
+		
 func _process(delta):
 	# Mostra/oculta texto de hover
 	if hovered and not is_built:
@@ -51,18 +54,17 @@ func _physics_process(delta):
 
 # --- Lógica de Construção ---
 func _on_buy_area_clicked(viewport, event, shape_idx):
-	if (event is InputEventMouseButton and 
-		event.button_index == MOUSE_BUTTON_LEFT and 
-		event.pressed):
-		
-		_try_build_tower()
+	print("Entrei")
+	_try_build_tower()
 
 func _try_build_tower():
 	if is_built: return
-	
+	print("Entrei aqui")
 	if Economy.spend_coins(build_cost):
+		print("Entrei no complete")
 		_complete_build()
 	else:
+		print(Economy.current_coins)
 		_show_feedback("Moedas insuficientes!")
 
 func _complete_build():
