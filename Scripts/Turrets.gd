@@ -1,5 +1,5 @@
 extends Node2D
-class_name TowerRT1
+class_name Turrets
 
 # Configurações exportáveis (ajustáveis no Inspector)
 @export var build_cost: int = 50          # Custo para construir
@@ -22,7 +22,6 @@ var damage_timer: Timer
 
 func _ready():
 	# Configuração inicial
-	#buy_area.pressed.connect(_on_buy_area_clicked)
 	tower_sprite.visible = false  # Torre começa invisível
 	base_sprite.visible = true    # Base sempre visível
 	
@@ -36,9 +35,8 @@ func _ready():
 	buy_area.input_event.connect(_on_buy_area_clicked)
 	buy_area.mouse_entered.connect(_on_buy_area_hover)
 	buy_area.mouse_exited.connect(_on_buy_area_unhover)
-	#_complete_build()
+
 	# Configura colisão
-	#_complete_build()
 	var shape = CircleShape2D.new()
 	shape.radius = 50  # Ajuste conforme tamanho da base
 	buy_area.get_node("CollisionShape2D").shape = shape
@@ -84,15 +82,6 @@ func build_tower(scene: PackedScene):
 		queue_free()
 	else:
 		_show_feedback("Moedas insuficientes!")
-#func _try_build_tower():
-	#if is_built: return
-	#print("Entrei aqui")
-	#if Economy.spend_coins(build_cost):
-		#print("Entrei no complete")
-		#_complete_build()
-	#else:
-		#print(Economy.current_coins)
-		#_show_feedback("Moedas insuficientes!")
 
 func _complete_build():
 	is_built = true
@@ -114,17 +103,27 @@ func _update_combat():
 	enemy_array = enemy_array.filter(func(e): return is_instance_valid(e))
 	
 	if enemy_array.size() > 0:
-		current_target = enemy_array[0]
-		_aim_tower()
+		var target = enemy_array[0]
+		if is_instance_valid(target):
+			current_target = target
+			_aim_tower()
+		else:
+			current_target = null
+	else:
+		current_target = null
 
 func _aim_tower():
-	if current_target:
+	if current_target and is_instance_valid(current_target):
 		var direction = (current_target.global_position - global_position).normalized()
 		tower_sprite.rotation = atan2(direction.y, direction.x) + PI/2
+	else:
+		current_target = null
 
 func _apply_damage():
-	if current_target and current_target.has_method("take_damage"):
+	if current_target and is_instance_valid(current_target) and current_target.has_method("take_damage"):
 		current_target.take_damage(damage)
+	else:
+		current_target = null
 
 # --- Detecção de Inimigos ---
 func _on_range_body_entered(body):
@@ -135,6 +134,8 @@ func _on_range_body_entered(body):
 func _on_range_body_exited(body):
 	if body in enemy_array:
 		enemy_array.erase(body)
+		if body == current_target:
+			current_target = null
 
 func _sort_by_distance(a, b):
 	return a.global_position.distance_to(global_position) < b.global_position.distance_to(global_position)
