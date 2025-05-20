@@ -3,7 +3,7 @@ extends Enemy
 var gravity: float = 500.0
 
 func _ready():
-	coins_reward = 10  # Define o valor para esse inimigo
+	coins_reward = 20  # Define o valor para esse inimigo
 	super()  # Chama _ready do pai
 
 func _move_towards_target(delta: float) -> void:

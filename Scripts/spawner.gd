@@ -65,10 +65,12 @@ func spawn_enemy(wave: int):
 		enemy.add_to_group("inimigo")
 
 	# Escalonamento de atributos
-	if "life" in enemy:
-		enemy.life += wave * 5
+
+	if enemy.has_node("HealthSystem"):
+		var health_system = enemy.get_node("HealthSystem")
+		health_system.max_health *= wave
 	if "speed" in enemy:
-		enemy.speed += wave * 2
+		enemy.speed += wave * 10
 
 	# Posiciona e adiciona à cena
 	enemy.global_position = position

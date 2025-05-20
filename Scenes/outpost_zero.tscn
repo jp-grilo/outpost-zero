@@ -287,7 +287,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -315.0
+offset_left = -360.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -297,7 +297,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -312.0
+offset_left = -353.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -309,7 +309,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Céu" type="Sprite2D" parent="Background/ParallaxLayer4"]
 position = Vector2(3.00007, -776)
-scale = Vector2(0.501993, 0.318351)
+scale = Vector2(0.5, 0.317)
 texture = ExtResource("7_ciofq")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]

@@ -11,7 +11,7 @@ var available_towers = [
 		"icon": preload("res://assets/sprites/armas/turret_01_mk1.PNG")
 	},
 	{
-		"name": "Lança-Foguetes",
+		"name": "Metralhadora-Dupla",
 		"scene": preload("res://Scenes/tower_rt_1.tscn"),
 		"icon": preload("res://assets/sprites/armas/turret_01_mk2.PNG")
 	},

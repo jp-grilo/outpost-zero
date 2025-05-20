@@ -63,9 +63,9 @@ func _ready():
 		"center":
 			collision_shape.position.x = 0
 
-func _process(delta):
-	if hovered and not is_built:
-		_show_hover_info()
+#func _process(delta):
+	#if hovered and not is_built:
+		#_show_hover_info()
 
 func _physics_process(_delta):
 	if is_built:
