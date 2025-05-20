@@ -95,6 +95,11 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
@@ -110,9 +115,8 @@ script = ExtResource("1_pkvpv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tygpv")
-animation = &"idle"
+animation = &"new_animation"
 autoplay = "idle"
-frame_progress = 0.230954
 
 [node name="colisaoInimigo" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4.5)

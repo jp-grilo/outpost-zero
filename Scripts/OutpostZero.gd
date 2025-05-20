@@ -6,10 +6,12 @@ extends Node2D
 
 var current_wave := 0
 
+
 func _ready():
 	wave_timer.timeout.connect(_on_wave_timer_timeout)
+	Economy.reset()
 	_on_wave_timer_timeout()
-
+	
 func _on_wave_timer_timeout():
 	current_wave += 1
 	print("Wave atual:", current_wave)
@@ -35,7 +37,7 @@ func _process(delta: float) -> void:
 	if hud:
 		# Atualiza o timer da próxima wave
 		hud.update_timer($WaveTimer.time_left)
-
+		hud.update_coin_count(Economy.current_coins)
 		# Atualiza a contagem de inimigos
 		var spawner = get_node_or_null(spawner_path)
 		if spawner and spawner.has_method("get_active_enemy_count"):

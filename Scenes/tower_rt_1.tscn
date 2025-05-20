@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://uo3a4j074ovg" path="res://Scripts/TowerRT1.gd" id="1_2eijs"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="1_5wtso"]
-[ext_resource type="Texture2D" uid="uid://cm2utvqinxlr6" path="res://assets/sprites/armas/turret_01_mk1.PNG" id="2_2eijs"]
 [ext_resource type="Texture2D" uid="uid://b8fnb8ateqxep" path="res://assets/sprites/armas/shotThin.png" id="4_mlg3v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlg3v"]
-size = Vector2(31.1111, 35.5556)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2eijs"]
+load_path = "res://Scenes/turret_01_mk2.PNG-084e105dd58f8c538933e826b9d7c9e7.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eijs"]
 size = Vector2(534.444, 988.889)
@@ -48,16 +47,15 @@ _data = {
 &"Shoot": SubResource("Animation_rvb35")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlg3v"]
+size = Vector2(31.1111, 35.5556)
+
 [node name="TowerRT1" type="Node2D"]
 scale = Vector2(0.45, 0.45)
 script = ExtResource("1_2eijs")
+build_cost = 100
+damage = 2.0
 tower_name = "Torre Direita"
-
-[node name="BuyOrUpgrade" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
-position = Vector2(5.29819e-08, 0)
-shape = SubResource("RectangleShape2D_mlg3v")
 
 [node name="Base" type="Sprite2D" parent="."]
 scale = Vector2(0.45, 0.45)
@@ -65,7 +63,7 @@ texture = ExtResource("1_5wtso")
 
 [node name="Tower" type="Sprite2D" parent="."]
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_2eijs")
+texture = SubResource("CompressedTexture2D_2eijs")
 
 [node name="Muzzle" type="Marker2D" parent="Tower"]
 position = Vector2(0, -40.965)
@@ -87,5 +85,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_nstbv")
 }
 
-[connection signal="mouse_entered" from="BuyOrUpgrade" to="." method="_on_buy_or_upgrade_mouse_entered"]
+[node name="BuyOrUpgrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
+position = Vector2(5.29819e-08, 0)
+shape = SubResource("RectangleShape2D_mlg3v")
+
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="mouse_entered" from="BuyOrUpgrade" to="." method="_on_buy_or_upgrade_mouse_entered"]

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+ 
 # Referências aos nós
 @onready var target = get_tree().get_root().get_node("OutpostZero/player")  # Alvo (player)
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  # Sprite animado
@@ -107,4 +107,5 @@ func take_damage(amount: int):
 # Chamado quando o inimigo morre
 func _on_death():
 	remove_from_group("inimigo")  # Remove do grupo
+	Economy.add_coins(10)
 	queue_free()  # Destroi o inimigo

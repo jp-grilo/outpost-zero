@@ -10,8 +10,13 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS  # Godot 4
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		toggle_pause()
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		var tower_ui = get_tree().get_first_node_in_group("ui")
+		if tower_ui and tower_ui.visible:
+			tower_ui.visible = false  # fecha só a UI de compra
+		else:
+			# só abre o menu de pause se a UI de compra não estiver ativa
+			toggle_pause()
 
 func toggle_pause():
 	if get_tree().paused:

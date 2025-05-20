@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=19 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
 [ext_resource type="Texture2D" uid="uid://5tjl0f50ltgf" path="res://assets/CENARIO_OZ/Céu.png" id="7_ciofq"]
+[ext_resource type="Script" uid="uid://bfxr2qv3dgwvg" path="res://Scripts/tower_selection_ui.gd" id="7_wbs02"]
 [ext_resource type="Texture2D" uid="uid://dng6w335tt6wq" path="res://assets/CENARIO_OZ/Montanha_1.png" id="8_xe5w2"]
 [ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
 [ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
@@ -152,7 +153,6 @@ spawner_path = NodePath("Spawner")
 position = Vector2(-30, 13)
 
 [node name="MapCamera" type="Camera2D" parent="."]
-visible = false
 position = Vector2(0, -23)
 limit_left = -3000
 limit_top = -2000
@@ -174,15 +174,14 @@ wait_time = 10.0
 autostart = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 2
 script = ExtResource("6_gh8l2")
 
 [node name="HUDRoot" type="Control" parent="HUD"]
+custom_minimum_size = Vector2(1200, 30)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="container" type="MarginContainer" parent="HUD/HUDRoot"]
 custom_minimum_size = Vector2(0, 5)
@@ -219,8 +218,14 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Inimigos: 0"
 
+[node name="CoinCountLabel" type="Label" parent="HUD/HUDRoot/container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Moedas:"
+
 [node name="PauseMenu" type="Control" parent="HUD"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -267,7 +272,37 @@ layout_mode = 2
 text = "Menu Inicial
 "
 
+[node name="TowerSelectionUi" type="Control" parent="HUD" groups=["ui"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_wbs02")
+
+[node name="Panel" type="Panel" parent="HUD/TowerSelectionUi"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -315.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TowerList" type="VBoxContainer" parent="HUD/TowerSelectionUi/Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -312.0
+grow_horizontal = 0
+grow_vertical = 2
+
 [node name="Background" type="Parallax2D" parent="."]
+visibility_layer = 1023
 scale = Vector2(0.5, 0.5)
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
@@ -324,5 +359,7 @@ position = Vector2(-127, -101)
 
 [node name="TowerRT1" parent="Turrets" instance=ExtResource("14_5yvy5")]
 position = Vector2(90.5599, -100.232)
+build_cost = 50
+damage = 1.0
 
 [connection signal="timeout" from="Spawner/EnemySpawnTimer" to="Spawner" method="_on_enemy_spawn_timer_timeout"]
