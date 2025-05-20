@@ -74,7 +74,6 @@ position = Vector2(0, -10.374)
 texture = ExtResource("4_mlg3v")
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 position = Vector2(257.222, -72.2222)
