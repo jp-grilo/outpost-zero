@@ -70,12 +70,23 @@ func _render_tower_buttons():
 		hbox.add_child(button)
 		tower_list_container.add_child(hbox)
 		
-		# Adiciona botão de cancelar no final da lista
+		# Botão de vender torre (se já construída)
+	print(current_base.has_method("is_built"))
+	if current_base and current_base.is_built:
+		var sell_button = Button.new()
+		sell_button.text = "Vender Torre (+%d moedas)" % int(current_base.build_cost / 2)
+		sell_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		sell_button.pressed.connect(func():
+			current_base.sell_tower()
+			visible = false
+		)
+		tower_list_container.add_child(sell_button)
+
+	# Botão de cancelar
 	var cancel_button = Button.new()
 	cancel_button.text = "Cancelar"
 	cancel_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	cancel_button.pressed.connect(func():
 		visible = false
 	)
-
 	tower_list_container.add_child(cancel_button)

@@ -1,12 +1,10 @@
 res://Scenes/outpost_zero.tscn
-res://Scripts/spawner.gd
-res://Scenes/slime.tscn
-res://Scenes/slimeVoador.tscn
+res://Scripts/Turrets.gd
 res://Scenes/startScreen.tscn
 res://Scenes/tower_rt_1.tscn
 res://Scenes/tower_lt_1.tscn
-res://Scripts/Turrets.gd
 res://Scripts/tower_selection_ui.gd
-res://Scripts/slime.gd
+res://Scripts/TurretPosition.gd
+res://Scenes/TurretPosition.tscn
 res://Scripts/TowerRT1.gd
 res://Scenes/TowerLT1.tres.gd

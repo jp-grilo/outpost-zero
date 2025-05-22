@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=18 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -14,8 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
 [ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
 [ext_resource type="PackedScene" uid="uid://b68iv11s7a68k" path="res://Scenes/slimeVoador.tscn" id="12_wedwb"]
-[ext_resource type="PackedScene" uid="uid://u0qw7kqjmxr4" path="res://Scenes/tower_lt_1.tscn" id="13_gjb8k"]
-[ext_resource type="PackedScene" uid="uid://im5ktgxtw46a" path="res://Scenes/tower_rt_1.tscn" id="14_5yvy5"]
+[ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/TurretPosition.tscn" id="17_mh4e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
 texture = ExtResource("2_6rkfg")
@@ -350,16 +349,20 @@ position = Vector2(281.18, 32.0287)
 position = Vector2(255.009, -50.5898)
 
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
-wait_time = 0.5
+wait_time = 0.073
 
 [node name="Turrets" type="Node2D" parent="."]
 
-[node name="LeftTower" parent="Turrets" instance=ExtResource("13_gjb8k")]
-position = Vector2(-127, -101)
+[node name="Turrets" parent="Turrets" instance=ExtResource("17_mh4e7")]
+position = Vector2(-111.132, -108.49)
 
-[node name="TowerRT1" parent="Turrets" instance=ExtResource("14_5yvy5")]
-position = Vector2(90.5599, -100.232)
-build_cost = 50
-damage = 1.0
+[node name="Turrets2" parent="Turrets" instance=ExtResource("17_mh4e7")]
+position = Vector2(77.4026, -107.361)
+
+[node name="Turrets3" parent="Turrets" instance=ExtResource("17_mh4e7")]
+position = Vector2(-137.662, -81.3953)
+
+[node name="Turrets4" parent="Turrets" instance=ExtResource("17_mh4e7")]
+position = Vector2(101.675, -85.3466)
 
 [connection signal="timeout" from="Spawner/EnemySpawnTimer" to="Spawner" method="_on_enemy_spawn_timer_timeout"]

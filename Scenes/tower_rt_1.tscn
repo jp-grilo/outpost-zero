@@ -8,7 +8,7 @@
 load_path = "res://Scenes/turret_01_mk2.PNG-084e105dd58f8c538933e826b9d7c9e7.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eijs"]
-size = Vector2(534.444, 988.889)
+size = Vector2(2240, 988.889)
 
 [sub_resource type="Animation" id="Animation_nsuto"]
 length = 0.5
@@ -76,7 +76,7 @@ texture = ExtResource("4_mlg3v")
 [node name="Range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-position = Vector2(257.222, -72.2222)
+position = Vector2(2.22227, -128.889)
 shape = SubResource("RectangleShape2D_2eijs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

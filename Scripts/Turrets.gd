@@ -73,18 +73,60 @@ func _physics_process(_delta):
 
 # --- Construção ---
 func _on_buy_area_clicked(viewport, event, shape_idx):
+	print(event)
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-		if not is_built:
 			_open_selection_ui()
+		
+		
 
 func _open_selection_ui():
 	var ui_node = get_tree().get_first_node_in_group("ui")
 	if ui_node:
 		ui_node.open_tower_selection(self)
+		
+func sell_tower():
+	if not is_built:
+		_show_feedback("Nada para vender.")
+		return
 
+	var refund = int(build_cost / 2)
+
+	# Obtem a torre mais barata
+	var ui = get_tree().get_first_node_in_group("ui")
+	if ui == null:
+		_show_feedback("Erro: interface não encontrada.")
+		return
+
+	var min_cost = INF
+	for tower_data in ui.available_towers:
+		var scene: PackedScene = tower_data["scene"]
+		var temp_instance = scene.instantiate()
+		if "build_cost" in temp_instance:
+			min_cost = min(min_cost, temp_instance.build_cost)
+
+	if Economy.current_coins + refund < min_cost:
+		_show_feedback("Não é seguro vender! Você ficaria sem dinheiro para comprar uma nova torre.")
+		return
+
+	# Tudo certo, fazer a venda
+	Economy.current_coins += refund
+
+	var tween = create_tween()
+	tween.tween_property(tower_sprite, "scale", Vector2(0.5, 0.5), 0.3)
+	await tween.finished
+
+	is_built = false
+	tower_sprite.visible = false
+	damage_timer.stop()
+
+	if has_node("HoverText"):
+		$HoverText.queue_free()
+
+	_show_feedback("Torre vendida por %d moedas!" % refund)
+	
 func build_tower(scene: PackedScene):
 	if is_built: return
-
+	
 	var torre = scene.instantiate()
 	torre.global_position = global_position
 
@@ -104,6 +146,7 @@ func build_tower(scene: PackedScene):
 
 func _complete_build():
 	is_built = true
+	add_to_group("built_towers")
 	tower_sprite.visible = true
 	damage_timer.wait_time = fire_rate
 	damage_timer.start()
