@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://rgi8atjl0u8v"]
+
+[ext_resource type="Script" uid="uid://dulqici6y6umb" path="res://Scenes/turrets/TurretsScripts/turret_position.gd" id="1_oc75k"]
+[ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_cj1x4"]
+[ext_resource type="Texture2D" uid="uid://dbatv32qn5bxu" path="res://Scenes/turret_01_mk1.PNG" id="3_cj1x4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xph18"]
+size = Vector2(18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4knp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cj1x4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynlu2"]
+size = Vector2(1017, 1072.44)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_oc75k")
+
+[node name="BuyOrUpgrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
+shape = SubResource("RectangleShape2D_xph18")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -7.15256e-07)
+scale = Vector2(0.248437, 0.232812)
+texture = ExtResource("2_cj1x4")
+
+[node name="Tower" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.84217e-14, -2)
+scale = Vector2(0.338636, 0.292683)
+sprite_frames = SubResource("SpriteFrames_4knp5")
+animation = &"idle"
+
+[node name="Range" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(-0.500015, -39.7778)
+shape = SubResource("RectangleShape2D_ynlu2")

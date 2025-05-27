@@ -12,11 +12,27 @@ class_name Turrets
 # Referências aos nós
 @onready var buyorupgrade = $BuyOrUpgrade
 @onready var base_sprite: Sprite2D = $Base
-@onready var tower_sprite: Sprite2D = $Tower
+@onready var tower_sprite: AnimatedSprite2D = $Tower
 @onready var buy_area: Area2D = $BuyOrUpgrade
 @onready var range_area: Area2D = $Range
 
+var upgrade_levels = {
+	"damage": 0,
+	"fire_rate": 0,
+	"range": 0
+}
 
+var upgrade_costs = {
+	"damage": [30, 50, 80],
+	"fire_rate": [25, 45, 70],
+	"range": [20, 40, 60]
+}
+
+var upgrade_stats = {
+	"damage": [1.0, 1.5, 2.0, 3.0],
+	"fire_rate": [1.0, 0.8, 0.6, 0.4],
+	"range": [100.0, 150.0, 200.0, 250.0]
+}
 
 # Variáveis de estado
 var is_built: bool = false
@@ -73,17 +89,39 @@ func _physics_process(_delta):
 
 # --- Construção ---
 func _on_buy_area_clicked(viewport, event, shape_idx):
-	print(event)
-	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-			_open_selection_ui()
-		
-		
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			var ui_node = get_tree().get_first_node_in_group("ui")
+			if ui_node:
+				if is_built:
+					ui_node.open_upgrade_selection(self)
+				else:
+					ui_node.open_tower_selection(self)
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			if is_built:
+				_open_upgrade_floating_ui()
 
 func _open_selection_ui():
 	var ui_node = get_tree().get_first_node_in_group("ui")
 	if ui_node:
 		ui_node.open_tower_selection(self)
-		
+
+
+func upgrade_to(scene: PackedScene):
+	var upgraded_tower = scene.instantiate()
+	upgraded_tower.global_position = global_position
+
+	if Economy.spend_coins(upgraded_tower.build_cost):
+		get_parent().add_child(upgraded_tower)
+
+		# Chamar inicialização da torre nova
+		if upgraded_tower.has_method("_complete_build"):
+			upgraded_tower._complete_build()
+
+		queue_free()
+	else:
+		_show_feedback("Moedas insuficientes para evoluir!")
+	
 func sell_tower():
 	if not is_built:
 		_show_feedback("Nada para vender.")
@@ -104,12 +142,12 @@ func sell_tower():
 		if "build_cost" in temp_instance:
 			min_cost = min(min_cost, temp_instance.build_cost)
 
-	if Economy.current_coins + refund < min_cost:
+	if Economy.get_current_coins() + refund < min_cost:
 		_show_feedback("Não é seguro vender! Você ficaria sem dinheiro para comprar uma nova torre.")
 		return
 
 	# Tudo certo, fazer a venda
-	Economy.current_coins += refund
+	Economy.add_coins(refund)
 
 	var tween = create_tween()
 	tween.tween_property(tower_sprite, "scale", Vector2(0.5, 0.5), 0.3)
@@ -227,3 +265,51 @@ func _show_feedback(message):
 	add_child(feedback)
 	await get_tree().create_timer(1.5).timeout
 	feedback.queue_free()
+
+func _open_upgrade_floating_ui():
+	print("Tentando abrir HUD de upgrade...")
+
+	var hud_scene = preload("res://Scenes/upgradeTurrets.tscn")  # AJUSTE para o caminho correto!
+	if not hud_scene:
+		print("ERRO: Cena não encontrada!")
+		return
+
+	var hud_instance = hud_scene.instantiate()
+	if not hud_instance:
+		print("ERRO: Falha ao instanciar HUD!")
+		return
+
+	get_tree().current_scene.add_child(hud_instance)
+	print("HUD adicionada à cena.")
+
+	hud_instance.set_tower(self)
+
+func try_upgrade_attribute(attribute: String) -> void:
+	if not upgrade_levels.has(attribute):
+		_show_feedback("Atributo inválido: %s" % attribute)
+		return
+
+	var level = upgrade_levels[attribute]
+	if level >= 3:
+		_show_feedback("%s já está no nível máximo!" % attribute.capitalize())
+		return
+
+	var cost = upgrade_costs[attribute][level]
+	if not Economy.can_afford(cost):
+		_show_feedback("Moedas insuficientes para melhorar %s." % attribute.capitalize())
+		return
+
+	Economy.spend_coins(cost)
+	upgrade_levels[attribute] += 1
+
+	match attribute:
+		"damage":
+			damage = upgrade_stats["damage"][upgrade_levels["damage"]]
+		"fire_rate":
+			fire_rate = upgrade_stats["fire_rate"][upgrade_levels["fire_rate"]]
+			if damage_timer:
+				damage_timer.wait_time = fire_rate
+		"range":
+			print("Legal")
+
+	_show_feedback("%s melhorado para nível %d!" % [attribute.capitalize(), upgrade_levels[attribute]])

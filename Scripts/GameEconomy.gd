@@ -1,23 +1,28 @@
 extends Node
 
-var current_coins: int = 50 :  # Valor inicial
-	set(value):
-		current_coins = max(0, value)  # Garante que não fique negativo
-		coin_updated.emit(current_coins)  # Emite sinal quando atualiza
-
 signal coin_updated(new_amount)
 
+@export var starting_coins: int = 50
+
+var _current_coins: int = starting_coins:
+	set(value):
+		_current_coins = max(0, value)
+		coin_updated.emit(_current_coins)
+
+func get_current_coins() -> int:
+	return _current_coins
+
 func add_coins(amount: int) -> void:
-	current_coins += amount
+	_current_coins += amount
 
 func spend_coins(amount: int) -> bool:
 	if can_afford(amount):
-		current_coins -= amount
+		_current_coins -= amount
 		return true
 	return false
 
 func can_afford(amount: int) -> bool:
-	return current_coins >= amount
+	return _current_coins >= amount
 
 func reset(start_amount: int = 50) -> void:
-	current_coins = start_amount
+	_current_coins = start_amount

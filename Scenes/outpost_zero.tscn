@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://n3m15ntvghgj" path="res://assets/CENARIO_OZ/Montanha_2.png" id="9_immmw"]
 [ext_resource type="Texture2D" uid="uid://ca2yyjd735en2" path="res://assets/CENARIO_OZ/Solo.png" id="10_wedwb"]
 [ext_resource type="PackedScene" uid="uid://b68iv11s7a68k" path="res://Scenes/slimeVoador.tscn" id="12_wedwb"]
-[ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/TurretPosition.tscn" id="17_mh4e7"]
+[ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/turrets/TurretPosition.tscn" id="17_mh4e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
 texture = ExtResource("2_6rkfg")
@@ -349,7 +349,7 @@ position = Vector2(281.18, 32.0287)
 position = Vector2(255.009, -50.5898)
 
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
-wait_time = 0.073
+wait_time = 0.5
 
 [node name="Turrets" type="Node2D" parent="."]
 
