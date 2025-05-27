@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var coin_count_label = $HUDRoot/container/VBoxContainer/CoinCountLabel as Label
 
 func update_wave(wave: int) -> void:
-	wave_label.text = "Wave: %d" % wave
+	wave_label.text = "Onda: %d" % wave
 	#print("🎯 HUD: Wave atualizada para:", wave)
 
 func update_timer(seconds: float) -> void:

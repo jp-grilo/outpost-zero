@@ -306,7 +306,6 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Background" type="Parallax2D" parent="."]
-visibility_layer = 1023
 scale = Vector2(0.5, 0.5)
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
@@ -340,6 +339,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_wedwb")
 
 [node name="Spawner" parent="." instance=ExtResource("4_qljh0")]
+z_index = 1
 position = Vector2(-1.01555, -50.015)
 enemy_scene = ExtResource("5_ld1ho")
 flying_enemy_scene = ExtResource("12_wedwb")
@@ -357,6 +357,7 @@ position = Vector2(255.009, -50.5898)
 wait_time = 0.5
 
 [node name="Turrets" type="Node2D" parent="."]
+z_index = 1
 
 [node name="Turrets" parent="Turrets" instance=ExtResource("17_mh4e7")]
 position = Vector2(-111.132, -108.49)

@@ -1,3 +1,5 @@
+ParallaxBackground
+Parallax2D
 Control
 Button
 VBoxContainer
@@ -10,5 +12,3 @@ HBoxContainer
 CollisionShape2D
 Area2D
 CanvasLayer
-AnimationPlayer
-Marker2D

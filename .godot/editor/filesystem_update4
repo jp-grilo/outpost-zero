@@ -9,3 +9,4 @@ res://Scenes/turrets/TurretsScripts/turret_1_2.gd
 res://Scenes/turrets/TurretsScripts/turret_1_3.gd
 res://Scenes/turrets/TurretsScripts/tower_lt_1.gd
 res://Scenes/turrets/TurretsScripts/tower_rt_1.gd
+res://Scripts/HUD.gd
