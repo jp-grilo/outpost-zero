@@ -16,23 +16,9 @@ class_name Turrets
 @onready var buy_area: Area2D = $BuyOrUpgrade
 @onready var range_area: Area2D = $Range
 
-var upgrade_levels = {
-	"damage": 0,
-	"fire_rate": 0,
-	"range": 0
-}
-
-var upgrade_costs = {
-	"damage": [30, 50, 80],
-	"fire_rate": [25, 45, 70],
-	"range": [20, 40, 60]
-}
-
-var upgrade_stats = {
-	"damage": [1.0, 1.5, 2.0, 3.0],
-	"fire_rate": [1.0, 0.8, 0.6, 0.4],
-	"range": [100.0, 150.0, 200.0, 250.0]
-}
+var upgrade_levels = {}
+var upgrade_costs = {}
+var upgrade_stats = {}
 
 # Variáveis de estado
 var is_built: bool = false

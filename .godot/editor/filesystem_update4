@@ -4,3 +4,8 @@ res://Scenes/upgradeTurrets.tscn
 res://Scenes/turrets/Turret_1_2.tscn
 res://Scripts/Turrets.gd
 res://Scenes/slime.tscn
+res://Scripts/pause_menu.gd
+res://Scenes/turrets/TurretsScripts/turret_1_2.gd
+res://Scenes/turrets/TurretsScripts/turret_1_3.gd
+res://Scenes/turrets/TurretsScripts/tower_lt_1.gd
+res://Scenes/turrets/TurretsScripts/tower_rt_1.gd

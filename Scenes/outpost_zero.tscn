@@ -266,6 +266,11 @@ layout_mode = 2
 text = "Continuar
 "
 
+[node name="RestartButton" type="Button" parent="HUD/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Reiniciar
+"
+
 [node name="QuitButton" type="Button" parent="HUD/PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Menu Inicial

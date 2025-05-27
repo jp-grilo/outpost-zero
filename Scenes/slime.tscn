@@ -103,9 +103,9 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="colisaoInimigo" type="CollisionShape2D" parent="."]
-physics_interpolation_mode = 2
 position = Vector2(1.5, 7.25)
 shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
 
 [node name="Hitbox" type="Area2D" parent="."]
 visible = false
