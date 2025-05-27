@@ -103,6 +103,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="colisaoInimigo" type="CollisionShape2D" parent="."]
+physics_interpolation_mode = 2
 position = Vector2(1.5, 7.25)
 shape = SubResource("RectangleShape2D_swwnm")
 
@@ -125,5 +126,5 @@ offset_right = 36.0
 offset_bottom = -10.0
 script = ExtResource("4_paq7w")
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]

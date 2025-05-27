@@ -236,7 +236,10 @@ func _on_range_body_exited(body):
 			current_target = null
 
 func _sort_by_distance(a, b):
-	return a.global_position.distance_to(global_position) < b.global_position.distance_to(global_position)
+	if is_instance_valid(a) and is_instance_valid(b):
+		return a.global_position.distance_to(global_position) < b.global_position.distance_to(global_position)
+	else:
+		return 0;
 
 # --- Hover ---
 func _on_buy_area_hover():
