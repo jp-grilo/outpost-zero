@@ -23,24 +23,24 @@ texture = ExtResource("4_fkybt")
 
 [node name="HealthSystem" type="Node" parent="OutpostZero"]
 script = ExtResource("3_6t5aa")
-max_health = 100.0
+max_health = 1000.0
 
 [node name="HealthBar" type="ProgressBar" parent="OutpostZero"]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.442
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.442
 anchor_bottom = 0.5
-offset_left = -3293.0
-offset_top = -2438.5
-offset_right = -3229.0
-offset_bottom = -2411.5
+offset_left = -3262.03
+offset_top = -2413.1
+offset_right = -3195.03
+offset_bottom = -2386.1
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(15, 15)
+size_flags_horizontal = 4
 value = 50.0
 script = ExtResource("4_vgqql")
-metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4.16667, -18.6667)
