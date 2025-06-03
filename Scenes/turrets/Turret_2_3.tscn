@@ -19,8 +19,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3nqc"]
-size = Vector2(341.111, 720)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v41b1"]
+size = Vector2(673.334, 720)
 
 [sub_resource type="Animation" id="Animation_nsuto"]
 length = 0.5
@@ -58,11 +58,10 @@ position = Vector2(0, -41)
 scale = Vector2(0.45, 0.45)
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-position = Vector2(-160.556, 22.2222)
-shape = SubResource("RectangleShape2D_m3nqc")
+position = Vector2(5.55535, 22.2222)
+shape = SubResource("RectangleShape2D_v41b1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

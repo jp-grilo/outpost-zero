@@ -1,40 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfqiik6sj0uxm"]
+[gd_scene load_steps=5 format=3 uid="uid://bfqiik6sj0uxm"]
 
 [ext_resource type="Script" uid="uid://cvpqpdh7aay78" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://domvjn3fjvkuy" path="res://assets/CENARIO_OZ/Outpost_zero.png" id="4_fkybt"]
 [ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
-size = Vector2(67.6667, 35.3333)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
-size = Vector2(7.66667, 3.85185)
+size = Vector2(68, 80)
 
 [node name="player" type="StaticBody2D"]
-z_index = 5
+z_index = 11
+z_as_relative = false
 scale = Vector2(3, 3)
 script = ExtResource("1_cvnsp")
 
 [node name="OutpostZero" type="Sprite2D" parent="."]
 position = Vector2(-4.33333, -57)
 scale = Vector2(0.029, 0.028)
-texture = ExtResource("4_fkybt")
 
 [node name="HealthSystem" type="Node" parent="OutpostZero"]
 script = ExtResource("3_6t5aa")
 max_health = 1000.0
 
 [node name="HealthBar" type="ProgressBar" parent="OutpostZero"]
+z_index = 5
 anchors_preset = -1
 anchor_left = 0.442
 anchor_top = 0.5
 anchor_right = 0.442
 anchor_bottom = 0.5
-offset_left = -3262.03
-offset_top = -2413.1
-offset_right = -3195.03
-offset_bottom = -2386.1
+offset_left = -149.868
+offset_top = -869.547
+offset_right = -82.8678
+offset_bottom = -842.547
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(15, 15)
@@ -43,15 +40,16 @@ value = 50.0
 script = ExtResource("4_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 6
 position = Vector2(4.16667, -18.6667)
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(3, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.38889, -6.44444)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_fkybt")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.38889, -6.22223)
+scale = Vector2(0.333333, 0.333333)
+shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Timer" type="Timer" parent="."]

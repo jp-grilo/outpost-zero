@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ylqfpgaob5v"]
+[gd_scene load_steps=18 format=3 uid="uid://dll3yhyhdruhr"]
 
 [ext_resource type="Script" uid="uid://sjtqafh3lrn8" path="res://Scenes/turrets/TurretsScripts/turret_1_1.gd" id="1_jv36w"]
 [ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="2_xg87f"]
@@ -68,8 +68,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3nqc"]
-size = Vector2(341.111, 720)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv36w"]
+size = Vector2(673.334, 720)
 
 [sub_resource type="Animation" id="Animation_nsuto"]
 length = 0.5
@@ -107,11 +107,10 @@ position = Vector2(0, -41)
 scale = Vector2(0.45, 0.45)
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
-position = Vector2(-160.556, 22.2222)
-shape = SubResource("RectangleShape2D_m3nqc")
+position = Vector2(5.55535, 22.2222)
+shape = SubResource("RectangleShape2D_jv36w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
