@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjmhynu7dueom" path="res://Scripts/upgrade_turrets.gd" id="1_k84dv"]
 
-[node name="UpgradeHud" type="Control"]
+[node name="UpgradeHud" type="Control" groups=["ui"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_k84dv")

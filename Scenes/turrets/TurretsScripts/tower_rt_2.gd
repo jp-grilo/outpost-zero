@@ -1,8 +1,8 @@
 extends Turrets
 @export var custom_name: String = "Laser Azul"
 func _ready():
-	damage = 10
-	fire_rate = 1
+	damage = 50
+	fire_rate = 4.0
 	range = 500
 
 	# Níveis iniciais
@@ -14,15 +14,15 @@ func _ready():
 
 	# Custos específicos dessa torre
 	upgrade_costs = {
-		"damage": [50, 80, 120],
-		"fire_rate": [40, 60, 90],
+		"damage": [80, 100, 150],
+		"fire_rate": [80, 90, 100],
 		"range": [30, 50, 80]
 	}
 
 	# Escalonamento específico dessa torre
 	upgrade_stats = {
-		"damage": [10, 15, 20, 30],         # começa com 10
-		"fire_rate": [1.0, 0.8, 0.6, 0.4],  # menor = mais rápido
+		"damage": [50, 80, 100, 200],
+		"fire_rate": [4.0, 3.6, 3.3, 3.0],
 		"range": [500, 600, 700, 800]
 	}
 

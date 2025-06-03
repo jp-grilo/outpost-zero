@@ -18,6 +18,6 @@ func update_enemy_count(count: int) -> void:
 	#print("👾 HUD: Contagem de inimigos atualizada para:", count)
 	
 func update_coin_count(coin_count: int) -> void:
-	coin_count_label.text = "Moedas: %d" % coin_count
+	coin_count_label.text = "Staris: %d" % coin_count
 	
 	#print("👾 HUD: Contagem de inimigos atualizada para:", count)

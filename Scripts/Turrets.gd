@@ -1,6 +1,8 @@
 extends Node2D
 class_name Turrets
 
+static var current_upgrade_hud: Node = null
+
 # Configurações exportáveis (ajustáveis no Inspector)
 @export var build_cost: int = 50              # Custo de construção
 @export var damage: float = 1.0               # Dano por ataque
@@ -77,10 +79,16 @@ func _physics_process(_delta):
 func _on_buy_area_clicked(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	# Fecha o HUD de upgrade, se estiver aberto
+			if current_upgrade_hud and is_instance_valid(current_upgrade_hud):
+				current_upgrade_hud.queue_free()
+				current_upgrade_hud = null
+
+			# Continua com o fluxo normal
 			var ui_node = get_tree().get_first_node_in_group("ui")
 			if ui_node:
 				if is_built:
-					ui_node.open_upgrade_selection(self)
+					ui_node.open_upgrade_selection(self)	
 				else:
 					ui_node.open_tower_selection(self)
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
@@ -258,7 +266,12 @@ func _show_feedback(message):
 func _open_upgrade_floating_ui():
 	print("Tentando abrir HUD de upgrade...")
 
-	var hud_scene = preload("res://Scenes/upgradeTurrets.tscn")  # AJUSTE para o caminho correto!
+	# Fecha o HUD antigo, se existir
+	if current_upgrade_hud and is_instance_valid(current_upgrade_hud):
+		current_upgrade_hud.queue_free()
+
+	# Carrega a cena
+	var hud_scene = preload("res://Scenes/upgradeTurrets.tscn")  # Ajuste para o caminho correto!
 	if not hud_scene:
 		print("ERRO: Cena não encontrada!")
 		return
@@ -268,10 +281,16 @@ func _open_upgrade_floating_ui():
 		print("ERRO: Falha ao instanciar HUD!")
 		return
 
+	# Adiciona o HUD à cena
 	get_tree().current_scene.add_child(hud_instance)
+	hud_instance.add_to_group("ui")  # Adiciona ao grupo aqui!
 	print("HUD adicionada à cena.")
 
+	# Salva a referência global
+	current_upgrade_hud = hud_instance
+
 	hud_instance.set_tower(self)
+
 
 func try_upgrade_attribute(attribute: String) -> void:
 	if not upgrade_levels.has(attribute):

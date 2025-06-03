@@ -55,4 +55,4 @@ func get_upgrade_text(attr: String) -> String:
 	
 	var next_value = tower_ref.upgrade_stats[attr][lvl + 1]
 	var cost = tower_ref.upgrade_costs[attr][lvl]
-	return "%s: %.1f ➔ %.1f (Custo: %d)" % [label, value_now, next_value, cost]
+	return "%s: %.1f ➔ %.1f (%d Staris)" % [label, value_now, next_value, cost]

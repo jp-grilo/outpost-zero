@@ -13,12 +13,13 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		var tower_ui = get_tree().get_first_node_in_group("ui")
-		if tower_ui and tower_ui.visible:
-			tower_ui.visible = false  # fecha só a UI de compra
-		else:
-			# só abre o menu de pause se a UI de compra não estiver ativa
-			toggle_pause()
+		var ui_nodes = get_tree().get_nodes_in_group("ui")
+		for ui_node in ui_nodes:
+			if ui_node and is_instance_valid(ui_node) and ui_node.visible:
+				ui_node.visible = false
+				return  # Fecha apenas uma aba por vez
+		# Se nenhum painel estava visível, abre o menu de pausa
+		toggle_pause()
 
 func toggle_pause():
 	if get_tree().paused:
