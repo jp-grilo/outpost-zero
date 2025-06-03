@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://bbwk7hqimfgoe"]
+
+[ext_resource type="Script" uid="uid://dh7t851wd177c" path="res://Scenes/turrets/TurretsScripts/tower_rt_2.gd" id="1_s21b5"]
+[ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_3imbc"]
+[ext_resource type="Texture2D" uid="uid://dqdwvrw6j7lvl" path="res://assets/sprites/Guns/Blue/Weapons/turret_02_mk1.png" id="3_s21b5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3imbc"]
+atlas = ExtResource("3_s21b5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlg3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3imbc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eijs"]
+size = Vector2(2240, 988.889)
+
+[sub_resource type="Animation" id="Animation_nsuto"]
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_rvb35"]
+resource_name = "Shoot"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nstbv"]
+_data = {
+&"RESET": SubResource("Animation_nsuto"),
+&"Shoot": SubResource("Animation_rvb35")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlg3v"]
+size = Vector2(31.1111, 35.5556)
+
+[node name="TowerRT2" type="Node2D"]
+scale = Vector2(0.45, 0.45)
+script = ExtResource("1_s21b5")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_3imbc")
+
+[node name="Tower" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_mlg3v")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(2.22227, -128.889)
+shape = SubResource("RectangleShape2D_2eijs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nstbv")
+}
+
+[node name="BuyOrUpgrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
+position = Vector2(5.29819e-08, 0)
+shape = SubResource("RectangleShape2D_mlg3v")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="mouse_entered" from="BuyOrUpgrade" to="." method="_on_buy_or_upgrade_mouse_entered"]

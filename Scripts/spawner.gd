@@ -17,7 +17,7 @@ func _ready():
 
 func start_wave(wave: int):
 	current_wave = wave
-	enemies_to_spawn = 3 + wave * 2
+	enemies_to_spawn = 3 + wave * 3
 	spawn_timer.start()
 
 func _on_EnemySpawnTimer_timeout():
@@ -68,9 +68,10 @@ func spawn_enemy(wave: int):
 
 	if enemy.has_node("HealthSystem"):
 		var health_system = enemy.get_node("HealthSystem")
-		health_system.max_health *= wave
+		# Escalona a vida de forma progressiva
+		health_system.max_health = health_system.max_health * (1 + (wave - 1) * 0.2)
 	if "speed" in enemy:
-		enemy.speed += wave * 10
+		enemy.speed = enemy.speed * (1 + (wave - 1) * 0.05)
 
 	# Posiciona e adiciona à cena
 	enemy.global_position = position

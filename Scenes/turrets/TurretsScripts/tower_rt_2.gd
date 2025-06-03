@@ -1,5 +1,5 @@
 extends Turrets
-@export var custom_name: String = "Canhão Duplo Azul"
+@export var custom_name: String = "Laser Azul"
 func _ready():
 	damage = 10
 	fire_rate = 1

@@ -14,15 +14,14 @@ func _ready():
 
 	# Custos específicos dessa torre
 	upgrade_costs = {
-		"damage": [50, 80, 120],
+		"damage": [40, 60, 80],
 		"fire_rate": [20, 25, 30],
 		"range": [30, 50, 80]
 	}
 
-	# Escalonamento específico dessa torre
 	upgrade_stats = {
-		"damage": [10, 15, 20, 30],         # começa com 10
-		"fire_rate": [1.0, 0.8, 0.6, 0.4],  # menor = mais rápido
+		"damage": [10, 15, 20, 30],
+		"fire_rate": [1.0, 0.8, 0.6, 0.4],
 		"range": [500, 600, 700, 800]
 	}
 

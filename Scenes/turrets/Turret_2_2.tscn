@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://u0qw7kqjmxr4"]
+[gd_scene load_steps=11 format=3 uid="uid://d25v0752nfl6f"]
 
-[ext_resource type="Script" uid="uid://qsd74ro7v0rw" path="res://Scenes/turrets/TurretsScripts/tower_lt_1.gd" id="1_2q8hs"]
-[ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_uchiv"]
-[ext_resource type="Texture2D" uid="uid://dbatv32qn5bxu" path="res://Scenes/turret_01_mk1.PNG" id="3_0345d"]
+[ext_resource type="Script" uid="uid://bsh8sydkwoc3i" path="res://Scenes/turrets/TurretsScripts/turret_2_2.gd" id="1_0aaro"]
+[ext_resource type="Texture2D" uid="uid://c523less1n5dk" path="res://assets/sprites/Guns/Desert/Bodies/body_tracks.png" id="2_5y124"]
+[ext_resource type="Texture2D" uid="uid://cjr6lrvmj6scv" path="res://assets/sprites/Guns/Desert/Weapons/weapons.png" id="3_0aaro"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rvb35"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y124"]
+atlas = ExtResource("3_0aaro")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmo5y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_0345d")
+"texture": SubResource("AtlasTexture_5y124")
 }],
 "loop": true,
 "name": &"idle",
@@ -34,20 +38,23 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvb35"]
 size = Vector2(31.1111, 35.5556)
 
-[node name="TowerLT1" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 scale = Vector2(0.45, 0.45)
-script = ExtResource("1_2q8hs")
-build_cost = 100
+script = ExtResource("1_0aaro")
 
 [node name="Base" type="Sprite2D" parent="."]
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("2_uchiv")
+texture = ExtResource("2_5y124")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
-sprite_frames = SubResource("SpriteFrames_rvb35")
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_rmo5y")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Muzzle" type="Marker2D" parent="Tower"]
+position = Vector2(0, -41)
+scale = Vector2(0.45, 0.45)
 
 [node name="Range" type="Area2D" parent="."]
 visible = false

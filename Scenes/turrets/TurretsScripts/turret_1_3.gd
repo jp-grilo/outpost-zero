@@ -1,5 +1,7 @@
 extends Turrets
 
+@export var custom_name: String = "Laser Roxo"
+
 func _ready():
 	damage = 10
 	fire_rate = 1

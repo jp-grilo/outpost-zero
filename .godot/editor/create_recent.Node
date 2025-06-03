@@ -1,5 +1,6 @@
-HBoxContainer
 ProgressBar
+TextureProgressBar
+HBoxContainer
 ParallaxBackground
 Parallax2D
 Control
@@ -11,4 +12,3 @@ AnimatedSprite2D
 Label
 TextureRect
 CollisionShape2D
-Area2D

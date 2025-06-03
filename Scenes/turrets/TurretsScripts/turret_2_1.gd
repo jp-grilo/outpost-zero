@@ -1,7 +1,7 @@
 extends Turrets
 
 func _ready():
-	damage = 20
+	damage = 10
 	fire_rate = 1
 	range = 500
 
@@ -14,14 +14,15 @@ func _ready():
 
 	# Custos específicos dessa torre
 	upgrade_costs = {
-		"damage": [60, 80, 90],
-		"fire_rate": [25, 30, 40],
-		"range": [40, 60, 90]
+		"damage": [150, 200, 300],
+		"fire_rate": [50, 80, 100],
+		"range": [30, 50, 80]
 	}
 
+	# Escalonamento específico dessa torre
 	upgrade_stats = {
-		"damage": [20, 30, 40, 50],
-		"fire_rate": [1.0, 0.85, 0.65, 0.5],
+		"damage": [50, 80, 100, 150],         # começa com 10
+		"fire_rate": [1.0, 0.8, 0.6, 0.4],  # menor = mais rápido
 		"range": [500, 600, 700, 800]
 	}
 
