@@ -23,3 +23,6 @@ res://Scenes/turrets/Turret_1_2.tscn
 res://Scenes/turrets/TurretsScripts/turret_1_2.gd
 res://Scenes/turrets/tower_rt_1.tscn
 res://Scenes/turrets/TurretsScripts/tower_rt_1.gd
+res://Scripts/upgrade_turrets.gd
+res://Scenes/upgradeTurrets.tscn
+res://Scenes/player.tscn

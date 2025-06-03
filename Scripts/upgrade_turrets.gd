@@ -36,7 +36,23 @@ func _update_buttons():
 
 func get_upgrade_text(attr: String) -> String:
 	var lvl = tower_ref.upgrade_levels[attr]
+	var value_now = tower_ref.upgrade_stats[attr][lvl]
+	
+	# Define o rótulo amigável
+	var label = ""
+	match attr:
+		"damage":
+			label = "Dano"
+		"fire_rate":
+			label = "V. Disp."
+		"range":
+			label = "Alcance"
+		_:
+			label = attr.capitalize()
+	
 	if lvl >= 3:
-		return "%s: MAX" % attr.capitalize()
+		return "%s: %.1f (MAX)" % [label, value_now]
+	
+	var next_value = tower_ref.upgrade_stats[attr][lvl + 1]
 	var cost = tower_ref.upgrade_costs[attr][lvl]
-	return "%s: Nível %d (Custo: %d)" % [attr.capitalize(), lvl, cost]
+	return "%s: %.1f ➔ %.1f (Custo: %d)" % [label, value_now, next_value, cost]
