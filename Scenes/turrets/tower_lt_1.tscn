@@ -1,14 +1,16 @@
 [gd_scene load_steps=10 format=3 uid="uid://u0qw7kqjmxr4"]
 
-[ext_resource type="Script" uid="uid://qsd74ro7v0rw" path="res://Scenes/turrets/TurretsScripts/tower_lt_1.gd" id="1_2q8hs"]
+[ext_resource type="Script" path="res://Scenes/turrets/TurretsScripts/tower_lt_1.gd" id="1_2q8hs"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_uchiv"]
-[ext_resource type="Texture2D" uid="uid://dbatv32qn5bxu" path="res://Scenes/turret_01_mk1.PNG" id="3_0345d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3cpp"]
+load_path = "res://.godot/imported/turret_01_mk1.PNG-5cfd5f35d2ebacc4c30cfd9bb30d9337.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rvb35"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_0345d")
+"texture": SubResource("CompressedTexture2D_r3cpp")
 }],
 "loop": true,
 "name": &"idle",
@@ -27,8 +29,8 @@ length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nstbv"]
 _data = {
-&"RESET": SubResource("Animation_nsuto"),
-&"Shoot": SubResource("Animation_rvb35")
+"RESET": SubResource("Animation_nsuto"),
+"Shoot": SubResource("Animation_rvb35")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvb35"]
@@ -58,7 +60,7 @@ shape = SubResource("RectangleShape2D_m3nqc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_nstbv")
+"": SubResource("AnimationLibrary_nstbv")
 }
 
 [node name="BuyOrUpgrade" type="Area2D" parent="."]

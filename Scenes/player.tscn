@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfqiik6sj0uxm"]
 
-[ext_resource type="Script" uid="uid://cvpqpdh7aay78" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_vgqql"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
+[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(68, 80)
@@ -45,12 +45,14 @@ script = ExtResource("4_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 6
+scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_6t5aa")
 
 [node name="Timer" type="Timer" parent="."]

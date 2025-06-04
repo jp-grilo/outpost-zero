@@ -1,17 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://rgi8atjl0u8v"]
 
-[ext_resource type="Script" uid="uid://dulqici6y6umb" path="res://Scenes/turrets/TurretsScripts/turret_position.gd" id="1_oc75k"]
+[ext_resource type="Script" path="res://Scenes/turrets/TurretsScripts/turret_position.gd" id="1_oc75k"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_cj1x4"]
-[ext_resource type="Texture2D" uid="uid://dbatv32qn5bxu" path="res://Scenes/turret_01_mk1.PNG" id="3_cj1x4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xph18"]
 size = Vector2(18, 18)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3cpp"]
+load_path = "res://.godot/imported/turret_01_mk1.PNG-5cfd5f35d2ebacc4c30cfd9bb30d9337.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4knp5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_cj1x4")
+"texture": SubResource("CompressedTexture2D_r3cpp")
 }],
 "loop": true,
 "name": &"idle",

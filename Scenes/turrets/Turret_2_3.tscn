@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://diso5fqffylw8"]
 
-[ext_resource type="Script" uid="uid://cq8kh0orr6jb5" path="res://Scenes/turrets/TurretsScripts/turret_2_3.gd" id="1_v41b1"]
+[ext_resource type="Script" path="res://Scenes/turrets/TurretsScripts/turret_2_3.gd" id="1_v41b1"]
 [ext_resource type="Texture2D" uid="uid://c523less1n5dk" path="res://assets/sprites/Guns/Desert/Bodies/body_tracks.png" id="2_rn01q"]
 [ext_resource type="Texture2D" uid="uid://cjr6lrvmj6scv" path="res://assets/sprites/Guns/Desert/Weapons/weapons.png" id="3_v41b1"]
 
@@ -31,8 +31,8 @@ length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nstbv"]
 _data = {
-&"RESET": SubResource("Animation_nsuto"),
-&"Shoot": SubResource("Animation_rvb35")
+"RESET": SubResource("Animation_nsuto"),
+"Shoot": SubResource("Animation_rvb35")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvb35"]
@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_v41b1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_nstbv")
+"": SubResource("AnimationLibrary_nstbv")
 }
 
 [node name="BuyOrUpgrade" type="Area2D" parent="."]
