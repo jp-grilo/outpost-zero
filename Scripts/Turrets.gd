@@ -18,6 +18,10 @@ static var current_upgrade_hud: Node = null
 @onready var buy_area: Area2D = $BuyOrUpgrade
 @onready var range_area: Area2D = $Range
 
+# Cena do projétil para instanciar ao atacar
+@export var projectile_scene: PackedScene  
+
+
 var upgrade_levels = {}
 var upgrade_costs = {}
 var upgrade_stats = {}
@@ -212,8 +216,21 @@ func _aim_tower():
 		current_target = null
 
 func _apply_damage():
-	if current_target and is_instance_valid(current_target) and current_target.has_method("take_damage"):
-		current_target.take_damage(damage)
+	if current_target and is_instance_valid(current_target):
+		if not projectile_scene:
+			print("Erro: projectile_scene não configurado.")
+			return
+		
+		# Instancia o projétil
+		var projectile = projectile_scene.instantiate()
+		get_tree().current_scene.add_child(projectile)
+		
+		# Posiciona o projétil na torre
+		projectile.global_position = global_position
+		
+		# Define a direção e dano do projétil
+		projectile.direction = (current_target.global_position - global_position).normalized()
+		projectile.damage = damage
 	else:
 		current_target = null
 

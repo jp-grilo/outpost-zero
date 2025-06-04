@@ -1,6 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749057499
+::res://::1749057933
 icon.svg::CompressedTexture2D::3496982998616095378::1749051355::1749051355::1::::<><>::
+Projectile.gd::GDScript::-1::1749057933::0::1::::Projectile<>Area2D<>::
+projectile.tscn::PackedScene::3907984783316379399::1749058033::0::1::::<><>::res://Projectile.gd<>uid://ddwx4r1emhr55::::res://assets/sprites/Laser Bullets/01.png
 ::res://assets/::1749057459
 ::res://assets/CENARIO_OZ V1.1/::1749057460
 .trashed-1751567721-Céu.png::CompressedTexture2D::4636677813718697998::1749057459::1749057459::1::::<><>::
@@ -255,29 +257,18 @@ spawner.tscn::PackedScene::1788329721747647041::1749051354::0::1::::<><>::uid://
 startScreen.tscn::PackedScene::461643689148146854::1749051354::0::1::::<><>::uid://dpi6lphct0tlo::::res://Scripts/loginScreen.gd<>uid://7kaygmggbk7::::res://assets/sprites/WhatsApp Image 2025-05-10 at 20.38.36.jpeg<>uid://chw31ly4ewtr6::::res://assets/sprites/logo_jogo-Photoroom.png<>uid://dcea2emalwyu7::::res://assets/sprites/jogar-Photoroom.png<>uid://cv4spsrw2i8bh::::res://assets/sprites/options-Photoroom.png<>uid://dnb43rq14u2qo::::res://assets/sprites/exit-Photoroom.png<>uid://itr6bu3doasj::::res://assets/sprites/zero-Photoroom.png
 UICoins.tscn::PackedScene::5759103016097822879::1749051354::0::1::::<><>::uid://rsu1rw66tq0::::res://Scripts/ui_coins.gd<>uid://cc27f6njr8y7a::::res://assets/sprites/Unicos/coin.PNG
 upgradeTurrets.tscn::PackedScene::6051296450891875006::1749051354::0::1::::<><>::uid://cjmhynu7dueom::::res://Scripts/upgrade_turrets.gd
-::res://Scenes/turrets/::1749057505
-tower_lt_1.tscn::PackedScene::1456398772897054635::1749057505::0::1::::<><>::res://Scenes/turrets/TurretsScripts/tower_lt_1.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png
-tower_rt_1.tscn::PackedScene::588123658158802898::1749057504::0::1::::<><>::res://Scenes/turrets/TurretsScripts/tower_rt_1.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://ddtinmgalahla::::res://assets/sprites/armas/turret_01_mk2.PNG
-tower_rt_2.tscn::PackedScene::2502690546013114848::1749057505::0::1::::<><>::res://Scenes/turrets/TurretsScripts/tower_rt_2.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://dqdwvrw6j7lvl::::res://assets/sprites/Guns/Blue/Weapons/turret_02_mk1.png
-TurretPosition.tscn::PackedScene::1206141305287811743::1749057505::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_position.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png
-Turret_1_1.tscn::PackedScene::7955790826305000935::1749057504::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_1_1.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://bajhdii0kgiaa::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk1.png
-Turret_1_2.tscn::PackedScene::616123902559395640::1749057504::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_1_2.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://dd337wq63ra8f::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk2.png
-Turret_1_3.tscn::PackedScene::7250443898596625894::1749057504::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_1_3.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://dojljf5km6oyp::::res://assets/sprites/Guns/Purple/Weapons/turret_02_mk1.png
-Turret_2_1.tscn::PackedScene::7932851147406342484::1749057505::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_2_1.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://c04lc81eh08qw::::res://assets/sprites/Guns/Desert/Weapons/turret_01_mk2.png
-Turret_2_2.tscn::PackedScene::9117613591959365159::1749057504::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_2_2.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://cjr6lrvmj6scv::::res://assets/sprites/Guns/Desert/Weapons/weapons.png
-Turret_2_3.tscn::PackedScene::7758835499040952553::1749057505::0::1::::<><>::res://Scenes/turrets/TurretsScripts/turret_2_3.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://cjr6lrvmj6scv::::res://assets/sprites/Guns/Desert/Weapons/weapons.png
-::res://Scenes/turrets/TurretsScripts/::1749057504
-tower_lt_1.gd::GDScript::-1::1749057504::0::1::::<>Turrets<>::
-tower_rt_1.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-tower_rt_2.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-turret_1_1.gd::GDScript::-1::1749057504::0::1::::<>Turrets<>::
-turret_1_2.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-turret_1_3.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-turret_2_1.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-turret_2_2.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-turret_2_3.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-turret_position.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
-::res://Scripts/::1749057504
+::res://Scenes/turrets/::1749057554
+tower_lt_1.tscn::PackedScene::1456398772897054635::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/tower_lt_1.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png
+tower_rt_1.tscn::PackedScene::588123658158802898::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/tower_rt_1.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://ddtinmgalahla::::res://assets/sprites/armas/turret_01_mk2.PNG
+tower_rt_2.tscn::PackedScene::2502690546013114848::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/tower_rt_2.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://dqdwvrw6j7lvl::::res://assets/sprites/Guns/Blue/Weapons/turret_02_mk1.png
+TurretPosition.tscn::PackedScene::1206141305287811743::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_position.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png
+Turret_1_1.tscn::PackedScene::7955790826305000935::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_1_1.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://bajhdii0kgiaa::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk1.png
+Turret_1_2.tscn::PackedScene::616123902559395640::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_1_2.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://dd337wq63ra8f::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk2.png
+Turret_1_3.tscn::PackedScene::7250443898596625894::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_1_3.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://dojljf5km6oyp::::res://assets/sprites/Guns/Purple/Weapons/turret_02_mk1.png
+Turret_2_1.tscn::PackedScene::7932851147406342484::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_2_1.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://c04lc81eh08qw::::res://assets/sprites/Guns/Desert/Weapons/turret_01_mk2.png
+Turret_2_2.tscn::PackedScene::9117613591959365159::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_2_2.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://cjr6lrvmj6scv::::res://assets/sprites/Guns/Desert/Weapons/weapons.png
+Turret_2_3.tscn::PackedScene::7758835499040952553::1749057554::0::1::::<><>::res://Scripts/TurretsScripts/turret_2_3.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://cjr6lrvmj6scv::::res://assets/sprites/Guns/Desert/Weapons/weapons.png
+::res://Scripts/::1749058029
 arrow.gd::GDScript::-1::1749051354::0::1::::<>CharacterBody2D<>::
 Enemy.gd::GDScript::-1::1749057459::0::1::::Enemy<>CharacterBody2D<>::
 GameEconomy.gd::GDScript::-1::1749051354::0::1::::<>Node<>::
@@ -291,7 +282,6 @@ map_camera.gd::GDScript::-1::1749051354::0::1::::<>Camera2D<>::
 OutpostZero.gd::GDScript::-1::1749051354::0::1::::<>Node2D<>::
 pause_menu.gd::GDScript::-1::1749051354::0::1::::<>Control<>::
 player.gd::GDScript::-1::1749051354::0::1::::<>StaticBody2D<>::
-Projectile.gd::GDScript::-1::1749056930::0::1::::Projectile<>Area2D<>::
 slime.gd::GDScript::-1::1749051354::0::1::::<>Enemy<>::
 slime_voador.gd::GDScript::-1::1749051354::0::1::::<>Enemy<>::
 spawner.gd::GDScript::-1::1749051354::0::1::::<>Node2D<>::
@@ -302,4 +292,14 @@ TurretPosition.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
 Turrets.gd::GDScript::-1::1749057459::0::1::::Turrets<>Node2D<>::
 ui_coins.gd::GDScript::-1::1749051354::0::1::::<>CanvasLayer<>::
 upgrade_turrets.gd::GDScript::-1::1749051354::0::1::::<>Control<>::
-::res://Scripts/TurretsScripts/::0
+::res://Scripts/TurretsScripts/::1749057504
+tower_lt_1.gd::GDScript::-1::1749057504::0::1::::<>Turrets<>::
+tower_rt_1.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+tower_rt_2.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+turret_1_1.gd::GDScript::-1::1749057504::0::1::::<>Turrets<>::
+turret_1_2.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+turret_1_3.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+turret_2_1.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+turret_2_2.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+turret_2_3.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::
+turret_position.gd::GDScript::-1::1749051354::0::1::::<>Turrets<>::

@@ -16,3 +16,8 @@ res://Scenes/turrets/Turret_2_1.tscn
 res://Scenes/turrets/tower_rt_2.tscn
 res://Scenes/turrets/TurretPosition.tscn
 res://Scenes/turrets/tower_lt_1.tscn
+res://Projectile.gd
+res://projectile.tscn
+res://Scenes/Projectile.tscn
+res://Scripts/Projectile.gd
+res://Scripts/Turrets.gd

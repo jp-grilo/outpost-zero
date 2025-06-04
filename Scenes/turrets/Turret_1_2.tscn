@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://i1pqac0wsfau"]
+[gd_scene load_steps=19 format=3 uid="uid://i1pqac0wsfau"]
 
 [ext_resource type="Script" path="res://Scripts/TurretsScripts/turret_1_2.gd" id="1_oe5sc"]
+[ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_1kuq8"]
 [ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="2_8ptww"]
 [ext_resource type="Texture2D" uid="uid://dd337wq63ra8f" path="res://assets/sprites/Guns/Purple/Weapons/turret_01_mk2.png" id="3_oe5sc"]
 
@@ -91,6 +92,7 @@ size = Vector2(31.1111, 35.5556)
 scale = Vector2(0.45, 0.45)
 script = ExtResource("1_oe5sc")
 build_cost = 250
+projectile_scene = ExtResource("2_1kuq8")
 
 [node name="Base" type="Sprite2D" parent="."]
 scale = Vector2(0.45, 0.45)
