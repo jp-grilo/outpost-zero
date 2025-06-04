@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://u0qw7kqjmxr4"]
 
-[ext_resource type="Script" path="res://Scenes/turrets/TurretsScripts/tower_lt_1.gd" id="1_2q8hs"]
+[ext_resource type="Script" path="res://Scripts/TurretsScripts/tower_lt_1.gd" id="1_2q8hs"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_uchiv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3cpp"]

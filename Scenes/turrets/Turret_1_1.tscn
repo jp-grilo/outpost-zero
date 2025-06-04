@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://dll3yhyhdruhr"]
 
-[ext_resource type="Script" path="res://Scenes/turrets/TurretsScripts/turret_1_1.gd" id="1_jv36w"]
+[ext_resource type="Script" path="res://Scripts/TurretsScripts/turret_1_1.gd" id="1_jv36w"]
 [ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="2_xg87f"]
 [ext_resource type="Texture2D" uid="uid://bajhdii0kgiaa" path="res://assets/sprites/Guns/Purple/Weapons/turret_01_mk1.png" id="3_3q881"]
 
