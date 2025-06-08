@@ -36,7 +36,7 @@ func start_next_wave():
 func _process(delta: float) -> void:
 	if hud:
 		# Atualiza o timer da próxima wave
-		hud.update_timer($WaveTimer.time_left)
+		hud.update_timer($WaveTimer.time_left, $WaveTimer.wait_time)
 		hud.update_coin_count(Economy.get_current_coins())
 		# Atualiza a contagem de inimigos
 		var spawner = get_node_or_null(spawner_path)

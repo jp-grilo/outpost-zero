@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://kjiib22xqmnh"]
 
-[ext_resource type="Script" path="res://Scripts/HealthSystem.gd" id="1_aiwxb"]
-[ext_resource type="Texture2D" uid="uid://dfyn6mfqi0yvf" path="res://assets/sprites/slimeTeste.png" id="2_paq7w"]
-[ext_resource type="Script" path="res://Scripts/slime.gd" id="3_aiwxb"]
-[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="4_paq7w"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="1_aiwxb"]
+[ext_resource type="Texture2D" uid="uid://dfyn6mfqi0yvf" path="res://assets/sprites/Avulsos/slimeTeste.png" id="2_paq7w"]
+[ext_resource type="Script" uid="uid://dkpgvwods1apy" path="res://Scripts/slime.gd" id="3_aiwxb"]
+[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_paq7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f4si1"]
 atlas = ExtResource("2_paq7w")

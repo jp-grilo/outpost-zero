@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://gtvg67p6s1r3"]
 
 [ext_resource type="Script" uid="uid://dpi6lphct0tlo" path="res://Scripts/loginScreen.gd" id="1_a8hbt"]
-[ext_resource type="Texture2D" uid="uid://7kaygmggbk7" path="res://assets/sprites/WhatsApp Image 2025-05-10 at 20.38.36.jpeg" id="2_5pd68"]
-[ext_resource type="Texture2D" uid="uid://chw31ly4ewtr6" path="res://assets/sprites/logo_jogo-Photoroom.png" id="3_g2xlm"]
-[ext_resource type="Texture2D" uid="uid://dcea2emalwyu7" path="res://assets/sprites/jogar-Photoroom.png" id="4_xsiu8"]
-[ext_resource type="Texture2D" uid="uid://cv4spsrw2i8bh" path="res://assets/sprites/options-Photoroom.png" id="5_ajqwh"]
-[ext_resource type="Texture2D" uid="uid://dnb43rq14u2qo" path="res://assets/sprites/exit-Photoroom.png" id="6_ycdae"]
-[ext_resource type="Texture2D" uid="uid://itr6bu3doasj" path="res://assets/sprites/zero-Photoroom.png" id="7_5pd68"]
+[ext_resource type="Texture2D" uid="uid://7kaygmggbk7" path="res://assets/sprites/Avulsos/WhatsApp Image 2025-05-10 at 20.38.36.jpeg" id="2_5pd68"]
+[ext_resource type="Texture2D" uid="uid://chw31ly4ewtr6" path="res://assets/sprites/Avulsos/logo_jogo-Photoroom.png" id="3_g2xlm"]
+[ext_resource type="Texture2D" uid="uid://dcea2emalwyu7" path="res://assets/sprites/Avulsos/jogar-Photoroom.png" id="4_xsiu8"]
+[ext_resource type="Texture2D" uid="uid://cv4spsrw2i8bh" path="res://assets/sprites/Avulsos/options-Photoroom.png" id="5_ajqwh"]
+[ext_resource type="Texture2D" uid="uid://dnb43rq14u2qo" path="res://assets/sprites/Avulsos/exit-Photoroom.png" id="6_ycdae"]
+[ext_resource type="Texture2D" uid="uid://itr6bu3doasj" path="res://assets/sprites/Avulsos/zero-Photoroom.png" id="7_5pd68"]
 
 [node name="Login" type="Control"]
 layout_mode = 3

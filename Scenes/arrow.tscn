@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://n5ahi31egcfj"]
 
-[ext_resource type="Texture2D" uid="uid://u1js61nlqa58" path="res://assets/sprites/Arrows_pack.png" id="1_2u0bd"]
+[ext_resource type="Texture2D" uid="uid://u1js61nlqa58" path="res://assets/sprites/Avulsos/Arrows_pack.png" id="1_2u0bd"]
 [ext_resource type="Script" uid="uid://c1nx8cf6xesbw" path="res://Scripts/arrow.gd" id="1_h5x2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88kja"]

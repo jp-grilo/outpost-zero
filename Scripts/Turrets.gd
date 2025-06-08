@@ -101,7 +101,7 @@ func build_tower(scene: PackedScene):
 			ui.visible = false
 		queue_free()
 	else:
-		_show_feedback("Moedas insuficientes!")
+		print("Moedas insuficientes!")
 
 func _complete_build():
 	is_built = true
@@ -119,13 +119,13 @@ func _complete_build():
 
 func sell_tower():
 	if not is_built:
-		_show_feedback("Nada para vender.")
+		print("Nada para vender.")
 		return
 
 	var refund = int(build_cost / 2)
 	var ui = get_tree().get_first_node_in_group("ui")
 	if ui == null:
-		_show_feedback("Erro: interface não encontrada.")
+		print("Erro: interface não encontrada.")
 		return
 
 	var min_cost = INF
@@ -136,7 +136,7 @@ func sell_tower():
 			min_cost = min(min_cost, temp_instance.build_cost)
 
 	if Economy.get_current_coins() + refund < min_cost:
-		_show_feedback("Não é seguro vender! Você ficaria sem dinheiro para comprar outra torre.")
+		print("Não é seguro vender! Você ficaria sem dinheiro para comprar outra torre.")
 		return
 
 	Economy.add_coins(refund)
@@ -152,7 +152,7 @@ func sell_tower():
 	if has_node("HoverText"):
 		$HoverText.queue_free()
 
-	_show_feedback("Torre vendida por %d moedas!" % refund)
+	print("Torre vendida por %d moedas!" % refund)
 
 func upgrade_to(scene: PackedScene):
 	var upgraded_tower = scene.instantiate()
@@ -164,7 +164,7 @@ func upgrade_to(scene: PackedScene):
 			upgraded_tower._complete_build()
 		queue_free()
 	else:
-		_show_feedback("Moedas insuficientes para evoluir!")
+		print("Moedas insuficientes para evoluir!")
 
 # ---------------------------------------------------
 # COMBATE
@@ -304,17 +304,17 @@ func _open_upgrade_floating_ui():
 
 func try_upgrade_attribute(attribute: String) -> void:
 	if not upgrade_levels.has(attribute):
-		_show_feedback("Atributo inválido: %s" % attribute)
+		print("Atributo inválido: %s" % attribute)
 		return
 
 	var level = upgrade_levels[attribute]
 	if level >= 3:
-		_show_feedback("%s já está no nível máximo!" % attribute.capitalize())
+		print("%s já está no nível máximo!" % attribute.capitalize())
 		return
 
 	var cost = upgrade_costs[attribute][level]
 	if not Economy.can_afford(cost):
-		_show_feedback("Moedas insuficientes para melhorar %s." % attribute.capitalize())
+		print("Moedas insuficientes para melhorar %s." % attribute.capitalize())
 		return
 
 	Economy.spend_coins(cost)
@@ -330,4 +330,4 @@ func try_upgrade_attribute(attribute: String) -> void:
 		"range":
 			print("Legal")  # Placeholder para futura implementação
 
-	_show_feedback("%s melhorado para nível %d!" % [attribute.capitalize(), upgrade_levels[attribute]])
+	#_show_feedback("%s melhorado para nível %d!" % [attribute.capitalize(), upgrade_levels[attribute]])
