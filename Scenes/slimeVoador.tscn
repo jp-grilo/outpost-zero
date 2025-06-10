@@ -1,96 +1,33 @@
-[gd_scene load_steps=21 format=3 uid="uid://b68iv11s7a68k"]
+[gd_scene load_steps=10 format=3 uid="uid://b68iv11s7a68k"]
 
 [ext_resource type="Script" uid="uid://xf15u7hciort" path="res://Scripts/slime_voador.gd" id="1_pkvpv"]
-[ext_resource type="Texture2D" uid="uid://cdn5bms8t1xg5" path="res://assets/sprites/Avulsos/slime_purple.png" id="2_pkvpv"]
+[ext_resource type="Texture2D" uid="uid://caqtjye4hw5iw" path="res://assets/sprites/Unicos/EstrelaAlien.png" id="3_pfjf2"]
 [ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_uluyl"]
 [ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_6g6d1"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tygpv"]
+atlas = ExtResource("3_pfjf2")
+region = Rect2(0, 0, 955, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkvpv"]
+atlas = ExtResource("3_pfjf2")
+region = Rect2(0, 0, 900, 1080)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfjf2"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uluyl"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6g6d1"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7a52c"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ab7cl"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h3401"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljywh"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uhvrr"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmn5r"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvula"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_prdma"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0x1b6"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(72, 48, 24, 24)
+atlas = ExtResource("3_pfjf2")
+region = Rect2(910, 0, 900, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tygpv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tygpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkvpv")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pfjf2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uluyl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6g6d1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7a52c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ab7cl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h3401")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ljywh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uhvrr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmn5r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wvula")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_prdma")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0x1b6")
 }],
 "loop": true,
 "name": &"idle",
@@ -103,24 +40,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
-size = Vector2(12, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vblni"]
-size = Vector2(14, 14.75)
-
-[sub_resource type="GDScript" id="GDScript_swwnm"]
+size = Vector2(28, 30)
 
 [node name="slimeVoador" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
 script = ExtResource("1_pkvpv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
+position = Vector2(4, -2.5)
+scale = Vector2(0.0565445, 0.0564815)
 sprite_frames = SubResource("SpriteFrames_tygpv")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="colisaoInimigo" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(8, -3)
 shape = SubResource("RectangleShape2D_swwnm")
 one_way_collision = true
 
@@ -128,9 +62,9 @@ one_way_collision = true
 visible = false
 
 [node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 4.375)
-shape = SubResource("RectangleShape2D_vblni")
-script = SubResource("GDScript_swwnm")
+position = Vector2(8, -3)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
 
 [node name="HealthSystem" type="Node" parent="."]
 script = ExtResource("3_uluyl")
@@ -144,5 +78,5 @@ offset_bottom = -4.0
 show_percentage = false
 script = ExtResource("4_6g6d1")
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]

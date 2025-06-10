@@ -1,8 +1,8 @@
 extends Camera2D
 
 @export var zoom_speed: float = 0.1
-@export var min_zoom: float = 0.5
-@export var max_zoom: float = 2.0
+@export var min_zoom: float = 0.753
+@export var max_zoom: float = 3.0
 @export var move_speed: float = 500.0
 
 func _ready():
@@ -33,5 +33,7 @@ func _input(event):
 
 func zoom_camera(amount: float):
 	var new_zoom = zoom + Vector2(amount, amount)
+	print(new_zoom)
 	new_zoom = new_zoom.clamp(Vector2(min_zoom, min_zoom), Vector2(max_zoom, max_zoom))
+	print(new_zoom)
 	zoom = new_zoom
