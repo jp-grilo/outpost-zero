@@ -23,7 +23,7 @@ scale = Vector2(0.029, 0.028)
 
 [node name="HealthSystem" type="Node" parent="OutpostZero"]
 script = ExtResource("3_6t5aa")
-max_health = 100.0
+max_health = 1.0
 
 [node name="HealthBar" type="ProgressBar" parent="OutpostZero"]
 z_index = 5

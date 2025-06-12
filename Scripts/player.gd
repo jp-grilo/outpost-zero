@@ -61,5 +61,4 @@ func _on_body_exited(body: Node):
 # Chamado quando a base é destruída
 func _on_death():
 	print("Base destruída - Fim de jogo")
-	# Lógica de game over - recarrega a cena
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
