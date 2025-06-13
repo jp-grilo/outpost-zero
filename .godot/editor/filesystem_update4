@@ -11,3 +11,4 @@ res://Scenes/slimeVoador.tscn
 res://Scenes/game_over.tscn
 res://Scripts/player.gd
 res://Scripts/health_bar_player.gd
+res://Scripts/pause_menu.gd

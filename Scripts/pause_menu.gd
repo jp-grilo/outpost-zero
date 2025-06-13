@@ -25,6 +25,7 @@ func _ready():
 
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
@@ -34,6 +35,14 @@ func _unhandled_input(event):
 				ui_node.visible = false
 				return
 		toggle_pause()
+	elif event is InputEventMouseButton and event.pressed:
+		# Se clicou fora do painel
+		print("Clique capturado")
+		var ui_nodes = get_tree().get_nodes_in_group("ui")
+		for ui_node in ui_nodes:
+			if ui_node and is_instance_valid(ui_node) and ui_node.visible:
+				ui_node.visible = false
+				return
 
 func toggle_pause():
 	if get_tree().paused:
