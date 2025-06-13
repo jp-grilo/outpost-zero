@@ -2,7 +2,7 @@ extends Node
 
 signal coin_updated(new_amount)
 
-@export var starting_coins: int = 100
+@export var starting_coins: int
 
 var _current_coins: int = starting_coins:
 	set(value):
@@ -24,5 +24,5 @@ func spend_coins(amount: int) -> bool:
 func can_afford(amount: int) -> bool:
 	return _current_coins >= amount
 
-func reset(start_amount: int = 100) -> void:
+func reset(start_amount: int = 10000) -> void:
 	_current_coins = start_amount

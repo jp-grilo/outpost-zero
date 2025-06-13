@@ -1,8 +1,12 @@
 res://Scenes/outpost_zero.tscn
 res://Scripts/health_bar.gd
 res://Scripts/HUD.gd
-res://Scripts/Turrets.gd
 res://Scenes/player.tscn
 res://Scenes/Projectile.tscn
-res://Scripts/player.gd
-res://Scripts/Projectile.gd
+res://Scenes/slime.tscn
+res://Scenes/slimeVoador.tscn
+res://Scenes/turrets/tower_lt_1.tscn
+res://Scripts/GameEconomy.gd
+res://Scripts/slime.gd
+res://Scripts/slime_voador.gd
+res://Scripts/spawner.gd

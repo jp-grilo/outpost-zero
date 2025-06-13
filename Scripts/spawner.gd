@@ -58,12 +58,6 @@ func spawn_enemy(wave: int):
 		push_error("Falha ao instanciar inimigo!")
 		return
 
-	# Adiciona grupo correspondente
-	if position == air_spawn.global_position:
-		enemy.add_to_group("inimigo_voador")
-	else:
-		enemy.add_to_group("inimigo")
-
 	# Escalonamento de atributos
 
 	if enemy.has_node("HealthSystem"):
@@ -78,4 +72,4 @@ func spawn_enemy(wave: int):
 	add_child(enemy)
 
 func get_active_enemy_count() -> int:
-	return get_tree().get_nodes_in_group("inimigo").size() + get_tree().get_nodes_in_group("inimigo_voador").size()
+	return get_tree().get_nodes_in_group("terrestre").size() + get_tree().get_nodes_in_group("voador").size() + get_tree().get_nodes_in_group("tank").size()
