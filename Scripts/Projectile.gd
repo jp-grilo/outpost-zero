@@ -4,6 +4,8 @@ class_name Projectile
 # --- Parâmetros configuráveis ---
 @export var speed: float = 300.0
 @export var damage: float = 1.0
+
+
 var direction: Vector2 = Vector2.ZERO
 
 # --- Inicialização ---

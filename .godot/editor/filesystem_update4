@@ -1,14 +1,8 @@
 res://Scenes/outpost_zero.tscn
-res://Scripts/GameEconomy.gd
 res://Scripts/health_bar.gd
 res://Scripts/HUD.gd
-res://Scenes/upgradeTurrets.tscn
-res://Scenes/turrets/Turret_2_1.tscn
-res://Scenes/Projectile.tscn
-res://Scenes/startScreen.tscn
+res://Scripts/Turrets.gd
 res://Scenes/player.tscn
-res://Scenes/slimeVoador.tscn
-res://Scenes/game_over.tscn
+res://Scenes/Projectile.tscn
 res://Scripts/player.gd
-res://Scripts/health_bar_player.gd
-res://Scripts/pause_menu.gd
+res://Scripts/Projectile.gd

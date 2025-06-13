@@ -17,6 +17,9 @@ func _ready():
 	else:
 		push_error("❌ HealthBar ou HealthSystem não encontrados.")
 
+	add_to_group("player") # Necessário para as torres localizarem o Player
+
+
 func take_damage(amount: int):
 	health_system.take_damage(amount)
 	_show_health_bar_temp()

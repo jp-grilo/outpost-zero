@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://p50jgwji6o2j"]
 
-[ext_resource type="Script" uid="uid://doc11vy5ggdu3" path="res://Scripts/Projectile.gd" id="1_3c35n"]
+[ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_3c35n"]
 [ext_resource type="Texture2D" uid="uid://ddwx4r1emhr55" path="res://assets/sprites/Laser Bullets/01.png" id="1_qjba4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8vad"]
@@ -8,6 +8,7 @@ size = Vector2(38, 23)
 
 [node name="Projectile" type="Area2D"]
 z_index = 10
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_3c35n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

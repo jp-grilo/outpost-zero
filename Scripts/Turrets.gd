@@ -16,6 +16,12 @@ static var current_upgrade_hud: Node = null
 @export var tower_name: String = "Torre"
 @export var projectile_scene: PackedScene  # Cena de projétil a ser instanciada
 
+
+
+@export var targeting_mode: String = "player"
+
+
+
 # ---------------------------------------------------
 # REFERÊNCIAS A NÓS INTERNOS
 # ---------------------------------------------------
@@ -172,15 +178,26 @@ func upgrade_to(scene: PackedScene):
 
 func _update_combat():
 	enemy_array = enemy_array.filter(func(e): return is_instance_valid(e))
-	if enemy_array.size() > 0:
-		var target = enemy_array[0]
-		if is_instance_valid(target):
-			current_target = target
-			_aim_tower()
-		else:
-			current_target = null
-	else:
+
+	if enemy_array.is_empty():
 		current_target = null
+		return
+
+	var reference_position = global_position
+
+	if targeting_mode == "player":
+		var player = get_tree().get_first_node_in_group("player")
+		if player:
+			reference_position = player.global_position
+
+	# Ordena os inimigos com base na distância à referência (torre ou player)
+	enemy_array.sort_custom(func(a, b):
+		return a.global_position.distance_to(reference_position) < b.global_position.distance_to(reference_position)
+	)
+
+	current_target = enemy_array[0]
+	_aim_tower()
+
 
 func _aim_tower():
 	if current_target and is_instance_valid(current_target):
@@ -197,8 +214,16 @@ func _apply_damage():
 		
 		var projectile = projectile_scene.instantiate()
 		get_tree().current_scene.add_child(projectile)
+		
+		# Calcula a direção normalizada
+		var dir = (current_target.global_position - global_position).normalized()
+
+		# Define posição e rotação do projétil
 		projectile.global_position = global_position
-		projectile.direction = (current_target.global_position - global_position).normalized()
+		projectile.rotation = atan2(dir.y, dir.x)  # ← Aqui define o ângulo do projétil
+
+		# Passa direção e dano
+		projectile.direction = dir
 		projectile.damage = damage
 	else:
 		current_target = null
