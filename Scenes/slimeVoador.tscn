@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://b68iv11s7a68k"]
 
-[ext_resource type="Script" path="res://Scripts/slime_voador.gd" id="1_pkvpv"]
+[ext_resource type="Script" uid="uid://xf15u7hciort" path="res://Scripts/slime_voador.gd" id="1_pkvpv"]
 [ext_resource type="Texture2D" uid="uid://caqtjye4hw5iw" path="res://assets/sprites/Unicos/EstrelaAlien.png" id="3_pfjf2"]
-[ext_resource type="Script" path="res://Scripts/HealthSystem.gd" id="3_uluyl"]
-[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="4_6g6d1"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_uluyl"]
+[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_6g6d1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tygpv"]
 atlas = ExtResource("3_pfjf2")

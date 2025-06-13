@@ -14,6 +14,7 @@ static var current_upgrade_hud: Node = null
 @export var range_direction: String = "center"
 @export var tower_name: String = "Torre"
 @export var projectile_scene: PackedScene
+
 @export_enum("inimigo_voador", "inimigo_tank", "inimigo_terrestre") var targeting_mode: String = "inimigo_terrestre"
 
 # ---------------------------------------------------
@@ -180,7 +181,6 @@ func _update_combat():
 		return
 
 	var filtered_enemies: Array = []
-
 	match targeting_mode:
 		"inimigo_voador":
 			filtered_enemies = enemy_array.filter(func(e): return e.is_in_group("inimigo_voador"))
@@ -246,7 +246,7 @@ func _sort_by_distance(a, b):
 		return 0
 
 # ---------------------------------------------------
-# UI / HOVER / SELEÇÃO
+# UI / HOVER / SELEÇÃO / MELHORIAS
 # ---------------------------------------------------
 
 func _on_buy_area_clicked(viewport, event, shape_idx):
@@ -275,6 +275,24 @@ func _on_buy_area_unhover():
 	if has_node("HoverText"):
 		$HoverText.queue_free()
 
+func _show_hover_info():
+	if has_node("HoverText"):
+		$HoverText.queue_free()
+
+	var text = Label.new()
+	text.name = "HoverText"
+	text.text = "%s\nCusto: %d" % [tower_name, build_cost]
+	text.position = Vector2(0, -60)
+	add_child(text)
+
+func _show_feedback(message):
+	var feedback = Label.new()
+	feedback.text = message
+	feedback.position = Vector2(0, -80)
+	add_child(feedback)
+	await get_tree().create_timer(1.5).timeout
+	feedback.queue_free()
+
 func _open_upgrade_floating_ui():
 	if current_upgrade_hud and is_instance_valid(current_upgrade_hud):
 		current_upgrade_hud.queue_free()
@@ -293,3 +311,35 @@ func _open_upgrade_floating_ui():
 	hud_instance.add_to_group("ui")
 	current_upgrade_hud = hud_instance
 	hud_instance.set_tower(self)
+
+# ---------------------------------------------------
+# SISTEMA DE MELHORIA POR ATRIBUTOS
+# ---------------------------------------------------
+
+func try_upgrade_attribute(attribute: String) -> void:
+	if not upgrade_levels.has(attribute):
+		print("Atributo inválido: %s" % attribute)
+		return
+
+	var level = upgrade_levels[attribute]
+	if level >= 3:
+		print("%s já está no nível máximo!" % attribute.capitalize())
+		return
+
+	var cost = upgrade_costs[attribute][level]
+	if not Economy.can_afford(cost):
+		print("Moedas insuficientes para melhorar %s." % attribute.capitalize())
+		return
+
+	Economy.spend_coins(cost)
+	upgrade_levels[attribute] += 1
+
+	match attribute:
+		"damage":
+			damage = upgrade_stats["damage"][upgrade_levels["damage"]]
+		"fire_rate":
+			fire_rate = upgrade_stats["fire_rate"][upgrade_levels["fire_rate"]]
+			if damage_timer:
+				damage_timer.wait_time = fire_rate
+		"range":
+			print("Legal")  # Placeholder para futura implementação

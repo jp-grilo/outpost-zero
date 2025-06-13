@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfqiik6sj0uxm"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://cvpqpdh7aay78" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(68, 80)
