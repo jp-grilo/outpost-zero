@@ -6,12 +6,13 @@ extends CanvasLayer
 @onready var coin_count_label: Label = $Control/MarginContainer/BottomRightContainer/CoinCountLabel
 @onready var wave_timer: Timer = $WaveTimer
 @onready var progress_bar_label: Label = $Control/MarginContainer/TopRightContainer/ProgressBarLabel
-
+@onready var health_bar: Label = $Control/MarginContainer/VBoxContainer/HealthBarLabel
 
 func _ready():
 	$Control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	progress_bar_label.text = "Próxima Onda"
 	progress_bar_label.add_theme_color_override("font_color", Color.WHITE)
+	health_bar.add_theme_color_override("font_color", Color.WHITE)
 	_apply_hud_style(wave_label, Color("#55aaff"))
 	_apply_hud_style(enemy_count_label, Color("#ff5555"))
 	_apply_progressbar_style(wave_progress_bar, Color("#80d9ff"))

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfqiik6sj0uxm"]
+[gd_scene load_steps=5 format=3 uid="uid://bfqiik6sj0uxm"]
 
 [ext_resource type="Script" uid="uid://cvpqpdh7aay78" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(68, 80)
@@ -23,25 +22,7 @@ scale = Vector2(0.029, 0.028)
 
 [node name="HealthSystem" type="Node" parent="OutpostZero"]
 script = ExtResource("3_6t5aa")
-max_health = 1.0
-
-[node name="HealthBar" type="ProgressBar" parent="OutpostZero"]
-z_index = 5
-anchors_preset = -1
-anchor_left = 0.442
-anchor_top = 0.5
-anchor_right = 0.442
-anchor_bottom = 0.5
-offset_left = -184.35
-offset_top = -1452.88
-offset_right = -117.35
-offset_bottom = -1425.88
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(15, 15)
-size_flags_horizontal = 4
-value = 50.0
-script = ExtResource("4_vgqql")
+max_health = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 6
