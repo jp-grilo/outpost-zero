@@ -11,3 +11,4 @@ res://Scripts/slime.gd
 res://Scripts/slime_voador.gd
 res://Scripts/spawner.gd
 res://Scripts/Turrets.gd
+res://Scripts/player.gd

@@ -14,7 +14,6 @@ static var current_upgrade_hud: Node = null
 @export var range_direction: String = "center"
 @export var tower_name: String = "Torre"
 @export var projectile_scene: PackedScene
-
 @export_enum("inimigo_voador", "inimigo_tank", "inimigo_terrestre") var targeting_mode: String = "inimigo_terrestre"
 
 # ---------------------------------------------------
@@ -48,7 +47,7 @@ var damage_timer: Timer
 func _ready():
 	tower_sprite.visible = false
 	base_sprite.visible = true
-	
+
 	damage_timer = Timer.new()
 	damage_timer.wait_time = fire_rate
 	damage_timer.timeout.connect(_apply_damage)
@@ -62,7 +61,7 @@ func _ready():
 	var shape = RectangleShape2D.new()
 	var collision_shape = range_area.get_node("CollisionShape2D")
 	var current_shape = collision_shape.shape
-	
+
 	if current_shape is RectangleShape2D:
 		shape.extents.y = current_shape.extents.y
 	else:
@@ -181,6 +180,7 @@ func _update_combat():
 		return
 
 	var filtered_enemies: Array = []
+
 	match targeting_mode:
 		"inimigo_voador":
 			filtered_enemies = enemy_array.filter(func(e): return e.is_in_group("inimigo_voador"))
@@ -212,10 +212,10 @@ func _apply_damage():
 		if not projectile_scene:
 			print("Erro: projectile_scene não configurado.")
 			return
-		
+
 		var projectile = projectile_scene.instantiate()
 		get_tree().current_scene.add_child(projectile)
-		
+
 		var dir = (current_target.global_position - global_position).normalized()
 		projectile.global_position = global_position
 		projectile.rotation = atan2(dir.y, dir.x)

@@ -1,45 +1,43 @@
-extends StaticBody2D
+extends Area2D
 
-@onready var health_system: HealthSystem = get_node_or_null("/root/OutpostZero/player/OutpostZero/HealthSystem")
-@onready var health_bar: ProgressBar = get_node_or_null("/root/OutpostZero/HUD/Control/MarginContainer/VBoxContainer/HealthBar")
-var show_health_timer: Timer
+# ---------------------------------------------------
+# PARÂMETROS CONFIGURÁVEIS
+# ---------------------------------------------------
 
-func _ready():
-	if health_bar and health_system:
-		health_bar.max_value = health_system.max_health
-		health_bar.value = health_system.current_health
+@export var speed: float = 300.0
+@export var damage: float = 1.0
 
-		health_system.health_changed.connect(_on_health_changed)
-		health_system.died.connect(_on_death)
+# ---------------------------------------------------
+# VARIÁVEIS INTERNAS
+# ---------------------------------------------------
 
-		$Area2D.body_entered.connect(_on_body_entered)
-		$Area2D.body_exited.connect(_on_body_exited)
-	else:
-		push_error("❌ HealthBar ou HealthSystem não encontrados.")
+var direction: Vector2 = Vector2.ZERO
 
-	add_to_group("player") # Necessário para as torres localizarem o Player
+# ---------------------------------------------------
+# FUNÇÕES DE CICLO DE VIDA
+# ---------------------------------------------------
 
+func _ready() -> void:
+	# Remove o projétil automaticamente após 5 segundos
+	await get_tree().create_timer(5.0).timeout
+	if is_inside_tree():
+		queue_free()
 
-func take_damage(amount: int):
-	health_system.take_damage(amount)
-	_show_health_bar_temp()
+	# Conecta o sinal de detecção de corpo
+	if has_signal("body_entered"):
+		connect("body_entered", Callable(self, "_on_body_entered"))
 
-func _on_health_changed(current: float, max: float):
-	health_bar.value = current
-	if current < max:
-		_show_health_bar_temp()
+func _physics_process(delta: float) -> void:
+	position += direction * speed * delta
 
-func _show_health_bar_temp():
-	health_bar.visible = true
+# ---------------------------------------------------
+# DETECÇÃO DE COLISÃO
+# ---------------------------------------------------
 
-func _on_body_entered(body: Node):
-	if body.is_in_group("enemies") and body.has_method("_on_base_entered"):
-		body._on_base_entered(self)
+func _on_body_entered(body: Node) -> void:
+	if not is_instance_valid(body):
+		return
 
-func _on_body_exited(body: Node):
-	if body.is_in_group("enemies") and body.has_method("_on_base_exited"):
-		body._on_base_exited()
-
-func _on_death():
-	print("Base destruída - Fim de jogo")
-	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	if body.is_in_group("enemies") and body.has_method("take_damage"):
+		body.take_damage(damage)
+		queue_free()
