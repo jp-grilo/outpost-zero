@@ -7,20 +7,15 @@ class_name Turrets
 
 static var current_upgrade_hud: Node = null
 
-# Configurações da torre (ajustáveis no editor)
 @export var build_cost: int = 50
 @export var damage: float = 1.0
 @export var fire_rate: float = 1.0
 @export var range: float = 100.0
-@export var range_direction: String = "center"  # "left", "right", "center"
+@export var range_direction: String = "center"
 @export var tower_name: String = "Torre"
-@export var projectile_scene: PackedScene  # Cena de projétil a ser instanciada
+@export var projectile_scene: PackedScene
 
-
-
-@export var targeting_mode: String = "player"
-
-
+@export_enum("inimigo_voador", "inimigo_tank", "inimigo_terrestre") var targeting_mode: String = "inimigo_terrestre"
 
 # ---------------------------------------------------
 # REFERÊNCIAS A NÓS INTERNOS
@@ -54,19 +49,16 @@ func _ready():
 	tower_sprite.visible = false
 	base_sprite.visible = true
 	
-	# Inicializa o temporizador de ataque
 	damage_timer = Timer.new()
 	damage_timer.wait_time = fire_rate
 	damage_timer.timeout.connect(_apply_damage)
 	damage_timer.one_shot = false
 	add_child(damage_timer)
 
-	# Conecta os sinais da área de construção
 	buy_area.input_event.connect(_on_buy_area_clicked)
 	buy_area.mouse_entered.connect(_on_buy_area_hover)
 	buy_area.mouse_exited.connect(_on_buy_area_unhover)
 
-	# Configura o alcance com base no range definido
 	var shape = RectangleShape2D.new()
 	var collision_shape = range_area.get_node("CollisionShape2D")
 	var current_shape = collision_shape.shape
@@ -183,26 +175,35 @@ func _update_combat():
 		current_target = null
 		return
 
-	var reference_position = global_position
+	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		current_target = null
+		return
 
-	if targeting_mode == "player":
-		var player = get_tree().get_first_node_in_group("player")
-		if player:
-			reference_position = player.global_position
+	var filtered_enemies: Array = []
+	match targeting_mode:
+		"inimigo_voador":
+			filtered_enemies = enemy_array.filter(func(e): return e.is_in_group("inimigo_voador"))
+		"inimigo_tank":
+			filtered_enemies = enemy_array.filter(func(e): return e.is_in_group("inimigo_tank"))
+		"inimigo_terrestre":
+			filtered_enemies = enemy_array.filter(func(e): return e.is_in_group("inimigo_terrestre"))
 
-	# Ordena os inimigos com base na distância à referência (torre ou player)
-	enemy_array.sort_custom(func(a, b):
-		return a.global_position.distance_to(reference_position) < b.global_position.distance_to(reference_position)
+	if filtered_enemies.is_empty():
+		current_target = null
+		return
+
+	filtered_enemies.sort_custom(func(a, b):
+		return a.global_position.distance_to(player.global_position) < b.global_position.distance_to(player.global_position)
 	)
 
-	current_target = enemy_array[0]
+	current_target = filtered_enemies[0]
 	_aim_tower()
-
 
 func _aim_tower():
 	if current_target and is_instance_valid(current_target):
 		var direction = (current_target.global_position - global_position).normalized()
-		tower_sprite.rotation = atan2(direction.y, direction.x) + PI/2
+		tower_sprite.rotation = atan2(direction.y, direction.x) + PI / 2
 	else:
 		current_target = null
 
@@ -215,14 +216,9 @@ func _apply_damage():
 		var projectile = projectile_scene.instantiate()
 		get_tree().current_scene.add_child(projectile)
 		
-		# Calcula a direção normalizada
 		var dir = (current_target.global_position - global_position).normalized()
-
-		# Define posição e rotação do projétil
 		projectile.global_position = global_position
-		projectile.rotation = atan2(dir.y, dir.x)  # ← Aqui define o ângulo do projétil
-
-		# Passa direção e dano
+		projectile.rotation = atan2(dir.y, dir.x)
 		projectile.direction = dir
 		projectile.damage = damage
 	else:
@@ -233,7 +229,7 @@ func _apply_damage():
 # ---------------------------------------------------
 
 func _on_range_body_entered(body):
-	if body.is_in_group("enemies"):
+	if body.is_in_group("inimigo_terrestre") or body.is_in_group("inimigo_voador") or body.is_in_group("inimigo_tank"):
 		enemy_array.append(body)
 		enemy_array.sort_custom(_sort_by_distance)
 
@@ -250,7 +246,7 @@ func _sort_by_distance(a, b):
 		return 0
 
 # ---------------------------------------------------
-# INTERAÇÃO COM UI / HOVER / SELEÇÃO
+# UI / HOVER / SELEÇÃO
 # ---------------------------------------------------
 
 func _on_buy_area_clicked(viewport, event, shape_idx):
@@ -279,32 +275,7 @@ func _on_buy_area_unhover():
 	if has_node("HoverText"):
 		$HoverText.queue_free()
 
-func _show_hover_info():
-	if has_node("HoverText"):
-		$HoverText.queue_free()
-
-	var text = Label.new()
-	text.name = "HoverText"
-	text.text = "%s\nCusto: %d" % [tower_name, build_cost]
-	text.position = Vector2(0, -60)
-	add_child(text)
-
-func _show_feedback(message):
-	var feedback = Label.new()
-	feedback.text = message
-	feedback.position = Vector2(0, -80)
-	add_child(feedback)
-	await get_tree().create_timer(1.5).timeout
-	feedback.queue_free()
-
-func _open_selection_ui():
-	var ui_node = get_tree().get_first_node_in_group("ui")
-	if ui_node:
-		ui_node.open_tower_selection(self)
-
 func _open_upgrade_floating_ui():
-	print("Tentando abrir HUD de upgrade...")
-
 	if current_upgrade_hud and is_instance_valid(current_upgrade_hud):
 		current_upgrade_hud.queue_free()
 
@@ -322,37 +293,3 @@ func _open_upgrade_floating_ui():
 	hud_instance.add_to_group("ui")
 	current_upgrade_hud = hud_instance
 	hud_instance.set_tower(self)
-
-# ---------------------------------------------------
-# SISTEMA DE MELHORIA POR ATRIBUTOS
-# ---------------------------------------------------
-
-func try_upgrade_attribute(attribute: String) -> void:
-	if not upgrade_levels.has(attribute):
-		print("Atributo inválido: %s" % attribute)
-		return
-
-	var level = upgrade_levels[attribute]
-	if level >= 3:
-		print("%s já está no nível máximo!" % attribute.capitalize())
-		return
-
-	var cost = upgrade_costs[attribute][level]
-	if not Economy.can_afford(cost):
-		print("Moedas insuficientes para melhorar %s." % attribute.capitalize())
-		return
-
-	Economy.spend_coins(cost)
-	upgrade_levels[attribute] += 1
-
-	match attribute:
-		"damage":
-			damage = upgrade_stats["damage"][upgrade_levels["damage"]]
-		"fire_rate":
-			fire_rate = upgrade_stats["fire_rate"][upgrade_levels["fire_rate"]]
-			if damage_timer:
-				damage_timer.wait_time = fire_rate
-		"range":
-			print("Legal")  # Placeholder para futura implementação
-
-	#_show_feedback("%s melhorado para nível %d!" % [attribute.capitalize(), upgrade_levels[attribute]])

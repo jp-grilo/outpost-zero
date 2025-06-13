@@ -10,3 +10,4 @@ res://Scripts/GameEconomy.gd
 res://Scripts/slime.gd
 res://Scripts/slime_voador.gd
 res://Scripts/spawner.gd
+res://Scripts/Turrets.gd

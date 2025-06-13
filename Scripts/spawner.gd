@@ -72,4 +72,4 @@ func spawn_enemy(wave: int):
 	add_child(enemy)
 
 func get_active_enemy_count() -> int:
-	return get_tree().get_nodes_in_group("terrestre").size() + get_tree().get_nodes_in_group("voador").size() + get_tree().get_nodes_in_group("tank").size()
+	return get_tree().get_nodes_in_group("inimigo_terrestre").size() + get_tree().get_nodes_in_group("inimigo_aereo").size() + get_tree().get_nodes_in_group("inimigo_tank").size()
