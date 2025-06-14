@@ -29,5 +29,9 @@ text = "Fire Rate"
 layout_mode = 2
 text = "Range"
 
+[node name="TargetingModeButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Modo: Terrestre"
+
 [node name="CloseButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2

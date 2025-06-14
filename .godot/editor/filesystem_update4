@@ -7,3 +7,7 @@ res://Scenes/Projectile.tscn
 res://Scenes/slime.tscn
 res://Scenes/slimeVoador.tscn
 res://Scenes/turrets/tower_lt_1.tscn
+res://Scripts/TurretsScripts/turret_1_1.gd
+res://Scenes/upgradeTurrets.tscn
+res://Scripts/upgrade_turrets.gd
+res://Scripts/slime_voador.gd

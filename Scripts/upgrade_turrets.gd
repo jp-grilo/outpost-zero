@@ -6,6 +6,9 @@ var tower_ref: Node = null
 @onready var fire_rate_button = $Panel/VBoxContainer/FireRateButton
 @onready var range_button = $Panel/VBoxContainer/RangeButton
 @onready var close_button = $Panel/VBoxContainer/CloseButton
+@onready var targeting_button = $Panel/VBoxContainer/TargetingModeButton
+var targeting_modes = ["inimigo_terrestre", "inimigo_voador", "inimigo_tank"]
+var current_target_index = 0
 
 func _ready():
 	z_index = 1000  # bem alto para garantir visibilidade
@@ -15,18 +18,45 @@ func _ready():
 	_apply_button_style(damage_button, "damage")
 	_apply_button_style(fire_rate_button, "fire_rate")
 	_apply_button_style(range_button, "range")
+	_apply_button_style(targeting_button, "targeting")
 	_apply_button_style(close_button, "close")
 	
 	damage_button.pressed.connect(func(): _upgrade("damage"))
 	fire_rate_button.pressed.connect(func(): _upgrade("fire_rate"))
 	range_button.pressed.connect(func(): _upgrade("range"))
+	targeting_button.pressed.connect(_on_targeting_mode_pressed)
 	close_button.pressed.connect(func(): queue_free())
 
 func set_tower(tower: Node):
 	tower_ref = tower
 	global_position = tower.global_position + Vector2(50, -50)  # Offset ao lado da torre
 	_update_buttons()
+	
+func _on_targeting_mode_pressed():
+	if not tower_ref:
+		return
 
+	current_target_index = (current_target_index + 1) % targeting_modes.size()
+	tower_ref.targeting_mode = targeting_modes[current_target_index]
+	_update_targeting_button()
+
+func _update_targeting_button():
+	if not tower_ref:
+		return
+	var label := ""
+	match tower_ref.targeting_mode:
+		"inimigo_terrestre":
+			label = "Terrestre"
+		"inimigo_voador":
+			label = "Voador"
+		"inimigo_tank":
+			label = "Tank"
+		_:
+			label = "Desconhecido"
+	targeting_button.text = "Modo: %s" % label
+
+	# Atualiza o índice atual para manter sincronizado
+	current_target_index = targeting_modes.find(tower_ref.targeting_mode)
 func _upgrade(attribute: String):
 	if tower_ref:
 		tower_ref.try_upgrade_attribute(attribute)
@@ -40,7 +70,8 @@ func _update_buttons():
 	fire_rate_button.text = get_upgrade_text("fire_rate")
 	range_button.text = get_upgrade_text("range")
 	close_button.text = "Fechar"
-
+	_update_targeting_button()
+	
 func get_upgrade_text(attr: String) -> String:
 	var lvl = tower_ref.upgrade_levels[attr]
 	var value_now = tower_ref.upgrade_stats[attr][lvl]
@@ -72,6 +103,8 @@ func _apply_button_style(button: Button, type: String):
 			theme_color = Color("#ffaa00")
 		"range":
 			theme_color = Color("#55aaff")
+		"targeting":
+			theme_color = Color("#bb88ff")  # lilás ou outra cor pro botão de modo
 		"close":
 			theme_color = Color("#888888")
 	

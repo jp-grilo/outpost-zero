@@ -5,7 +5,7 @@ var vertical_speed: float = 80.0
 
 func _ready():
 	coins_reward = 10  # Define o valor para esse inimigo
-	add_to_group("inimigo_aereo")
+	add_to_group("inimigo_voador")
 	super()  # Chama _ready do pai
 
 func _move_towards_target(delta: float) -> void:

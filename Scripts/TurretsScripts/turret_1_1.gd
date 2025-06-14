@@ -4,7 +4,8 @@ func _ready():
 	damage = 20
 	fire_rate = 1
 	range = 500
-
+	var filtered_enemies: Array = ["inimigo_voador"]
+	
 	# Níveis iniciais
 	upgrade_levels = {
 		"damage": 0,
