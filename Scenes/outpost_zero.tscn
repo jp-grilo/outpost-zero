@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=17 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
 [ext_resource type="Texture2D" uid="uid://d05t0nrgj35gx" path="res://assets/sprites/Avulsos/world_tileset.png" id="2_6rkfg"]
 [ext_resource type="Script" uid="uid://cyacmwsm4vsa3" path="res://Scripts/map_camera.gd" id="3_0kjhj"]
 [ext_resource type="PackedScene" uid="uid://0qjr82hbx7kf" path="res://Scenes/spawner.tscn" id="4_qljh0"]
+[ext_resource type="Script" uid="uid://dc2td61cpfsq7" path="res://Scripts/restore_button.gd" id="5_5yvy5"]
 [ext_resource type="Script" uid="uid://c3xwpselad5jh" path="res://Scripts/health_bar_player.gd" id="5_gjb8k"]
 [ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="5_ld1ho"]
 [ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
 [ext_resource type="Script" uid="uid://bfxr2qv3dgwvg" path="res://Scripts/tower_selection_ui.gd" id="7_wbs02"]
-[ext_resource type="Texture2D" uid="uid://hyann2p73fda" path="res://assets/sprites/CENARIO_OZ V1.1/Reconstruida_nave.png" id="8_66mx0"]
+[ext_resource type="Texture2D" uid="uid://drqrurq7u7vbv" path="res://assets/sprites/CENARIO_OZ V1.1/Cenario1.png" id="9_5yvy5"]
 [ext_resource type="PackedScene" uid="uid://b68iv11s7a68k" path="res://Scenes/slimeVoador.tscn" id="12_wedwb"]
 [ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/turrets/TurretPosition.tscn" id="17_mh4e7"]
 
@@ -249,6 +250,10 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
+[node name="RestoreButton" type="Button" parent="HUD/Control/MarginContainer/BottomRightContainer"]
+layout_mode = 2
+script = ExtResource("5_5yvy5")
+
 [node name="CoinCountLabel" type="Label" parent="HUD/Control/MarginContainer/BottomRightContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -369,7 +374,7 @@ grow_vertical = 2
 z_index = -2
 position = Vector2(53, -400)
 scale = Vector2(0.235, 0.235)
-texture = ExtResource("8_66mx0")
+texture = ExtResource("9_5yvy5")
 
 [node name="MapCamera" type="Camera2D" parent="Cenário"]
 position = Vector2(-12.7659, 1506.38)
@@ -405,21 +410,25 @@ wait_time = 0.5
 z_index = 10
 
 [node name="Turrets" parent="Turrets" instance=ExtResource("17_mh4e7")]
+visible = false
 z_index = 10
 position = Vector2(-219, -226)
 scale = Vector2(0.8, 0.8)
 
 [node name="Turrets2" parent="Turrets" instance=ExtResource("17_mh4e7")]
+visible = false
 z_index = 10
 position = Vector2(236, -229)
 scale = Vector2(0.7, 0.7)
 
 [node name="Turrets3" parent="Turrets" instance=ExtResource("17_mh4e7")]
+visible = false
 z_index = 10
 position = Vector2(-219, -151)
 scale = Vector2(0.7, 0.7)
 
 [node name="Turrets4" parent="Turrets" instance=ExtResource("17_mh4e7")]
+visible = false
 z_index = 10
 position = Vector2(237, -155)
 scale = Vector2(0.7, 0.7)
