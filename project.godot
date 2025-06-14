@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Outpost Zero"
-run/main_scene="res://Scenes/outpost_zero.tscn"
+run/main_scene="uid://gtvg67p6s1r3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Economy="*res://Scripts/GameEconomy.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 

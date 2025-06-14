@@ -10,7 +10,7 @@ var upgrades = [
 var current_stage := 0
 
 func _ready():
-	connect("pressed", Callable(self, "_on_pressed"))
+	pressed.connect(_on_pressed)
 	_apply_button_style(Color("#ffaa00"))
 	_update_button_text()
 
@@ -18,7 +18,7 @@ func _on_pressed():
 	if current_stage >= upgrades.size():
 		disabled = true
 		return
-	
+
 	var upgrade = upgrades[current_stage]
 	var cost = upgrade["cost"]
 	var action = upgrade["action"]
@@ -89,4 +89,9 @@ func _expand_area():
 
 func _finalize_phase():
 	print("Fase concluída!")
-	get_tree().change_scene_to_file("res://Scenes/outpost_zero.tscn")
+
+	# Atualiza progresso global
+	Global.progresso_fase += 1  # Ou += 1 se for dinâmica
+
+	# Vai para o menu de seleção
+	get_tree().change_scene_to_file("res://Scenes/menu_selecao_fase.tscn")

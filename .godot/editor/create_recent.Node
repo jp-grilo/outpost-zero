@@ -1,8 +1,9 @@
+Control
 Button
+TextureRect
 VBoxContainer
 ColorRect
 Label
-Control
 HBoxContainer
 ProgressBar
 Area2D
@@ -11,4 +12,3 @@ Sprite2D
 TextureProgressBar
 ParallaxBackground
 Panel
-AnimatedSprite2D

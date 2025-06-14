@@ -10,7 +10,8 @@ func _ready():
 	button_exit.pressed.connect(_on_exit_pressed)
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/outpost_zero.tscn")
+	var menu_fase = preload("res://Scenes/menu_selecao_fase.tscn")
+	get_tree().change_scene_to_packed(menu_fase)
 
 func _on_options_pressed():
 	print("Abrir tela de opções futuramente")

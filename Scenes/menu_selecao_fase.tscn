@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4bxph5kkn8v6"]
+
+[ext_resource type="Script" uid="uid://bqs2j2w22djyo" path="res://Scripts/menu_selecao_fase.gd" id="1_i42aj"]
+[ext_resource type="Texture2D" uid="uid://dtnb4y3736vfn" path="res://assets/sprites/Planetas/Planetas1.png" id="2_kgjug"]
+
+[node name="MenuSelecaoFase" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i42aj")
+
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 1151.0
+scale = Vector2(0.563, 0.563)
+texture = ExtResource("2_kgjug")
+
+[node name="BotaoLua" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0112847
+anchor_top = 0.00771605
+anchor_right = -0.0078125
+anchor_bottom = 0.00925926
+offset_left = 67.0
+offset_top = 192.0
+offset_right = 292.0
+offset_bottom = 420.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoTerrys" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00520833
+anchor_top = 0.0138889
+anchor_right = -0.00694444
+offset_left = 323.0
+offset_top = 167.0
+offset_right = 569.0
+offset_bottom = 412.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoFerin" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00462963
+anchor_bottom = 0.0138889
+offset_left = 581.0
+offset_top = 259.0
+offset_right = 815.0
+offset_bottom = 487.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoLaz" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.00771605
+offset_left = 843.0
+offset_top = 231.0
+offset_right = 1097.0
+offset_bottom = 482.0
+metadata/_edit_use_anchors_ = true
+
+[node name="voltar" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0121528
+anchor_right = -0.00954861
+anchor_bottom = 0.00462963
+offset_left = 86.0
+offset_top = 28.0
+offset_right = 214.0
+offset_bottom = 79.0
+metadata/_edit_use_anchors_ = true
