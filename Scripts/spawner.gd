@@ -1,11 +1,24 @@
 extends Node2D
 
-@export var enemy_scene: PackedScene
-@export var flying_enemy_scene: PackedScene
+@export var enemy_definitions: Array[Dictionary] = [
+	{
+		"type": "ground",
+		"scene": preload("res://Scenes/slime.tscn")
+	},
+	{
+		"type": "ground",
+		"scene": preload("res://Scenes/Brutamontes.tscn")
+	},
+	{
+		"type": "air",
+		"scene": preload("res://Scenes/slimeVoador.tscn")
+	}
+]
 
 @onready var left_spawn = $LeftSpawn
 @onready var right_spawn = $RightSpawn
 @onready var air_spawn = $AirSpawn
+@onready var air_spawn2 = $AirSpawn2
 @onready var spawn_timer: Timer = $EnemySpawnTimer
 
 var enemies_to_spawn: int = 0
@@ -18,6 +31,7 @@ func _ready():
 func start_wave(wave: int):
 	current_wave = wave
 	enemies_to_spawn = 3 + wave * 3
+	spawn_timer.wait_time = max(0.4, 1.0 - (wave * 0.05))
 	spawn_timer.start()
 
 func _on_EnemySpawnTimer_timeout():
@@ -25,51 +39,101 @@ func _on_EnemySpawnTimer_timeout():
 		spawn_timer.stop()
 		return
 
-	spawn_enemy(current_wave)
-	enemies_to_spawn -= 1
+	var spawn_count = min(2 + int(current_wave / 3), enemies_to_spawn)
+	call_deferred("_spawn_batch", spawn_count)
+
+func _spawn_batch(count: int) -> void:
+	for i in count:
+		if enemies_to_spawn <= 0:
+			return
+		spawn_enemy(current_wave)
+		enemies_to_spawn -= 1
+		await get_tree().create_timer(0.1).timeout  # delay entre spawns
 
 func spawn_enemy(wave: int):
-	var enemy: Node2D
+	if enemy_definitions.is_empty():
+		push_error("Nenhuma definição de inimigo encontrada!")
+		return
+
+	# Filtra inimigos permitidos pela wave, e reduz chance do Brutamontes
+	var valid_definitions = []
+	for def in enemy_definitions:
+		var scene = def.get("scene", null)
+		if scene == null:
+			continue
+		var path = scene.resource_path
+
+		if path == "res://Scenes/Brutamontes.tscn":
+			if wave < 11:
+				continue
+			if randf() < 0.7:
+				continue  # 70% de chance de ignorar Brutamontes
+
+		valid_definitions.append(def)
+
+	if valid_definitions.is_empty():
+		push_error("Nenhuma definição válida de inimigo para essa wave!")
+		return
+
+	var definition = valid_definitions[randi() % valid_definitions.size()]
+	var enemy_scene = definition.get("scene", null)
+	var type = definition.get("type", "")
+
+	if enemy_scene == null or type == "":
+		push_error("Definição de inimigo inválida!")
+		return
+
+	var enemy = enemy_scene.instantiate()
 	var position: Vector2
 
-	# Direção de spawn por wave
-	if wave <= 2:
-		position = left_spawn.global_position
-		enemy = enemy_scene.instantiate()
-	elif wave <= 4:
-		var from_left = randf() < 0.5
-		position = left_spawn.global_position if from_left else right_spawn.global_position
-		enemy = enemy_scene.instantiate()
-	else:
-		var choice = randi() % 3
-		match choice:
-			0:
+	# Lógica de spawn baseada na wave
+	match type:
+		"ground":
+			if wave <= 2:
 				position = left_spawn.global_position
-				enemy = enemy_scene.instantiate()
-			1:
-				position = right_spawn.global_position
-				enemy = enemy_scene.instantiate()
-			2:
-				position = air_spawn.global_position
-				enemy = flying_enemy_scene.instantiate()  # <- aqui usamos o slime voador
+			elif wave <= 4:
+				position = [left_spawn.global_position, right_spawn.global_position].pick_random()
+			else:
+				position = [left_spawn.global_position, right_spawn.global_position].pick_random()
 
-	# Falha ao instanciar
+		"air":
+			if wave <= 4:
+				queue_free_safe(enemy)
+				return
+			elif wave <= 6:
+				position = air_spawn.global_position
+			else:
+				position = [air_spawn.global_position, air_spawn2.global_position].pick_random()
+
+		_:
+			push_error("Tipo de inimigo desconhecido: %s" % type)
+			return
+
 	if enemy == null:
 		push_error("Falha ao instanciar inimigo!")
 		return
 
 	# Escalonamento de atributos
-
 	if enemy.has_node("HealthSystem"):
 		var health_system = enemy.get_node("HealthSystem")
-		# Escalona a vida de forma progressiva
-		health_system.max_health = health_system.max_health * (1 + (wave - 1) * 0.2)
-	if "speed" in enemy:
-		enemy.speed = enemy.speed * (1 + (wave - 1) * 0.05)
+		health_system.max_health *= (1 + (wave - 1) * 0.2)
 
-	# Posiciona e adiciona à cena
+	if "speed" in enemy:
+		enemy.speed *= (1 + (wave - 1) * 0.05)
+
 	enemy.global_position = position
 	add_child(enemy)
 
+func queue_free_safe(enemy):
+	if is_instance_valid(enemy):
+		enemy.queue_free()
+
 func get_active_enemy_count() -> int:
-	return get_tree().get_nodes_in_group("inimigo_terrestre").size() + get_tree().get_nodes_in_group("inimigo_aereo").size() + get_tree().get_nodes_in_group("inimigo_tank").size()
+	var total := 0
+	for enemy in get_tree().get_nodes_in_group("inimigo_terrestre"):
+		if is_instance_valid(enemy): total += 1
+	for enemy in get_tree().get_nodes_in_group("inimigo_aereo"):
+		if is_instance_valid(enemy): total += 1
+	for enemy in get_tree().get_nodes_in_group("inimigo_tank"):
+		if is_instance_valid(enemy): total += 1
+	return total

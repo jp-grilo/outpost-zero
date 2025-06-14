@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=15 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -7,12 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://0qjr82hbx7kf" path="res://Scenes/spawner.tscn" id="4_qljh0"]
 [ext_resource type="Script" uid="uid://dc2td61cpfsq7" path="res://Scripts/restore_button.gd" id="5_5yvy5"]
 [ext_resource type="Script" uid="uid://c3xwpselad5jh" path="res://Scripts/health_bar_player.gd" id="5_gjb8k"]
-[ext_resource type="PackedScene" uid="uid://kjiib22xqmnh" path="res://Scenes/slime.tscn" id="5_ld1ho"]
 [ext_resource type="Script" uid="uid://b2xosdkl7rrya" path="res://Scripts/HUD.gd" id="6_gh8l2"]
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
 [ext_resource type="Script" uid="uid://bfxr2qv3dgwvg" path="res://Scripts/tower_selection_ui.gd" id="7_wbs02"]
 [ext_resource type="Texture2D" uid="uid://drqrurq7u7vbv" path="res://assets/sprites/CENARIO_OZ V1.1/Cenario1.png" id="9_5yvy5"]
-[ext_resource type="PackedScene" uid="uid://b68iv11s7a68k" path="res://Scenes/slimeVoador.tscn" id="12_wedwb"]
 [ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/turrets/TurretPosition.tscn" id="17_mh4e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
@@ -161,6 +159,7 @@ layer_1/name = "mid"
 layer_1/tile_data = PackedInt32Array(-65539, 0, 0, -65540, 0, 0, -65541, 0, 0, -65542, 0, 0, -65543, 0, 0, -65544, 0, 0, -65545, 0, 0, -65546, 0, 0, -65547, 0, 0, -65548, 0, 0, -65549, 0, 0, -65550, 0, 0, -65551, 0, 0, -65552, 0, 0, -65553, 0, 0, -65554, 0, 0, -65555, 0, 0, -65556, 0, 0, -65557, 0, 0, -65558, 0, 0, -65559, 0, 0, -65560, 0, 0, -65561, 0, 0, -65562, 0, 0, -65563, 0, 0, -65564, 0, 0, -65565, 0, 0, -65566, 0, 0, -65567, 0, 0, -65568, 0, 0, -65569, 0, 0, -65570, 0, 0, -65571, 0, 0, -65572, 0, 0, -65573, 0, 0, -65574, 0, 0, -65575, 0, 0, -65576, 0, 0, -65577, 0, 0, -65578, 0, 0, -65579, 0, 0, -65580, 0, 0, -65581, 0, 0, -65582, 0, 0, -65583, 0, 0, -65584, 0, 0, -65585, 0, 0, -65586, 0, 0, -65587, 0, 0, -65588, 0, 0, -65589, 0, 0, -65590, 0, 0, -65591, 0, 0, -65592, 0, 0, -65593, 0, 0, -65594, 0, 0, -65595, 0, 0, -65596, 0, 0, -65597, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, -131045, 0, 0, -131044, 0, 0, -131043, 0, 0, -131042, 0, 0, -131041, 0, 0, -131040, 0, 0, -131039, 0, 0, -131038, 0, 0, -131037, 0, 0, -131036, 0, 0, -131035, 0, 0, -131034, 0, 0, -131033, 0, 0, -131032, 0, 0, -131031, 0, 0, -131030, 0, 0, -131029, 0, 0, -131028, 0, 0, -131027, 0, 0, -131026, 0, 0, -131025, 0, 0, -131024, 0, 0, -131023, 0, 0, -131022, 0, 0, -131021, 0, 0, -131020, 0, 0, -131019, 0, 0, -131018, 0, 0)
 
 [node name="WaveTimer" type="Timer" parent="."]
+wait_time = 10.0
 autostart = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -391,8 +390,6 @@ script = ExtResource("3_0kjhj")
 [node name="Spawner" parent="." instance=ExtResource("4_qljh0")]
 z_index = 1
 position = Vector2(-1.01555, -50.015)
-enemy_scene = ExtResource("5_ld1ho")
-flying_enemy_scene = ExtResource("12_wedwb")
 
 [node name="LeftSpawn" type="Marker2D" parent="Spawner"]
 position = Vector2(-624.984, -89.985)
@@ -402,6 +399,9 @@ position = Vector2(735.016, -87.985)
 
 [node name="AirSpawn" type="Marker2D" parent="Spawner"]
 position = Vector2(625.016, -242.985)
+
+[node name="AirSpawn2" type="Marker2D" parent="Spawner"]
+position = Vector2(-449.841, -242.202)
 
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
 wait_time = 0.5

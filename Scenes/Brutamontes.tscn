@@ -1,25 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3ffs72flsq40"]
+[gd_scene load_steps=9 format=3 uid="uid://b68iv11s7a68k"]
 
-[ext_resource type="Script" uid="uid://xf15u7hciort" path="res://Scripts/slime_voador.gd" id="1_pkvpv"]
-[ext_resource type="Texture2D" uid="uid://bvftunbn3cnpa" path="res://assets/sprites/Unicos/EstrelaAnimada.png" id="2_pkvpv"]
-[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_uluyl"]
-[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_6g6d1"]
+[ext_resource type="Script" uid="uid://i6oj4eg5gqbd" path="res://Scripts/Brutamontes.gd" id="1_amyoi"]
+[ext_resource type="Texture2D" uid="uid://cyok7px4gcdyi" path="res://assets/sprites/Unicos/Brutamontes.png" id="2_1nph7"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_b5f57"]
+[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_xgc8u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfjf2"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(0, 0, 480, 1080)
+atlas = ExtResource("2_1nph7")
+region = Rect2(0, 0, 660, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uluyl"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(480, 0, 480, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6g6d1"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(960, 0, 480, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7a52c"]
-atlas = ExtResource("2_pkvpv")
-region = Rect2(1440, 0, 480, 1080)
+atlas = ExtResource("2_1nph7")
+region = Rect2(660, 0, 660, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tygpv"]
 animations = [{
@@ -29,12 +21,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uluyl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6g6d1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7a52c")
 }],
 "loop": true,
 "name": &"idle",
@@ -47,15 +33,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
-size = Vector2(28, 30)
+size = Vector2(44.5, 66)
 
-[node name="slimeVoador" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
-script = ExtResource("1_pkvpv")
+[node name="Brutamontes" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
+script = ExtResource("1_amyoi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
-position = Vector2(4, -2.5)
-scale = Vector2(0.0565445, 0.0564815)
+position = Vector2(-3.89562, -2.4375)
+scale = Vector2(0.105744, 0.112153)
 sprite_frames = SubResource("SpriteFrames_tygpv")
 animation = &"idle"
 autoplay = "idle"
@@ -66,7 +52,6 @@ shape = SubResource("RectangleShape2D_swwnm")
 one_way_collision = true
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(8, -3)
@@ -74,7 +59,7 @@ shape = SubResource("RectangleShape2D_swwnm")
 one_way_collision = true
 
 [node name="HealthSystem" type="Node" parent="."]
-script = ExtResource("3_uluyl")
+script = ExtResource("3_b5f57")
 max_health = 20.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
@@ -83,7 +68,8 @@ offset_top = -8.0
 offset_right = 15.0
 offset_bottom = -4.0
 show_percentage = false
-script = ExtResource("4_6g6d1")
+script = ExtResource("4_xgc8u")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
