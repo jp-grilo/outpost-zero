@@ -4,7 +4,7 @@ var upgrades = [
 	{ "cost": 150, "action": _build_base },
 	{ "cost": 350, "action": _unlock_tower },
 	{ "cost": 550, "action": _expand_area },
-	{ "cost": 2000, "action": _finalize_phase }
+	{ "cost": 100000, "action": _finalize_phase }
 ]
 
 var current_stage := 0

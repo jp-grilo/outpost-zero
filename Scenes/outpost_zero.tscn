@@ -403,6 +403,9 @@ position = Vector2(625.016, -242.985)
 [node name="AirSpawn2" type="Marker2D" parent="Spawner"]
 position = Vector2(-449.841, -242.202)
 
+[node name="BossSpawn" type="Marker2D" parent="Spawner"]
+position = Vector2(916.024, -660.673)
+
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
 wait_time = 0.5
 

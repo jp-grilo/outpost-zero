@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkux7gcp5py68"]
+
+[ext_resource type="Script" uid="uid://cd8rw7mt2ncer" path="res://Scripts/boss_estrela.gd" id="1_taywj"]
+[ext_resource type="Texture2D" uid="uid://c21t0ep25i3gs" path="res://assets/sprites/Unicos/BossMalvado.png" id="2_taywj"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_ym2kl"]
+[ext_resource type="Script" uid="uid://cr38304wxusmf" path="res://Scripts/boss_health_bar.gd" id="4_taywj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tn62"]
+atlas = ExtResource("2_taywj")
+region = Rect2(0, 0, 500, 580)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym2kl"]
+atlas = ExtResource("2_taywj")
+region = Rect2(500, 0, 500, 580)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkbsk"]
+atlas = ExtResource("2_taywj")
+region = Rect2(1000, 0, 500, 580)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tygpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tn62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym2kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbsk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
+size = Vector2(195.75, 193.25)
+
+[node name="BossEstrela" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
+script = ExtResource("1_taywj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(7, -19)
+scale = Vector2(0.452284, 0.397845)
+sprite_frames = SubResource("SpriteFrames_tygpv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="colisaoInimigo" type="CollisionShape2D" parent="."]
+position = Vector2(8, -3)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(8, -3)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource("3_ym2kl")
+max_health = 60000.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -90.0
+offset_top = -115.0
+offset_right = 104.0
+offset_bottom = -106.0
+show_percentage = false
+script = ExtResource("4_taywj")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
