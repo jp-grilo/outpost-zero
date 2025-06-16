@@ -91,7 +91,9 @@ size = Vector2(31.1111, 35.5556)
 [node name="Node2D" type="Node2D"]
 scale = Vector2(0.45, 0.45)
 script = ExtResource("1_oe5sc")
-build_cost = 250
+build_cost = 180
+damage = 8.0
+fire_rate = 0.2
 projectile_scene = ExtResource("2_1kuq8")
 
 [node name="Base" type="Sprite2D" parent="."]

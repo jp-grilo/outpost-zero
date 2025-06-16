@@ -30,8 +30,8 @@ func _ready():
 
 func start_wave(wave: int):
 	current_wave = wave
-	enemies_to_spawn = 3 + wave * 3
-	spawn_timer.wait_time = max(0.4, 1.0 - (wave * 0.05))
+	enemies_to_spawn = int(5 + wave * 2 + pow(wave, 1.2))
+	spawn_timer.wait_time = max(0.3, 1.0 - (wave * 0.03))
 	spawn_timer.start()
 
 func _on_EnemySpawnTimer_timeout():
@@ -66,8 +66,8 @@ func spawn_enemy(wave: int):
 		if path == "res://Scenes/Brutamontes.tscn":
 			if wave < 11:
 				continue
-			if randf() < 0.7:
-				continue  # 70% de chance de ignorar Brutamontes
+			if randf() < 0.8:
+				continue  # 80% de chance de ignorar Brutamontes
 
 		valid_definitions.append(def)
 
@@ -116,10 +116,12 @@ func spawn_enemy(wave: int):
 	# Escalonamento de atributos
 	if enemy.has_node("HealthSystem"):
 		var health_system = enemy.get_node("HealthSystem")
-		health_system.max_health *= (1 + (wave - 1) * 0.2)
+		print(enemy)
+		print(health_system.max_health)
+		health_system.max_health *= 1.0 + (wave * 0.25)
 
 	if "speed" in enemy:
-		enemy.speed *= (1 + (wave - 1) * 0.05)
+		enemy.speed *= 1.0 + (wave * 0.04)
 
 	enemy.global_position = position
 	add_child(enemy)

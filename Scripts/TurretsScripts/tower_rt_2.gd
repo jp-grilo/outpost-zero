@@ -1,28 +1,22 @@
+# Azul Evolucao - BigShot
 extends Turrets
-@export var custom_name: String = "Laser Azul"
+@export var custom_name: String = "BigShot"
 func _ready():
 	damage = 50
-	fire_rate = 4.0
+	fire_rate = 2.5
 	range = 500
 
-	# Níveis iniciais
-	upgrade_levels = {
-		"damage": 0,
-		"fire_rate": 0,
-		"range": 0
-	}
-
-	# Custos específicos dessa torre
+	upgrade_levels = {"damage": 0, "fire_rate": 0, "range": 0}
+	
 	upgrade_costs = {
-		"damage": [80, 100, 150],
-		"fire_rate": [80, 90, 100],
-		"range": [30, 50, 80]
+		"damage": [70, 110, 150],
+		"fire_rate": [50, 70, 90],
+		"range": [60, 80, 110]
 	}
 
-	# Escalonamento específico dessa torre
 	upgrade_stats = {
-		"damage": [50, 80, 100, 200],
-		"fire_rate": [4.0, 3.6, 3.3, 3.0],
+		"damage": [50, 75, 100, 150],
+		"fire_rate": [2.5, 2.0, 1.8, 1.5],
 		"range": [500, 600, 700, 800]
 	}
 

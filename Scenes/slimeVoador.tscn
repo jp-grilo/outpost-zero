@@ -75,7 +75,7 @@ one_way_collision = true
 
 [node name="HealthSystem" type="Node" parent="."]
 script = ExtResource("3_uluyl")
-max_health = 20.0
+max_health = 45.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -14.0

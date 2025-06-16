@@ -1,29 +1,23 @@
+# Desert Evolucao - Rapid Dust
 extends Turrets
-@export var custom_name: String = "Laser Gigante Desert"
+@export var custom_name: String = "Rapid Dust"
 func _ready():
-	damage = 500
-	fire_rate = 5
-	range = 500
-
-	# Níveis iniciais
-	upgrade_levels = {
-		"damage": 0,
-		"fire_rate": 0,
-		"range": 0
-	}
-
-	# Custos específicos dessa torre
+	damage = 10
+	fire_rate = 0.15
+	range = 600
+	
+	upgrade_levels = {"damage": 0, "fire_rate": 0, "range": 0}
+	
 	upgrade_costs = {
-		"damage": [800, 1200, 1600],
-		"fire_rate": [600, 700, 800],
-		"range": [30, 50, 80]
+		"damage": [80, 100, 130],
+		"fire_rate": [70, 100, 130],
+		"range": [60, 90, 110]
 	}
 
-	# Escalonamento específico dessa torre
 	upgrade_stats = {
-		"damage": [500, 800, 1000, 1500],         # começa com 10
-		"fire_rate": [5.0, 4.5, 4.0, 3.5],  # menor = mais rápido
-		"range": [500, 600, 700, 800]
+		"damage": [10, 12, 14, 16],
+		"fire_rate": [0.15, 0.12, 0.10, 0.08],
+		"range": [600, 700, 800, 900]
 	}
 
 	super()

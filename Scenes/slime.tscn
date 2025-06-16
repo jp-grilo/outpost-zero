@@ -118,7 +118,7 @@ script = SubResource("GDScript_swwnm")
 
 [node name="HealthSystem" type="Node" parent="."]
 script = ExtResource("1_aiwxb")
-max_health = 25.0
+max_health = 40.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -18.0

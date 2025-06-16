@@ -1,29 +1,23 @@
+# Desert Evolucao - Cannon Dust
 extends Turrets
-@export var custom_name: String = "Misseis Gigantes Desert"
+@export var custom_name: String = "Cannon Dust"
 func _ready():
-	damage = 500
-	fire_rate = 4.0
-	range = 500
+	damage = 80
+	fire_rate = 2.5
+	range = 600
 
-	# Níveis iniciais
-	upgrade_levels = {
-		"damage": 0,
-		"fire_rate": 0,
-		"range": 0
-	}
-
-	# Custos específicos dessa torre
+	upgrade_levels = {"damage": 0, "fire_rate": 0, "range": 0}
+	
 	upgrade_costs = {
-		"damage": [500, 600, 700],
-		"fire_rate": [400, 500, 600],
-		"range": [30, 50, 80]
+		"damage": [100, 140, 180],
+		"fire_rate": [70, 90, 110],
+		"range": [70, 100, 130]
 	}
 
-	# Escalonamento específico dessa torre
 	upgrade_stats = {
-		"damage": [500, 800, 1000, 2000],         # começa com 10
-		"fire_rate": [4.0, 3.5, 3.0, 2.5],  # menor = mais rápido
-		"range": [500, 600, 700, 800]
+		"damage": [80, 150, 250, 500],
+		"fire_rate": [2.5, 2.0, 1.8, 1.5],
+		"range": [600, 700, 800, 900]
 	}
 
 	super()

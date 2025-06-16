@@ -3,9 +3,11 @@ extends Enemy
 var gravity: float = 500.0
 
 func _ready():
-	coins_reward = 20  # Define o valor para esse inimigo
+	coins_reward = 30  # Recompensa maior
+	speed = 30         # Mais lento
+	health_system.max_health = 1000
 	add_to_group("inimigo_tank")
-	super()  # Chama _ready do pai
+	super()
 
 func _move_towards_target(delta: float) -> void:
 	if not is_on_floor():
