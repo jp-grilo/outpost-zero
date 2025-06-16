@@ -91,7 +91,7 @@ func _finalize_phase():
 	print("Fase concluída!")
 
 	# Atualiza progresso global
-	Global.progresso_fase += 1  # Ou += 1 se for dinâmica
+	Global.progresso_fase = 2  # Ou += 1 se for dinâmica
 
 	# Vai para o menu de seleção
 	get_tree().change_scene_to_file("res://Scenes/menu_selecao_fase.tscn")
