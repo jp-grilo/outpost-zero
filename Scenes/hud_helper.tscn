@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://crsh7fg3p5ocn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qpn88"]
+load_path = "res://.godot/imported/interrogacao-removebg-preview.png-eaa4b1daa1efbf8ec72baf677c78ac57.ctex"
+
+[node name="HUD_Helper" type="CanvasLayer"]
+
+[node name="Helper_Button" type="TextureButton" parent="."]
+offset_right = 500.0
+offset_bottom = 500.0
+texture_normal = SubResource("CompressedTexture2D_qpn88")

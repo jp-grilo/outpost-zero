@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bw3u08kavh4c3"]
+[gd_scene load_steps=18 format=3 uid="uid://bw3u08kavh4c3"]
 
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="1_gtyw5"]
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_qljh0"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="6_immmw"]
 [ext_resource type="Script" uid="uid://bfxr2qv3dgwvg" path="res://Scripts/tower_selection_ui.gd" id="7_wbs02"]
 [ext_resource type="Texture2D" uid="uid://drqrurq7u7vbv" path="res://assets/sprites/CENARIO_OZ V1.1/Cenario1.png" id="9_5yvy5"]
+[ext_resource type="Script" uid="uid://dpfs8q0q6kd08" path="res://Scripts/hud_tutorial.gd" id="9_ciofq"]
+[ext_resource type="Texture2D" uid="uid://bustvn6g5cym4" path="res://assets/sprites/Unicos/interrogacao-removebg-preview (1).png" id="9_gjb8k"]
+[ext_resource type="Texture2D" uid="uid://c21t0ep25i3gs" path="res://assets/sprites/Unicos/BossMalvado.png" id="11_ciofq"]
 [ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/turrets/TurretPosition.tscn" id="17_mh4e7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
@@ -369,6 +372,95 @@ offset_left = -374.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="Tutorial" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("9_ciofq")
+
+[node name="HelpButton" type="TextureButton" parent="HUD/Tutorial"]
+offset_left = 12.0
+offset_top = 95.0
+offset_right = 30.0
+offset_bottom = 113.0
+texture_normal = ExtResource("9_gjb8k")
+
+[node name="Tutorial_HUD" type="Control" parent="HUD/Tutorial"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Tutorial/Tutorial_HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.776471)
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Tutorial/Tutorial_HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = 258.0
+offset_top = 170.0
+offset_right = -280.667
+offset_bottom = -131.704
+texture = ExtResource("11_ciofq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BotaoAnterior" type="Button" parent="HUD/Tutorial/Tutorial_HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = 0.5
+anchor_right = 0.192
+anchor_bottom = 0.5
+offset_left = -9.18401
+offset_top = -15.0
+offset_right = 8.81599
+offset_bottom = 16.0
+grow_vertical = 2
+text = "<"
+
+[node name="BotaoProximo" type="Button" parent="HUD/Tutorial/Tutorial_HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766
+anchor_top = 0.499
+anchor_right = 0.766
+anchor_bottom = 0.499
+offset_left = -8.43201
+offset_top = -15.352
+offset_right = 9.56799
+offset_bottom = 15.648
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="BotaoFechar" type="Button" parent="HUD/Tutorial/Tutorial_HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.764
+anchor_top = 0.203
+anchor_right = 0.764
+anchor_bottom = 0.203
+offset_left = -8.12805
+offset_top = -15.544
+offset_right = 8.87195
+offset_bottom = 15.456
+grow_horizontal = 0
+text = "x"
+
 [node name="Cenário" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(53, -400)
@@ -446,4 +538,8 @@ z_index = 10
 position = Vector2(30, -103)
 scale = Vector2(0.7, 0.7)
 
+[connection signal="pressed" from="HUD/Tutorial/HelpButton" to="HUD/Tutorial" method="_on_help_button_pressed"]
+[connection signal="pressed" from="HUD/Tutorial/Tutorial_HUD/BotaoAnterior" to="HUD/Tutorial" method="_on_botao_anterior_pressed"]
+[connection signal="pressed" from="HUD/Tutorial/Tutorial_HUD/BotaoProximo" to="HUD/Tutorial" method="_on_botao_proximo_pressed"]
+[connection signal="pressed" from="HUD/Tutorial/Tutorial_HUD/BotaoFechar" to="HUD/Tutorial" method="_on_botao_fechar_pressed"]
 [connection signal="timeout" from="Spawner/EnemySpawnTimer" to="Spawner" method="_on_enemy_spawn_timer_timeout"]
