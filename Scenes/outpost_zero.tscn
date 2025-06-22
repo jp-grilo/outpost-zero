@@ -373,14 +373,15 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Tutorial" type="Control" parent="HUD"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 script = ExtResource("9_ciofq")
 
 [node name="HelpButton" type="TextureButton" parent="HUD/Tutorial"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 95.0
 offset_right = 30.0
@@ -388,7 +389,6 @@ offset_bottom = 113.0
 texture_normal = ExtResource("9_gjb8k")
 
 [node name="Tutorial_HUD" type="Control" parent="HUD/Tutorial"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

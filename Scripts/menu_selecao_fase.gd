@@ -33,7 +33,7 @@ func _on_BotaoLua_pressed():
 	get_tree().change_scene_to_packed(menu_fase)
 
 func _on_BotaoTerrys_pressed():
-	var menu_fase = preload("res://Scenes/outpost_zero.tscn")
+	var menu_fase = preload("res://Scenes/Fase2.tscn")
 	get_tree().change_scene_to_packed(menu_fase)
 
 func _on_BotaoFerin_pressed():
