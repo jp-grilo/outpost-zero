@@ -69,4 +69,4 @@ func _on_body_exited(body: Node):
 
 func _on_death():
 	print("Base destruída - Fim de jogo")
-	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	get_tree().change_scene_to_file("res://Scenes/game_over_fase2.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dukp7l2xpr3cx"]
+[gd_scene load_steps=19 format=3 uid="uid://dukp7l2xpr3cx"]
 
 [ext_resource type="Script" uid="uid://3i8ebuu6ib2h" path="res://Scripts/OutpostZero.gd" id="1_psxn2"]
 [ext_resource type="PackedScene" uid="uid://bfqiik6sj0uxm" path="res://Scenes/player.tscn" id="2_mn7lq"]
@@ -7,10 +7,14 @@
 [ext_resource type="Script" uid="uid://ritqbi8b4f2j" path="res://Scripts/restore_button_fase2.gd" id="5_yawb4"]
 [ext_resource type="Script" uid="uid://c3xwpselad5jh" path="res://Scripts/health_bar_player.gd" id="6_hdo26"]
 [ext_resource type="Script" uid="uid://bhqwysmp71npg" path="res://Scripts/pause_menu.gd" id="7_gc6b4"]
-[ext_resource type="Script" uid="uid://bfxr2qv3dgwvg" path="res://Scripts/tower_selection_ui.gd" id="8_mnxm3"]
+[ext_resource type="Script" uid="uid://boclqw4wcpnpe" path="res://Scripts/tower_selection_ui_fase2.gd" id="8_mn7lq"]
 [ext_resource type="Texture2D" uid="uid://cla0hj4pyxm8" path="res://assets/sprites/CENARIO_OZ V1.1/Cenario2/Fase2_comeco.png" id="9_yawb4"]
+[ext_resource type="Script" uid="uid://bl30yqxdifp5p" path="res://Scripts/spawner_fase2.gd" id="12_dvt13"]
 [ext_resource type="Script" uid="uid://cyacmwsm4vsa3" path="res://Scripts/map_camera.gd" id="13_hcx7v"]
+[ext_resource type="PackedScene" uid="uid://dsmh0qnjpf672" path="res://Scenes/slime_azul.tscn" id="13_mn7lq"]
+[ext_resource type="PackedScene" uid="uid://b7l3lsynvfv3j" path="res://Scenes/TartatugaDeGrama.tscn" id="14_kejr4"]
 [ext_resource type="PackedScene" uid="uid://0qjr82hbx7kf" path="res://Scenes/spawner.tscn" id="14_tks4a"]
+[ext_resource type="PackedScene" uid="uid://cmq6ss87lass5" path="res://Scenes/pernilongo.tscn" id="15_mn7lq"]
 [ext_resource type="PackedScene" uid="uid://rgi8atjl0u8v" path="res://Scenes/turrets/TurretPosition.tscn" id="15_v5w5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y846i"]
@@ -347,7 +351,7 @@ anchor_bottom = 1.0
 offset_left = 769.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("8_mnxm3")
+script = ExtResource("8_mn7lq")
 
 [node name="Panel" type="Panel" parent="HUD/TowerSelectionUi"]
 layout_mode = 1
@@ -390,6 +394,17 @@ script = ExtResource("13_hcx7v")
 [node name="Spawner" parent="." instance=ExtResource("14_tks4a")]
 z_index = 1
 position = Vector2(-1.01555, -50.015)
+script = ExtResource("12_dvt13")
+enemy_definitions = Array[Dictionary]([{
+"scene": ExtResource("13_mn7lq"),
+"type": "ground"
+}, {
+"scene": ExtResource("14_kejr4"),
+"type": "ground"
+}, {
+"scene": ExtResource("15_mn7lq"),
+"type": "air"
+}])
 
 [node name="LeftSpawn" type="Marker2D" parent="Spawner"]
 position = Vector2(-624.984, -89.985)
@@ -404,7 +419,7 @@ position = Vector2(625.016, -242.985)
 position = Vector2(-449.841, -242.202)
 
 [node name="BossSpawn" type="Marker2D" parent="Spawner"]
-position = Vector2(916.024, -660.673)
+position = Vector2(-870.668, -511.757)
 
 [node name="EnemySpawnTimer" type="Timer" parent="Spawner"]
 wait_time = 0.5

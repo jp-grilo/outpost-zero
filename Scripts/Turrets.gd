@@ -112,8 +112,8 @@ func _complete_build():
 		$HoverText.queue_free()
 
 	var tween = create_tween()
-	tower_sprite.scale = Vector2(0.5, 0.5)
-	tween.tween_property(tower_sprite, "scale", Vector2.ONE, 0.3)
+	#tower_sprite.scale = Vector2(0.5, 0.5)
+	#tween.tween_property(tower_sprite, "scale", Vector2.ONE, 0.3)
 
 func sell_tower():
 	if not is_built:

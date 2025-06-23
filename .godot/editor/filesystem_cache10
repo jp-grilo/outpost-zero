@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1750612090
+::res://::1750686962
 export_presets.cfg::TextFile/TextFile::-1::1750179834::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3496982998616095378::1749858065::1749858092::1::::<><><>0<>0<>bb738a097d6a96cd9bcd2fa723b1b54a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1749858064
@@ -69,11 +69,11 @@ Cenario2.png::CompressedTexture2D/CompressedTexture2D::7360949776205766310::1749
 Cenario3_TorreDireita.png::CompressedTexture2D/CompressedTexture2D::9170706503095091274::1749858065::1749858824::1::::<><><>0<>0<>d32ef95a59b2b0d90f92ffcbf81f3d1e<>res://.godot/imported/Cenario3_TorreDireita.png-193d40a06c9af769ee9c87528bcf6489.ctex::
 Cenario4_Final.png::CompressedTexture2D/CompressedTexture2D::5125290624242034211::1749858065::1749858824::1::::<><><>0<>0<>68c330f5169cdcdc343af5659992589f<>res://.godot/imported/Cenario4_Final.png-e46e14abb1fc91da7c581f9204103573.ctex::
 ::res://assets/sprites/CENARIO_OZ V1.1/Cenario2/::1750614399
-1750199631954.png::CompressedTexture2D::3485074744306370855::1750614288::1750614296::1::::<><><>0<>0<>c4f076abc90dda197e6f7fef45f9786a<>res://.godot/imported/1750199631954.png-e0d13cec29edd1f996e6bd566d915e8e.ctex::
-Fase2_comeco.png::CompressedTexture2D::163130870323678117::1750614288::1750614399::1::::<><><>0<>0<>f5662258e5cfc90271154a3ac8699ff8<>res://.godot/imported/Fase2_comeco.png-2f755a2236e5358b511aacba8d7a3124.ctex::
-Fase2_Completa.png::CompressedTexture2D::8970363534597740214::1750614288::1750614399::1::::<><><>0<>0<>6e8f8bc408fbbd72a830eb7e16483487<>res://.godot/imported/Fase2_Completa.png-619084cffd19060c873dec23fb6e38a1.ctex::
-Fase2_Talvez.png::CompressedTexture2D::3461039217106461293::1750614288::1750614399::1::::<><><>0<>0<>b6cd2bd4d8765c2d8cdbd91ae69b59ff<>res://.godot/imported/Fase2_Talvez.png-2878ff5dac761ffbf6afd5d5d91ee29e.ctex::
-Fase2_torreDireita.png::CompressedTexture2D::4779223618549001854::1750614288::1750614399::1::::<><><>0<>0<>5e2bcef01cd1c2b0892af4fc404c0dc1<>res://.godot/imported/Fase2_torreDireita.png-b91510406b568aeb65ad14a5a15638eb.ctex::
+1750199631954.png::CompressedTexture2D/CompressedTexture2D::3485074744306370855::1750614288::1750614296::1::::<><><>0<>0<>c4f076abc90dda197e6f7fef45f9786a<>res://.godot/imported/1750199631954.png-e0d13cec29edd1f996e6bd566d915e8e.ctex::
+Fase2_comeco.png::CompressedTexture2D/CompressedTexture2D::163130870323678117::1750614288::1750614399::1::::<><><>0<>0<>f5662258e5cfc90271154a3ac8699ff8<>res://.godot/imported/Fase2_comeco.png-2f755a2236e5358b511aacba8d7a3124.ctex::
+Fase2_Completa.png::CompressedTexture2D/CompressedTexture2D::8970363534597740214::1750614288::1750614399::1::::<><><>0<>0<>6e8f8bc408fbbd72a830eb7e16483487<>res://.godot/imported/Fase2_Completa.png-619084cffd19060c873dec23fb6e38a1.ctex::
+Fase2_Talvez.png::CompressedTexture2D/CompressedTexture2D::3461039217106461293::1750614288::1750614399::1::::<><><>0<>0<>b6cd2bd4d8765c2d8cdbd91ae69b59ff<>res://.godot/imported/Fase2_Talvez.png-2878ff5dac761ffbf6afd5d5d91ee29e.ctex::
+Fase2_torreDireita.png::CompressedTexture2D/CompressedTexture2D::4779223618549001854::1750614288::1750614399::1::::<><><>0<>0<>5e2bcef01cd1c2b0892af4fc404c0dc1<>res://.godot/imported/Fase2_torreDireita.png-b91510406b568aeb65ad14a5a15638eb.ctex::
 ::res://assets/sprites/Guns/::1749858065
 ::res://assets/sprites/Guns/Blue/::1749858065
 ::res://assets/sprites/Guns/Blue/Bodies/::1749858101
@@ -255,98 +255,121 @@ Planetas2.png::CompressedTexture2D/CompressedTexture2D::7354900947383077009::174
 Planetas3.png::CompressedTexture2D/CompressedTexture2D::8873250147557833264::1749935746::1749935806::1::::<><><>0<>0<>9b134638358d139c8154734bf967c67d<>res://.godot/imported/Planetas3.png-67877330641eb5bf943fb94f479b18b3.ctex::
 Planetas4.png::CompressedTexture2D/CompressedTexture2D::8523553776758515738::1749935748::1749935806::1::::<><><>0<>0<>239f728762310aced0e3e49f7dc8ddcf<>res://.godot/imported/Planetas4.png-c54a2f7d90843f5b1a708c100d34f12e.ctex::
 ::res://assets/sprites/TelaInicial/::1750613985
-1750181401049.png::CompressedTexture2D::2988945447765132660::1750612114::1750612151::1::::<><><>0<>0<>d42c82482bdba03b9f2aff49e8f60413<>res://.godot/imported/1750181401049.png-8ab9e6ba038f316858d128c1bedf8231.ctex::
-1750521700912.png::CompressedTexture2D::8146605735476148479::1750612115::1750612150::1::::<><><>0<>0<>bdc2ee8bc57fc0d5c1a9f4b7f55cc99b<>res://.godot/imported/1750521700912.png-9a29b12576767a1505789ff592970d3f.ctex::
-1750521700918.png::CompressedTexture2D::5404245669476243675::1750612116::1750612150::1::::<><><>0<>0<>f02df9ed03922d388bfd9205fc99846e<>res://.godot/imported/1750521700918.png-1b76a9793371fc252ad7e822a30fcc87.ctex::
-1750521700935.png::CompressedTexture2D::4360792511697165893::1750612120::1750612150::1::::<><><>0<>0<>3306ac3e5ea1b8a9fd2cb5011cd007fe<>res://.godot/imported/1750521700935.png-7b0a2f3baa0311155b2c14ec98fa773f.ctex::
-1750521700943.png::CompressedTexture2D::8936165186162628902::1750612122::1750612150::1::::<><><>0<>0<>4fa448f9098ff49af7d72ed202c17281<>res://.godot/imported/1750521700943.png-f4ad391d88b5cc41677dbde063f30ff2.ctex::
-1750521700951.png::CompressedTexture2D::6924177460589477732::1750612124::1750612150::1::::<><><>0<>0<>e2eba8c4ac43e8e2634eeea07f374e5c<>res://.godot/imported/1750521700951.png-9436a2d281f3eec87d1da3e88c480340.ctex::
-1750521700959.png::CompressedTexture2D::6321347489071652227::1750612126::1750612150::1::::<><><>0<>0<>5313c578b4c4e5a109fd2796a820c5c1<>res://.godot/imported/1750521700959.png-b0d88a6267c8c3a68ae802edd67e7324.ctex::
-1750521700967.png::CompressedTexture2D::7087485410325648911::1750612128::1750612150::1::::<><><>0<>0<>a4dd564ddebc45be26805b224c5b52ec<>res://.godot/imported/1750521700967.png-46ae5acf7f79b0bd5203ec60f80a0ecd.ctex::
-ZG-removebg-preview.png::CompressedTexture2D::6781536740643226170::1750613985::1750613985::1::::<><><>0<>0<>0ba67e78a4449ec411fae69611ef3ff3<>res://.godot/imported/ZG-removebg-preview.png-033acc803f887cdcdf29967a6143dd01.ctex::
-ZG.png::CompressedTexture2D::1094709097799340669::1750613868::1750613868::1::::<><><>0<>0<>ee5a9e1a58615e060c7a7cba9186968a<>res://.godot/imported/ZG.png-e7d9f769a335e02e2190b7a83fa145c7.ctex::
+1750181401049.png::CompressedTexture2D/CompressedTexture2D::2988945447765132660::1750612114::1750612151::1::::<><><>0<>0<>d42c82482bdba03b9f2aff49e8f60413<>res://.godot/imported/1750181401049.png-8ab9e6ba038f316858d128c1bedf8231.ctex::
+1750521700912.png::CompressedTexture2D/CompressedTexture2D::8146605735476148479::1750612115::1750612150::1::::<><><>0<>0<>bdc2ee8bc57fc0d5c1a9f4b7f55cc99b<>res://.godot/imported/1750521700912.png-9a29b12576767a1505789ff592970d3f.ctex::
+1750521700918.png::CompressedTexture2D/CompressedTexture2D::5404245669476243675::1750612116::1750612150::1::::<><><>0<>0<>f02df9ed03922d388bfd9205fc99846e<>res://.godot/imported/1750521700918.png-1b76a9793371fc252ad7e822a30fcc87.ctex::
+1750521700935.png::CompressedTexture2D/CompressedTexture2D::4360792511697165893::1750612120::1750612150::1::::<><><>0<>0<>3306ac3e5ea1b8a9fd2cb5011cd007fe<>res://.godot/imported/1750521700935.png-7b0a2f3baa0311155b2c14ec98fa773f.ctex::
+1750521700943.png::CompressedTexture2D/CompressedTexture2D::8936165186162628902::1750612122::1750612150::1::::<><><>0<>0<>4fa448f9098ff49af7d72ed202c17281<>res://.godot/imported/1750521700943.png-f4ad391d88b5cc41677dbde063f30ff2.ctex::
+1750521700951.png::CompressedTexture2D/CompressedTexture2D::6924177460589477732::1750612124::1750612150::1::::<><><>0<>0<>e2eba8c4ac43e8e2634eeea07f374e5c<>res://.godot/imported/1750521700951.png-9436a2d281f3eec87d1da3e88c480340.ctex::
+1750521700959.png::CompressedTexture2D/CompressedTexture2D::6321347489071652227::1750612126::1750612150::1::::<><><>0<>0<>5313c578b4c4e5a109fd2796a820c5c1<>res://.godot/imported/1750521700959.png-b0d88a6267c8c3a68ae802edd67e7324.ctex::
+1750521700967.png::CompressedTexture2D/CompressedTexture2D::7087485410325648911::1750612128::1750612150::1::::<><><>0<>0<>a4dd564ddebc45be26805b224c5b52ec<>res://.godot/imported/1750521700967.png-46ae5acf7f79b0bd5203ec60f80a0ecd.ctex::
+ZG-removebg-preview.png::CompressedTexture2D/CompressedTexture2D::6781536740643226170::1750613985::1750613985::1::::<><><>0<>0<>0ba67e78a4449ec411fae69611ef3ff3<>res://.godot/imported/ZG-removebg-preview.png-033acc803f887cdcdf29967a6143dd01.ctex::
+ZG.png::CompressedTexture2D/CompressedTexture2D::1094709097799340669::1750613868::1750613868::1::::<><><>0<>0<>ee5a9e1a58615e060c7a7cba9186968a<>res://.godot/imported/ZG.png-e7d9f769a335e02e2190b7a83fa145c7.ctex::
 ::res://assets/sprites/tutorial/::1750179877
 O contador de Contador de ondas e de inimigos (1).png::CompressedTexture2D/CompressedTexture2D::7814141612988267182::1750179834::1750179877::1::::<><><>0<>0<>a8e79d30d0d795f86421b1a6bc3b1809<>res://.godot/imported/O contador de Contador de ondas e de inimigos (1).png-966bbdc7f171e855714ad9507eae8f07.ctex::
 O contador de Contador de ondas e de inimigos (2).png::CompressedTexture2D/CompressedTexture2D::8238180793220064830::1750179834::1750179877::1::::<><><>0<>0<>0aa497fcdee45be477b2ff0b3157bd00<>res://.godot/imported/O contador de Contador de ondas e de inimigos (2).png-324104458d1259c26ee9083253637b05.ctex::
 O contador de Contador de ondas e de inimigos (3).png::CompressedTexture2D/CompressedTexture2D::7983375131130290879::1750179834::1750179877::1::::<><><>0<>0<>055d99ab7ca5c75896f116012ce1d1f1<>res://.godot/imported/O contador de Contador de ondas e de inimigos (3).png-7b8c80d54e8ff56339e20332c52f3c72.ctex::
 O contador de Contador de ondas e de inimigos (4).png::CompressedTexture2D/CompressedTexture2D::2846216022800044641::1750179834::1750179877::1::::<><><>0<>0<>13d8cc59cbe3f75e40b09f39eabec562<>res://.godot/imported/O contador de Contador de ondas e de inimigos (4).png-13b6128d3c7f6781d4ef76ec6dc2e565.ctex::
 O contador de Contador de ondas e de inimigos.png::CompressedTexture2D/CompressedTexture2D::1367621451014863653::1750179834::1750179877::1::::<><><>0<>0<>e678f0d4f3b0907be7dc5456325031df<>res://.godot/imported/O contador de Contador de ondas e de inimigos.png-c373464a7e87afcae6d206172a533373.ctex::
-::res://assets/sprites/Unicos/::1750179876
+::res://assets/sprites/Unicos/::1750687100
+1750673550080.png::CompressedTexture2D/CompressedTexture2D::3026918354755891267::1750683859::1750683859::1::::<><><>0<>0<>1bc8d99ca3714808369eb0beb8c0c322<>res://.godot/imported/1750673550080.png-276c4e6768b3a14ab64a017c8abe4f44.ctex::
+1750673550086.png::CompressedTexture2D/CompressedTexture2D::2867387339506366037::1750683859::1750683859::1::::<><><>0<>0<>4dc6769de7f845fb88d0a90bfc6a2a31<>res://.godot/imported/1750673550086.png-9cd9eacd2627fdcbcf92c226054edb0c.ctex::
+1750673550092.png::CompressedTexture2D/CompressedTexture2D::3557740288164575184::1750683859::1750683859::1::::<><><>0<>0<>5694912883027083b385a7ae9261dc94<>res://.godot/imported/1750673550092.png-294be69b018e6bb052eba9a73beb3418.ctex::
+1750673963848.png::CompressedTexture2D::594568861296940299::1750687098::1750687100::1::::<><><>0<>0<>89ba9775e77424942e3d21c42bf0e704<>res://.godot/imported/1750673963848.png-af40cafc7c2d44e732f823b33b599572.ctex::
+1750673963855.png::CompressedTexture2D::1629817542929192394::1750687098::1750687099::1::::<><><>0<>0<>8089c9f31e1b108e7f5f13ddcb77f768<>res://.godot/imported/1750673963855.png-8953b104b8357b7caf78b387ca115da8.ctex::
+1750673963862.png::CompressedTexture2D::4087510769130579041::1750687098::1750687099::1::::<><><>0<>0<>fce3b5e9ee08ca8538918ca7340f01e4<>res://.godot/imported/1750673963862.png-7dce5ea6e2780d6240d98d9a4ab7eae8.ctex::
+1750673963870.png::CompressedTexture2D::4818258001803172419::1750687098::1750687099::1::::<><><>0<>0<>07d41362c8410797b4e0fda91e1e953b<>res://.godot/imported/1750673963870.png-9e06080029ae06d9a623802cdd71a748.ctex::
+1750673963876.png::CompressedTexture2D::2663848835671256236::1750687098::1750687099::1::::<><><>0<>0<>fbb383cc7e32f9d7156b87a12f62d96d<>res://.godot/imported/1750673963876.png-c1927dafe2ca2ef0afa0712cf4ca232c.ctex::
 BossMalvado.png::CompressedTexture2D/CompressedTexture2D::6722812469461476238::1749929846::1749929940::1::::<><><>0<>0<>7d3fc211acd4794dbd89cfa874aca9a0<>res://.godot/imported/BossMalvado.png-d86162ea71e4281710d23ddf4e5e437e.ctex::
 Brutamontes.png::CompressedTexture2D/CompressedTexture2D::6486940043294919444::1749929840::1749929940::1::::<><><>0<>0<>dcbe7acfef57e1d1eef55707636ee1ee<>res://.godot/imported/Brutamontes.png-3b7ac10c862febb9b3fc60c576d1b721.ctex::
 coin.PNG::CompressedTexture2D/CompressedTexture2D::4970910775499206424::1749858065::1749858092::1::::<><><>0<>0<>b92191113e509dbbbcc4e97717bf6b6e<>res://.godot/imported/coin.PNG-5287a6516bda3e967e3bb281dc0651d0.ctex::
-Design sem nome.png::CompressedTexture2D/CompressedTexture2D::48771574097270210::1750179834::1750179876::1::::<><><>0<>0<>0de5f71d937aa78ceaac7d3fad4c8e87<>res://.godot/imported/Design sem nome.png-b50d0c4073ab860f45ea970b69807c33.ctex::
+Design sem nome_20250623_070747_0000.jpg::CompressedTexture2D/CompressedTexture2D::7219038163698593645::1750683958::1750683959::1::::<><><>0<>0<>84c1dba6688320d79c19ab8f6dbd132b<>res://.godot/imported/Design sem nome_20250623_070747_0000.jpg-a64a74156c4c1021b772d909f57ac9a6.ctex::
 EstrelaAlien.png::CompressedTexture2D/CompressedTexture2D::4807042374526367838::1749858065::1749858093::1::::<><><>0<>0<>8b1b8e3bc7c1a698ba1ac015658aee38<>res://.godot/imported/EstrelaAlien.png-4b32faf124606fbee5d44f46569dc0b4.ctex::
 EstrelaAnimada.png::CompressedTexture2D/CompressedTexture2D::3871898312579269090::1749929844::1749929940::1::::<><><>0<>0<>9e8a3d376375860c6ed8acbdd2110886<>res://.godot/imported/EstrelaAnimada.png-291671f081f492cc9edeb7c6fac359a2.ctex::
 interrogacao-removebg-preview (1).png::CompressedTexture2D/CompressedTexture2D::3828548211566688517::1750179834::1750179876::1::::<><><>0<>0<>59361ee79675dd07f999283a97dc167f<>res://.godot/imported/interrogacao-removebg-preview (1).png-81d393dd4107abc2bf8cad30f2c02a8b.ctex::
 SlimeFofo.png::CompressedTexture2D/CompressedTexture2D::7218264781026700365::1749929838::1749929939::1::::<><><>0<>0<>fc2259620b0f02a41f3fed4a0897e586<>res://.godot/imported/SlimeFofo.png-820935020e7452850504087a96c792b8.ctex::
-::res://Scenes/::1750614596
+::res://Scenes/::1750686942
 arrow.tscn::PackedScene/PackedScene::974399265101778027::1749931966::0::1::::<><><>0<>0<><>::uid://u1js61nlqa58::::res://assets/sprites/Avulsos/Arrows_pack.png<>uid://c1nx8cf6xesbw::::res://Scripts/arrow.gd
-BossEstrela.tscn::PackedScene::3131050630345155287::1750614595::0::1::::<><><>0<>0<><>::uid://cd8rw7mt2ncer::::res://Scripts/boss_estrela.gd<>uid://c21t0ep25i3gs::::res://assets/sprites/Unicos/BossMalvado.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://cr38304wxusmf::::res://Scripts/boss_health_bar.gd
+BossEstrela.tscn::PackedScene/PackedScene::3131050630345155287::1750615264::0::1::::<><><>0<>0<><>::uid://cd8rw7mt2ncer::::res://Scripts/boss_estrela.gd<>uid://c21t0ep25i3gs::::res://assets/sprites/Unicos/BossMalvado.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://cr38304wxusmf::::res://Scripts/boss_health_bar.gd
+BossMosquitao.tscn::PackedScene::683333840653529417::1750686615::0::1::::<><><>0<>0<><>::uid://d12balvh5bvje::::res://Scripts/boss_mosquitao.gd<>uid://bjei5x7bvrrd8::::res://assets/sprites/Unicos/1750673550080.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://cr38304wxusmf::::res://Scripts/boss_health_bar.gd
 Brutamontes.tscn::PackedScene/PackedScene::4630923946602868008::1750111320::0::1::::<><><>0<>0<><>::uid://i6oj4eg5gqbd::::res://Scripts/Brutamontes.gd<>uid://cyok7px4gcdyi::::res://assets/sprites/Unicos/Brutamontes.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
+Fase2.tscn::PackedScene::8584651222209333475::1750686717::0::1::::<><><>0<>0<><>::uid://3i8ebuu6ib2h::::res://Scripts/OutpostZero.gd<>uid://bfqiik6sj0uxm::::res://Scenes/player.tscn<>uid://d05t0nrgj35gx::::res://assets/sprites/Avulsos/world_tileset.png<>uid://b2xosdkl7rrya::::res://Scripts/HUD.gd<>uid://ritqbi8b4f2j::::res://Scripts/restore_button_fase2.gd<>uid://c3xwpselad5jh::::res://Scripts/health_bar_player.gd<>uid://bhqwysmp71npg::::res://Scripts/pause_menu.gd<>uid://boclqw4wcpnpe::::res://Scripts/tower_selection_ui_fase2.gd<>uid://cla0hj4pyxm8::::res://assets/sprites/CENARIO_OZ V1.1/Cenario2/Fase2_comeco.png<>uid://bl30yqxdifp5p::::res://Scripts/spawner_fase2.gd<>uid://cyacmwsm4vsa3::::res://Scripts/map_camera.gd<>uid://dsmh0qnjpf672::::res://Scenes/slime_azul.tscn<>uid://b7l3lsynvfv3j::::res://Scenes/TartatugaDeGrama.tscn<>uid://0qjr82hbx7kf::::res://Scenes/spawner.tscn<>uid://cmq6ss87lass5::::res://Scenes/pernilongo.tscn<>uid://rgi8atjl0u8v::::res://Scenes/turrets/TurretPosition.tscn
 game_over.tscn::PackedScene/PackedScene::972164229080639138::1749931966::0::1::::<><><>0<>0<><>::uid://bkqtmjbqdvpmh::::res://Scripts/game_over.gd
-hud_helper.tscn::PackedScene::6003692946339160041::1750614596::0::1::::<><><>0<>0<><>::
+game_over_fase2.tscn::PackedScene::1128289954131961004::1750685651::0::1::::<><><>0<>0<><>::uid://b2aaaqp31qtwo::::res://Scripts/game_over_fase_2.gd
+hud_helper.tscn::PackedScene/PackedScene::6003692946339160041::1750615265::0::1::::<><><>0<>0<><>::
 kill_zone.tscn::PackedScene/PackedScene::8378904690815474827::1749858064::0::1::::<><><>0<>0<><>::uid://djyj3sjaomhjj::::res://Scripts/kill_zone.gd
-menu_selecao_fase.tscn::PackedScene::9198226586554355125::1750614596::0::1::::<><><>0<>0<><>::uid://bqs2j2w22djyo::::res://Scripts/menu_selecao_fase.gd<>uid://dtnb4y3736vfn::::res://assets/sprites/Planetas/Planetas1.png
-outpost_zero.tscn::PackedScene::3989638554293409628::1750614595::0::1::::<><><>0<>0<><>::uid://bfqiik6sj0uxm::::res://Scenes/player.tscn<>uid://3i8ebuu6ib2h::::res://Scripts/OutpostZero.gd<>uid://d05t0nrgj35gx::::res://assets/sprites/Avulsos/world_tileset.png<>uid://cyacmwsm4vsa3::::res://Scripts/map_camera.gd<>uid://0qjr82hbx7kf::::res://Scenes/spawner.tscn<>uid://dc2td61cpfsq7::::res://Scripts/restore_button.gd<>uid://c3xwpselad5jh::::res://Scripts/health_bar_player.gd<>uid://b2xosdkl7rrya::::res://Scripts/HUD.gd<>uid://bhqwysmp71npg::::res://Scripts/pause_menu.gd<>uid://bfxr2qv3dgwvg::::res://Scripts/tower_selection_ui.gd<>uid://drqrurq7u7vbv::::res://assets/sprites/CENARIO_OZ V1.1/Cenario1.png<>uid://dpfs8q0q6kd08::::res://Scripts/hud_tutorial.gd<>uid://bustvn6g5cym4::::res://assets/sprites/Unicos/interrogacao-removebg-preview (1).png<>uid://c21t0ep25i3gs::::res://assets/sprites/Unicos/BossMalvado.png<>uid://rgi8atjl0u8v::::res://Scenes/turrets/TurretPosition.tscn
+menu_selecao_fase.tscn::PackedScene/PackedScene::9198226586554355125::1750615265::0::1::::<><><>0<>0<><>::uid://bqs2j2w22djyo::::res://Scripts/menu_selecao_fase.gd<>uid://dtnb4y3736vfn::::res://assets/sprites/Planetas/Planetas1.png
+outpost_zero.tscn::PackedScene/PackedScene::3989638554293409628::1750615264::0::1::::<><><>0<>0<><>::uid://bfqiik6sj0uxm::::res://Scenes/player.tscn<>uid://3i8ebuu6ib2h::::res://Scripts/OutpostZero.gd<>uid://d05t0nrgj35gx::::res://assets/sprites/Avulsos/world_tileset.png<>uid://cyacmwsm4vsa3::::res://Scripts/map_camera.gd<>uid://0qjr82hbx7kf::::res://Scenes/spawner.tscn<>uid://dc2td61cpfsq7::::res://Scripts/restore_button.gd<>uid://c3xwpselad5jh::::res://Scripts/health_bar_player.gd<>uid://b2xosdkl7rrya::::res://Scripts/HUD.gd<>uid://bhqwysmp71npg::::res://Scripts/pause_menu.gd<>uid://bfxr2qv3dgwvg::::res://Scripts/tower_selection_ui.gd<>uid://drqrurq7u7vbv::::res://assets/sprites/CENARIO_OZ V1.1/Cenario1.png<>uid://dpfs8q0q6kd08::::res://Scripts/hud_tutorial.gd<>uid://bustvn6g5cym4::::res://assets/sprites/Unicos/interrogacao-removebg-preview (1).png<>uid://c21t0ep25i3gs::::res://assets/sprites/Unicos/BossMalvado.png<>uid://rgi8atjl0u8v::::res://Scenes/turrets/TurretPosition.tscn
+pernilongo.tscn::PackedScene::5650052904041098682::1750686615::0::1::::<><><>0<>0<><>::uid://b3k615fu2pm4v::::res://Scripts/pernilongo.gd<>uid://bg38pk3px6q7n::::res://assets/sprites/Unicos/1750673550086.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
 player.tscn::PackedScene/PackedScene::2770895542194899778::1750111321::0::1::::<><><>0<>0<><>::uid://cvpqpdh7aay78::::res://Scripts/player.gd<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd
 Projectile.tscn::PackedScene/PackedScene::1116298333703227759::1749931966::0::1::::<><><>0<>0<><>::uid://doc11vy5ggdu3::::res://Scripts/Projectile.gd<>uid://ddwx4r1emhr55::::res://assets/sprites/Laser Bullets/01.png
-Fase2.tscn::PackedScene::8584651222209333475::1750614793::0::1::::<><><>0<>0<><>::uid://3i8ebuu6ib2h::::res://Scripts/OutpostZero.gd<>uid://bfqiik6sj0uxm::::res://Scenes/player.tscn<>uid://d05t0nrgj35gx::::res://assets/sprites/Avulsos/world_tileset.png<>uid://b2xosdkl7rrya::::res://Scripts/HUD.gd<>uid://ritqbi8b4f2j::::res://Scenes/restore_button_fase2.gd<>uid://c3xwpselad5jh::::res://Scripts/health_bar_player.gd<>uid://bhqwysmp71npg::::res://Scripts/pause_menu.gd<>uid://bfxr2qv3dgwvg::::res://Scripts/tower_selection_ui.gd<>uid://cla0hj4pyxm8::::res://assets/sprites/CENARIO_OZ V1.1/Cenario2/Fase2_comeco.png<>uid://cyacmwsm4vsa3::::res://Scripts/map_camera.gd<>uid://0qjr82hbx7kf::::res://Scenes/spawner.tscn<>uid://rgi8atjl0u8v::::res://Scenes/turrets/TurretPosition.tscn
-restore_button_fase2.gd::GDScript::1210907625827707211::1750614778::0::1::::<>Button<><>0<>0<><>::
 slime.tscn::PackedScene/PackedScene::720967953951437441::1750111320::0::1::::<><><>0<>0<><>::uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://da3t1b5kf3mmv::::res://assets/sprites/Unicos/SlimeFofo.png<>uid://dkpgvwods1apy::::res://Scripts/slime.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
-slimeVoador.tscn::PackedScene::9135209013668156883::1750614595::0::1::::<><><>0<>0<><>::uid://xf15u7hciort::::res://Scripts/slime_voador.gd<>uid://bvftunbn3cnpa::::res://assets/sprites/Unicos/EstrelaAnimada.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
+slimeVoador.tscn::PackedScene/PackedScene::9135209013668156883::1750615264::0::1::::<><><>0<>0<><>::uid://xf15u7hciort::::res://Scripts/slime_voador.gd<>uid://bvftunbn3cnpa::::res://assets/sprites/Unicos/EstrelaAnimada.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
+slime_azul.tscn::PackedScene::8447904294294848079::1750684547::0::1::::<><><>0<>0<><>::uid://jnm0exu2ohdr::::res://Scripts/slime_azul.gd<>uid://da37reo8pqbgn::::res://assets/sprites/Unicos/Design sem nome_20250623_070747_0000.jpg<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
 spawner.tscn::PackedScene/PackedScene::1788329721747647041::1749858064::0::1::::<><><>0<>0<><>::uid://c5hujtbgjy4vl::::res://Scripts/spawner.gd
-startScreen.tscn::PackedScene::461643689148146854::1750614596::0::1::::<><><>0<>0<><>::uid://dpi6lphct0tlo::::res://Scripts/loginScreen.gd<>uid://bit4q3a75cvmy::::res://assets/sprites/TelaInicial/1750181401049.png<>uid://chw31ly4ewtr6::::res://assets/sprites/Avulsos/logo_jogo-Photoroom.png<>uid://dcea2emalwyu7::::res://assets/sprites/Avulsos/jogar-Photoroom.png<>uid://cv4spsrw2i8bh::::res://assets/sprites/Avulsos/options-Photoroom.png<>uid://dnb43rq14u2qo::::res://assets/sprites/Avulsos/exit-Photoroom.png<>uid://c3va6i0db67tm::::res://assets/sprites/TelaInicial/ZG-removebg-preview.png
+startScreen.tscn::PackedScene/PackedScene::461643689148146854::1750615265::0::1::::<><><>0<>0<><>::uid://dpi6lphct0tlo::::res://Scripts/loginScreen.gd<>uid://bit4q3a75cvmy::::res://assets/sprites/TelaInicial/1750181401049.png<>uid://chw31ly4ewtr6::::res://assets/sprites/Avulsos/logo_jogo-Photoroom.png<>uid://dcea2emalwyu7::::res://assets/sprites/Avulsos/jogar-Photoroom.png<>uid://cv4spsrw2i8bh::::res://assets/sprites/Avulsos/options-Photoroom.png<>uid://dnb43rq14u2qo::::res://assets/sprites/Avulsos/exit-Photoroom.png<>uid://c3va6i0db67tm::::res://assets/sprites/TelaInicial/ZG-removebg-preview.png
+TartatugaDeGrama.tscn::PackedScene::4656892538049763629::1750684281::0::1::::<><><>0<>0<><>::uid://c5q7fxic83pql::::res://Scripts/tartatuga_de_grama.gd<>uid://bqxnpy7co8tki::::res://assets/sprites/Unicos/1750673550092.png<>uid://b7h1g1orwdil5::::res://Scripts/HealthSystem.gd<>uid://pip2keyhbfpa::::res://Scripts/health_bar.gd
 UICoins.tscn::PackedScene/PackedScene::5759103016097822879::1750111320::0::1::::<><><>0<>0<><>::uid://rsu1rw66tq0::::res://Scripts/ui_coins.gd<>uid://cc27f6njr8y7a::::res://assets/sprites/Unicos/coin.PNG
 upgradeTurrets.tscn::PackedScene/PackedScene::6051296450891875006::1749931966::0::1::::<><><>0<>0<><>::uid://cjmhynu7dueom::::res://Scripts/upgrade_turrets.gd
-::res://Scenes/turrets/::1750111321
+::res://Scenes/turrets/::1750686962
 tower_lt_1.tscn::PackedScene/PackedScene::1456398772897054635::1750111320::0::1::::<><><>0<>0<><>::uid://qsd74ro7v0rw::::res://Scripts/TurretsScripts/tower_lt_1.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png
-tower_rt_1.tscn::PackedScene/PackedScene::588123658158802898::1750111320::0::1::::<><><>0<>0<><>::uid://tmpiiwt37x8p::::res://Scripts/TurretsScripts/tower_rt_1.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://ddtinmgalahla::::res://assets/sprites/armas/turret_01_mk2.PNG
-tower_rt_2.tscn::PackedScene/PackedScene::2502690546013114848::1750111320::0::1::::<><><>0<>0<><>::uid://dh7t851wd177c::::res://Scripts/TurretsScripts/tower_rt_2.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://dqdwvrw6j7lvl::::res://assets/sprites/Guns/Blue/Weapons/turret_02_mk1.png
+tower_rt_1.tscn::PackedScene/PackedScene::588123658158802898::1750615265::0::1::::<><><>0<>0<><>::uid://tmpiiwt37x8p::::res://Scripts/TurretsScripts/tower_rt_1.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://ddtinmgalahla::::res://assets/sprites/armas/turret_01_mk2.PNG
+tower_rt_2.tscn::PackedScene/PackedScene::2502690546013114848::1750615265::0::1::::<><><>0<>0<><>::uid://dh7t851wd177c::::res://Scripts/TurretsScripts/tower_rt_2.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://dqdwvrw6j7lvl::::res://assets/sprites/Guns/Blue/Weapons/turret_02_mk1.png
 TurretPosition.tscn::PackedScene/PackedScene::1206141305287811743::1749858064::0::1::::<><><>0<>0<><>::uid://dulqici6y6umb::::res://Scripts/TurretsScripts/turret_position.gd<>uid://mgplhxhbn28q::::res://assets/sprites/armas/body_tracks.png
-Turret_1_1.tscn::PackedScene/PackedScene::7955790826305000935::1750111320::0::1::::<><><>0<>0<><>::uid://sjtqafh3lrn8::::res://Scripts/TurretsScripts/turret_1_1.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://bajhdii0kgiaa::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk1.png
+Turret_1_1.tscn::PackedScene/PackedScene::7955790826305000935::1750615265::0::1::::<><><>0<>0<><>::uid://sjtqafh3lrn8::::res://Scripts/TurretsScripts/turret_1_1.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://bajhdii0kgiaa::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk1.png
 Turret_1_2.tscn::PackedScene/PackedScene::616123902559395640::1750111321::0::1::::<><><>0<>0<><>::uid://civrjakb3u22g::::res://Scripts/TurretsScripts/turret_1_2.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://dd337wq63ra8f::::res://assets/sprites/Guns/Purple/Weapons/turret_01_mk2.png
 Turret_1_3.tscn::PackedScene/PackedScene::7250443898596625894::1750111321::0::1::::<><><>0<>0<><>::uid://cnj2rg0p752dr::::res://Scripts/TurretsScripts/turret_1_3.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://dojljf5km6oyp::::res://assets/sprites/Guns/Purple/Weapons/turret_02_mk1.png
 Turret_2_1.tscn::PackedScene/PackedScene::7932851147406342484::1750111321::0::1::::<><><>0<>0<><>::uid://d63t31vgy4nt::::res://Scripts/TurretsScripts/turret_2_1.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://c04lc81eh08qw::::res://assets/sprites/Guns/Desert/Weapons/turret_01_mk2.png
 Turret_2_2.tscn::PackedScene/PackedScene::9117613591959365159::1750111321::0::1::::<><><>0<>0<><>::uid://bsh8sydkwoc3i::::res://Scripts/TurretsScripts/turret_2_2.gd<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://cjr6lrvmj6scv::::res://assets/sprites/Guns/Desert/Weapons/weapons.png
 Turret_2_3.tscn::PackedScene/PackedScene::7758835499040952553::1750111321::0::1::::<><><>0<>0<><>::uid://cq8kh0orr6jb5::::res://Scripts/TurretsScripts/turret_2_3.gd<>uid://p50jgwji6o2j::::res://Scenes/Projectile.tscn<>uid://c523less1n5dk::::res://assets/sprites/Guns/Desert/Bodies/body_tracks.png<>uid://cjr6lrvmj6scv::::res://assets/sprites/Guns/Desert/Weapons/weapons.png
-::res://Scripts/::1750614595
+::res://Scenes/turrets_fase2/::1750687028
+turret_test.tscn::PackedScene::5035336415665242238::1750687202::0::1::::<><><>0<>0<><>::uid://bvd3eyfxwvjk1::::res://Scripts/turret_1_fase2.gd<>uid://bj7bln2dhmsbu::::res://assets/sprites/Guns/Purple/Bodies/body_tracks.png<>uid://bd7ng3rhxmpaa::::res://assets/sprites/Unicos/1750673963876.png
+::res://Scripts/::1750687028
 arrow.gd::GDScript/GDScript::6626043749020445744::1749858064::0::1::::<>CharacterBody2D<><>0<>0<><>::
 boss_estrela.gd::GDScript/GDScript::5052605540711934617::1750115033::0::1::::<>Enemy<><>0<>0<><>::
 boss_health_bar.gd::GDScript/GDScript::6025909308251260789::1750114060::0::1::::<>ProgressBar<><>0<>0<><>::
+boss_mosquitao.gd::GDScript::9039971512576471826::1750686615::0::1::::<>Enemy<><>0<>0<><>::
 Brutamontes.gd::GDScript/GDScript::626374099193315509::1750031520::0::1::::<>Enemy<><>0<>0<><>::
 Enemy.gd::GDScript/GDScript::2648007200323910914::1749858064::0::1::::Enemy<>CharacterBody2D<><>0<>0<><>::
 GameEconomy.gd::GDScript/GDScript::6678252357057369976::1750115120::0::1::::<>Node<><>0<>0<><>::
 game_over.gd::GDScript/GDScript::3122514691514577523::1749858064::0::1::::<>Control<><>0<>0<><>::
-global.gd::GDScript/GDScript::558483903757911939::1749937237::0::1::::<>Node<><>0<>0<><>::
+game_over_fase_2.gd::GDScript::4281520326773232166::1750685651::0::1::::<>Control<><>0<>0<><>::
+global.gd::GDScript::558483903757911939::1750684577::0::1::::<>Node<><>0<>0<><>::
 HealthBar.gd::GDScript/GDScript::5546331573733547602::1749858064::0::1::::<>TextureProgressBar<><>0<>0<><>::
 HealthSystem.gd::GDScript/GDScript::4648505069000207948::1749858064::0::1::::HealthSystem<>Node<><>0<>0<><>::
-health_bar.gd::GDScript::1070307180442462346::1750614541::0::1::::<>ProgressBar<><>0<>0<><>::
+health_bar.gd::GDScript/GDScript::1070307180442462346::1750683831::0::1::::<>ProgressBar<><>0<>0<><>::
 health_bar_player.gd::GDScript/GDScript::6786973190443382185::1749858064::0::1::::<>ProgressBar<><>0<>0<><>::
-HUD.gd::GDScript::4329882506013704540::1750614541::0::1::::<>CanvasLayer<><>0<>0<><>::
+HUD.gd::GDScript/GDScript::4329882506013704540::1750683831::0::1::::<>CanvasLayer<><>0<>0<><>::
 hud_tutorial.gd::GDScript/GDScript::8223569311251249023::1750179834::0::1::::<>Control<><>0<>0<><>::
 kill_zone.gd::GDScript/GDScript::7841104124425995607::1749858064::0::1::::<>Area2D<><>0<>0<><>::
 loginScreen.gd::GDScript/GDScript::8230512396972130632::1749937782::0::1::::<>Control<><>0<>0<><>::
 map_camera.gd::GDScript/GDScript::6457517662116378716::1749858064::0::1::::<>Camera2D<><>0<>0<><>::
-menu_selecao_fase.gd::GDScript::3548257865803651466::1750614595::0::1::::<>Control<><>0<>0<><>::
+menu_selecao_fase.gd::GDScript/GDScript::3548257865803651466::1750615245::0::1::::<>Control<><>0<>0<><>::
 OutpostZero.gd::GDScript/GDScript::1983813532204187729::1750113331::0::1::::<>Node2D<><>0<>0<><>::
-pause_menu.gd::GDScript/GDScript::2912152230802151016::1749858064::0::1::::<>Control<><>0<>0<><>::
-player.gd::GDScript/GDScript::6278771178726259457::1749858064::0::1::::Base<>StaticBody2D<><>0<>0<><>::
+pause_menu.gd::GDScript::2912152230802151016::1750686213::0::1::::<>Control<><>0<>0<><>::
+pernilongo.gd::GDScript::4374282324885813639::1750684392::0::1::::<>Enemy<><>0<>0<><>::
+player.gd::GDScript::6278771178726259457::1750685643::0::1::::Base<>StaticBody2D<><>0<>0<><>::
 Projectile.gd::GDScript/GDScript::8147660831410311200::1749858064::0::1::::Projectile<>Area2D<><>0<>0<><>::
-restore_button.gd::GDScript::7356538586459162464::1750614776::0::1::::<>Button<><>0<>0<><>::
+turret_1_fase2.gd::GDScript::3868288021686716858::1750687028::0::1::::<>Turrets<><>0<>0<><>::
+restore_button.gd::GDScript/GDScript::7356538586459162464::1750614776::0::1::::<>Button<><>0<>0<><>::
+restore_button_fase2.gd::GDScript/GDScript::1210907625827707211::1750615262::0::1::::<>Button<><>0<>0<><>::
 slime.gd::GDScript/GDScript::7892519134701472998::1750029600::0::1::::<>Enemy<><>0<>0<><>::
+slime_azul.gd::GDScript/GDScript::659309998875138675::1750683831::0::1::::<>Enemy<><>0<>0<><>::
 slime_voador.gd::GDScript/GDScript::1626298608295914701::1750111730::0::1::::<>Enemy<><>0<>0<><>::
-spawner.gd::GDScript/GDScript::6894188732580139673::1750115098::0::1::::<>Node2D<><>0<>0<><>::
+spawner.gd::GDScript::6894188732580139673::1750684307::0::1::::<>Node2D<><>0<>0<><>::
+spawner_fase2.gd::GDScript::3217862200749325839::1750686537::0::1::::<>Node2D<><>0<>0<><>::
+tartatuga_de_grama.gd::GDScript::6913489813861758359::1750684138::0::1::::<>Enemy<><>0<>0<><>::
 TowerLT1.tres.gd::GDScript/GDScript::597680743881008508::1749858064::0::1::::<>Turrets<><>0<>0<><>::
 TowerRT1.gd::GDScript/GDScript::1434379775375144528::1749858064::0::1::::<>Turrets<><>0<>0<><>::
 tower_selection_ui.gd::GDScript/GDScript::2785926869630057800::1749858064::0::1::::<>Control<><>0<>0<><>::
+tower_selection_ui_fase2.gd::GDScript::3373890911072471758::1750686137::0::1::::<>Control<><>0<>0<><>::
 TurretPosition.gd::GDScript/GDScript::6062584623635193956::1749858064::0::1::::<>Turrets<><>0<>0<><>::
 Turrets.gd::GDScript/GDScript::5876417910274291151::1749858064::0::1::::Turrets<>Node2D<><>0<>0<><>::
 ui_coins.gd::GDScript/GDScript::36224436477935981::1749858064::0::1::::<>CanvasLayer<><>0<>0<><>::
 upgrade_turrets.gd::GDScript/GDScript::5429782086338667592::1749872471::0::1::::<>Control<><>0<>0<><>::
-::res://Scripts/TurretsScripts/::1750032197
+::res://Scripts/TurretsScripts/::1750683831
 tower_lt_1.gd::GDScript/GDScript::1160421144283392996::1750030661::0::1::::<>Turrets<><>0<>0<><>::
-tower_rt_1.gd::GDScript/GDScript::1359286058488542957::1750031257::0::1::::<>Turrets<><>0<>0<><>::
+tower_rt_1.gd::GDScript/GDScript::1359286058488542957::1750683831::0::1::::<>Turrets<><>0<>0<><>::
 tower_rt_2.gd::GDScript/GDScript::7717858215606934530::1750031257::0::1::::<>Turrets<><>0<>0<><>::
 turret_1_1.gd::GDScript/GDScript::1283160788916101975::1750030720::0::1::::<>Turrets<><>0<>0<><>::
 turret_1_2.gd::GDScript/GDScript::5378752325879605640::1750031257::0::1::::<>Turrets<><>0<>0<><>::

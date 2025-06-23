@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmq6ss87lass5"]
+
+[ext_resource type="Script" uid="uid://b3k615fu2pm4v" path="res://Scripts/pernilongo.gd" id="1_68p2g"]
+[ext_resource type="Texture2D" uid="uid://bg38pk3px6q7n" path="res://assets/sprites/Unicos/1750673550086.png" id="2_68p2g"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_xr64d"]
+[ext_resource type="Script" uid="uid://pip2keyhbfpa" path="res://Scripts/health_bar.gd" id="4_t07ks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn3s7"]
+atlas = ExtResource("2_68p2g")
+region = Rect2(0, 0, 450, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr64d"]
+atlas = ExtResource("2_68p2g")
+region = Rect2(450, 0, 450, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t07ks"]
+atlas = ExtResource("2_68p2g")
+region = Rect2(900, 0, 450, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uxlc"]
+atlas = ExtResource("2_68p2g")
+region = Rect2(1350, 0, 450, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tygpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn3s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr64d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t07ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uxlc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
+size = Vector2(28, 30)
+
+[node name="pernilongo" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
+script = ExtResource("1_68p2g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(3, -6)
+scale = Vector2(0.0796917, 0.0756204)
+sprite_frames = SubResource("SpriteFrames_tygpv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="colisaoInimigo" type="CollisionShape2D" parent="."]
+position = Vector2(8, -3)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(8, -3)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource("3_xr64d")
+max_health = 45.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -6.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = -19.0
+show_percentage = false
+script = ExtResource("4_t07ks")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

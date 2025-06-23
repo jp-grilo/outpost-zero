@@ -1,9 +1,8 @@
 extends Button
 
 var upgrades = [
-	{ "cost": 150, "action": _build_base },
-	{ "cost": 350, "action": _unlock_tower },
-	{ "cost": 550, "action": _expand_area },
+	{ "cost": 150, "action": _unlock_tower },
+	{ "cost": 350, "action": _expand_area },
 	{ "cost": 100000, "action": _finalize_phase }
 ]
 

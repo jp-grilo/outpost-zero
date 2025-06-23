@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://cd0fiw5hq3kaw"]
+
+[ext_resource type="Script" uid="uid://bvd3eyfxwvjk1" path="res://Scripts/turret_1_fase2.gd" id="1_ys2ha"]
+[ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_5munm"]
+[ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="2_nbifh"]
+[ext_resource type="Texture2D" uid="uid://bd7ng3rhxmpaa" path="res://assets/sprites/Unicos/1750673963876.png" id="3_nbifh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5munm"]
+atlas = ExtResource("3_nbifh")
+region = Rect2(34, 124, 384, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvb35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5munm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3nqc"]
+size = Vector2(673.334, 720)
+
+[sub_resource type="Animation" id="Animation_nsuto"]
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_rvb35"]
+resource_name = "Shoot"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nstbv"]
+_data = {
+&"RESET": SubResource("Animation_nsuto"),
+&"Shoot": SubResource("Animation_rvb35")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvb35"]
+size = Vector2(31.1111, 35.5556)
+
+[node name="Turret1Fase2" type="Node2D"]
+scale = Vector2(0.45, 0.45)
+script = ExtResource("1_ys2ha")
+projectile_scene = ExtResource("2_5munm")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_nbifh")
+
+[node name="Tower" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.193822, 0.104983)
+sprite_frames = SubResource("SpriteFrames_rvb35")
+animation = &"idle"
+flip_v = true
+
+[node name="Range" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(5.55535, 22.2222)
+shape = SubResource("RectangleShape2D_m3nqc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nstbv")
+}
+
+[node name="BuyOrUpgrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
+visible = false
+position = Vector2(5.29819e-07, 0)
+shape = SubResource("RectangleShape2D_rvb35")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

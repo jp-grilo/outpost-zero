@@ -57,7 +57,8 @@ func _on_continue_pressed():
 
 func _on_restart_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/outpost_zero.tscn")
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file(current_scene_path)
 
 func _on_quit_pressed():
 	get_tree().paused = false

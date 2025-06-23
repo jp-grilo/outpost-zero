@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://j0an5io75cej"]
+
+[ext_resource type="Script" uid="uid://d12balvh5bvje" path="res://Scripts/boss_mosquitao.gd" id="1_bmjvn"]
+[ext_resource type="Texture2D" uid="uid://bjei5x7bvrrd8" path="res://assets/sprites/Unicos/1750673550080.png" id="2_bmjvn"]
+[ext_resource type="Script" uid="uid://b7h1g1orwdil5" path="res://Scripts/HealthSystem.gd" id="3_o6gnx"]
+[ext_resource type="Script" uid="uid://cr38304wxusmf" path="res://Scripts/boss_health_bar.gd" id="4_vxid4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuc25"]
+atlas = ExtResource("2_bmjvn")
+region = Rect2(0, 0, 640, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6gnx"]
+atlas = ExtResource("2_bmjvn")
+region = Rect2(640, 0, 640, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxid4"]
+atlas = ExtResource("2_bmjvn")
+region = Rect2(1280, 0, 640, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym4wj"]
+atlas = ExtResource("2_bmjvn")
+region = Rect2(0, 500, 640, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyh0e"]
+atlas = ExtResource("2_bmjvn")
+region = Rect2(640, 500, 640, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tygpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuc25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6gnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxid4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym4wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyh0e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swwnm"]
+size = Vector2(257, 196.625)
+
+[node name="BossMosquitao" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
+script = ExtResource("1_bmjvn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(7, -19)
+scale = Vector2(0.452284, 0.397845)
+sprite_frames = SubResource("SpriteFrames_tygpv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="colisaoInimigo" type="CollisionShape2D" parent="."]
+position = Vector2(13.5, -4.6875)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="colisaoMorte" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(14, -4)
+shape = SubResource("RectangleShape2D_swwnm")
+one_way_collision = true
+
+[node name="HealthSystem" type="Node" parent="."]
+script = ExtResource("3_o6gnx")
+max_health = 60000.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -90.0
+offset_top = -115.0
+offset_right = 104.0
+offset_bottom = -106.0
+show_percentage = false
+script = ExtResource("4_vxid4")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

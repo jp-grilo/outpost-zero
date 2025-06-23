@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xvi4msqnuf7"
-path="res://.godot/imported/Design sem nome.png-b50d0c4073ab860f45ea970b69807c33.ctex"
+uid="uid://bg38pk3px6q7n"
+path="res://.godot/imported/1750673550086.png-9cd9eacd2627fdcbcf92c226054edb0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Unicos/Design sem nome.png"
-dest_files=["res://.godot/imported/Design sem nome.png-b50d0c4073ab860f45ea970b69807c33.ctex"]
+source_file="res://assets/sprites/Unicos/1750673550086.png"
+dest_files=["res://.godot/imported/1750673550086.png-9cd9eacd2627fdcbcf92c226054edb0c.ctex"]
 
 [params]
 
