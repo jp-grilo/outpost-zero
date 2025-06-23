@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dkmrsorar0qck"]
 
 [ext_resource type="Script" uid="uid://colysajpsgfgc" path="res://Scripts/turret_3_fase_2.gd" id="1_nnhc4"]
-[ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_bwj7l"]
+[ext_resource type="PackedScene" uid="uid://cef1hpou5prou" path="res://Scenes/Projectile_RosaFast.tscn" id="2_bwj7l"]
 [ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="2_oj17v"]
 [ext_resource type="Texture2D" uid="uid://byiax8ggpjpbl" path="res://assets/sprites/Unicos/1750673963862.png" id="3_nnhc4"]
 
@@ -78,8 +78,8 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_oj17v")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2.22222)
-scale = Vector2(0.132132, 0.0945923)
+position = Vector2(-1.90735e-06, 9.53674e-07)
+scale = Vector2(0.205066, 0.112037)
 sprite_frames = SubResource("SpriteFrames_rvb35")
 animation = &"idle"
 autoplay = "idle"

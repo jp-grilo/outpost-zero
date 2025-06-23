@@ -51,8 +51,8 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_uchiv")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4.76837e-07)
-scale = Vector2(0.734735, 0.586152)
+position = Vector2(4.76837e-07, 3.57628e-07)
+scale = Vector2(0.889444, 0.788861)
 sprite_frames = SubResource("SpriteFrames_rvb35")
 animation = &"idle"
 autoplay = "idle"

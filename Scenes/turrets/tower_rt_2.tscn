@@ -53,7 +53,7 @@ texture = ExtResource("2_3imbc")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2.38419e-07)
-scale = Vector2(0.668056, 0.615972)
+scale = Vector2(0.889, 0.789)
 sprite_frames = SubResource("SpriteFrames_mlg3v")
 animation = &"idle"
 autoplay = "idle"

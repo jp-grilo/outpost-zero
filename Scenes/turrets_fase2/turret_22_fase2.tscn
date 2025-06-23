@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgqea1xhoev4x" path="res://Scripts/turret_22_fase_2.gd" id="1_4dvgg"]
 [ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="2_lmyf2"]
-[ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_lyot1"]
+[ext_resource type="PackedScene" uid="uid://dintw5krqtdy0" path="res://Scenes/Projectile_Rosa.tscn" id="2_lyot1"]
 [ext_resource type="Texture2D" uid="uid://iqapynmxing2" path="res://assets/sprites/Unicos/1750673963848.png" id="3_4dvgg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmyf2"]
@@ -78,8 +78,8 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_lmyf2")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -9.53674e-07)
-scale = Vector2(0.0527327, 0.0672962)
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.114444, 0.144056)
 sprite_frames = SubResource("SpriteFrames_rvb35")
 animation = &"idle"
 autoplay = "idle"

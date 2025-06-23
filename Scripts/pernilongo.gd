@@ -12,7 +12,7 @@ func _ready():
 	
 func _deal_base_damage():
 	if is_in_base and base_ref and base_ref.has_method("take_damage"):
-		base_ref.take_damage(2)
+		base_ref.take_damage(3)
 		
 func _move_towards_target(delta: float) -> void:
 	var direction = (target.global_position - global_position).normalized()

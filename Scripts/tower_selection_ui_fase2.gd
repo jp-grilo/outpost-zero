@@ -8,12 +8,12 @@ var mode: String = ""  # "base" ou "upgrade"
 
 var available_towers = [
 	{
-		"name": "Canhão Azul",
+		"name": "Star Fire",
 		"scene": preload("res://Scenes/turrets_fase2/turret_1_fase2.tscn"),
 		"icon": preload("res://assets/sprites/armas/turret_01_mk1.PNG")
 	},
 	{
-		"name": "Canhão Rosa",
+		"name": "Blaster Pink",
 		"scene": preload("res://Scenes/turrets_fase2/turret_21_fase2.tscn"),
 		"icon": preload("res://assets/sprites/armas/turret_01_mk2.PNG")
 	},

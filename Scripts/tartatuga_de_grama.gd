@@ -11,7 +11,7 @@ func _ready():
 	
 func _deal_base_damage():
 	if is_in_base and base_ref and base_ref.has_method("take_damage"):
-		base_ref.take_damage(4)
+		base_ref.take_damage(5)
 		
 func _move_towards_target(delta: float) -> void:
 	if not is_on_floor():

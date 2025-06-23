@@ -1,6 +1,6 @@
 # Torre 1
 extends Turrets
-
+@export var custom_name: String = "Ultra Star Fire"
 func _ready():
 	damage = 6
 	fire_rate = 0.3

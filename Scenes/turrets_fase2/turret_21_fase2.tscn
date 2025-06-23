@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cb04gnghkernn"]
 
 [ext_resource type="Script" uid="uid://b4nvm1ute2eqt" path="res://Scripts/turret_21_fase_2.gd" id="1_kkn6x"]
-[ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_wdj2q"]
+[ext_resource type="PackedScene" uid="uid://dintw5krqtdy0" path="res://Scenes/Projectile_Rosa.tscn" id="2_4a47u"]
 [ext_resource type="Texture2D" uid="uid://bj7bln2dhmsbu" path="res://assets/sprites/Guns/Purple/Bodies/body_tracks.png" id="3_6164q"]
 [ext_resource type="Texture2D" uid="uid://xhq4eqfxiv2q" path="res://assets/sprites/Unicos/1750673963855.png" id="3_kkn6x"]
 
@@ -71,15 +71,15 @@ size = Vector2(31.1111, 35.5556)
 scale = Vector2(0.45, 0.45)
 script = ExtResource("1_kkn6x")
 build_cost = 100
-projectile_scene = ExtResource("2_wdj2q")
+projectile_scene = ExtResource("2_4a47u")
 
 [node name="Base" type="Sprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.520139, 0.520139)
 texture = ExtResource("3_6164q")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.96046e-08, -2.22222)
-scale = Vector2(0.117117, 0.113963)
+position = Vector2(9.53674e-07, -9.53674e-07)
+scale = Vector2(0.224474, 0.176639)
 sprite_frames = SubResource("SpriteFrames_rvb35")
 animation = &"idle"
 autoplay = "idle"
