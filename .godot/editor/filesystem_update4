@@ -36,3 +36,10 @@ res://Scripts/turret_22_fase_2.gd
 res://Scenes/outpost_zero.tscn
 res://Scripts/restore_button.gd
 res://Scripts/restore_button_fase2.gd
+res://Scenes/BossEstrela.tscn
+res://Scripts/boss_estrela.gd
+res://Scenes/slime.tscn
+res://Scripts/player_Fase2.gd
+res://Scenes/turrets/Turret_2_3.tscn
+res://Scripts/TurretsScripts/turret_2_3.gd
+res://Scripts/tower_selection_ui.gd

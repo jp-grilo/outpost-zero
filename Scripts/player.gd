@@ -68,5 +68,12 @@ func _on_body_exited(body: Node):
 # ---------------------------------------------------
 
 func _on_death():
-	print("Base destruída - Fim de jogo")
-	get_tree().change_scene_to_file("res://Scenes/game_over_fase2.tscn")
+	var scene_path = get_tree().current_scene.scene_file_path
+
+	if scene_path.ends_with("outpost_zero.tscn"):
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	elif scene_path.ends_with("Fase2.tscn"):
+		get_tree().change_scene_to_file("res://Scenes/game_over_fase2.tscn")
+	else:
+		print("Cena desconhecida, usando tela padrão de game over")
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")

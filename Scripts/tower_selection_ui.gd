@@ -13,11 +13,6 @@ var available_towers = [
 		"icon": preload("res://assets/sprites/armas/turret_01_mk1.PNG")
 	},
 	{
-		"name": "Canhão Rosa",
-		"scene": preload("res://Scenes/turrets/Turret_1_1.tscn"),
-		"icon": preload("res://assets/sprites/armas/turret_01_mk2.PNG")
-	},
-	{
 		"name": "Canhão Desert",
 		"scene": preload("res://Scenes/turrets/Turret_2_1.tscn"),
 		"icon": preload("res://assets/sprites/armas/turret_01_mk2.PNG")
