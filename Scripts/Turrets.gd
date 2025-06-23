@@ -342,4 +342,7 @@ func try_upgrade_attribute(attribute: String) -> void:
 			if damage_timer:
 				damage_timer.wait_time = fire_rate
 		"range":
-			print("Legal")  # Placeholder para futura implementação
+			range = upgrade_stats["range"][upgrade_levels["range"]]
+			
+			var new_scale = 1.0 + (upgrade_levels["range"] * 0.65)
+			range_area.scale = Vector2(new_scale, new_scale)

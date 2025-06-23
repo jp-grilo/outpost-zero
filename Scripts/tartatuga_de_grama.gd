@@ -3,12 +3,16 @@ extends Enemy
 var gravity: float = 500.0
 
 func _ready():
-	coins_reward = 30  # Recompensa maior
+	coins_reward = 40  # Recompensa maior
 	speed = 30         # Mais lento
 	health_system.max_health = 1000
 	add_to_group("inimigo_tank")
 	super()
-
+	
+func _deal_base_damage():
+	if is_in_base and base_ref and base_ref.has_method("take_damage"):
+		base_ref.take_damage(4)
+		
 func _move_towards_target(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta

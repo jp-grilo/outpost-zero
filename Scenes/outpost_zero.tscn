@@ -535,7 +535,7 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Turrets6" parent="Turrets" instance=ExtResource("17_mh4e7")]
 z_index = 10
-position = Vector2(30, -103)
+position = Vector2(30, -101.45)
 scale = Vector2(0.7, 0.7)
 
 [connection signal="pressed" from="HUD/Tutorial/HelpButton" to="HUD/Tutorial" method="_on_help_button_pressed"]

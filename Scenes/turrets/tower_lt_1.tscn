@@ -1,17 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://u0qw7kqjmxr4"]
+[gd_scene load_steps=12 format=3 uid="uid://u0qw7kqjmxr4"]
 
 [ext_resource type="Script" uid="uid://qsd74ro7v0rw" path="res://Scripts/TurretsScripts/tower_lt_1.gd" id="1_bskfl"]
 [ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_f015q"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_uchiv"]
+[ext_resource type="Texture2D" uid="uid://wfvcfxbvw44i" path="res://assets/sprites/Guns/Blue/Weapons/turret_01_mk1.png" id="4_uchiv"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3cpp"]
-load_path = "res://.godot/imported/turret_01_mk1.PNG-5cfd5f35d2ebacc4c30cfd9bb30d9337.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_0345d"]
+atlas = ExtResource("4_uchiv")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rvb35"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_r3cpp")
+"texture": SubResource("AtlasTexture_0345d")
 }],
 "loop": true,
 "name": &"idle",
@@ -49,7 +51,8 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_uchiv")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.734735, 0.586152)
 sprite_frames = SubResource("SpriteFrames_rvb35")
 animation = &"idle"
 autoplay = "idle"
@@ -69,7 +72,6 @@ libraries = {
 [node name="BuyOrUpgrade" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuyOrUpgrade"]
-position = Vector2(5.29819e-07, 0)
 shape = SubResource("RectangleShape2D_rvb35")
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

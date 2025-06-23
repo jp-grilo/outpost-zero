@@ -70,6 +70,7 @@ size = Vector2(31.1111, 35.5556)
 [node name="Torre2Fase2" type="Node2D"]
 scale = Vector2(0.45, 0.45)
 script = ExtResource("1_b1hci")
+build_cost = 200
 projectile_scene = ExtResource("2_af12g")
 
 [node name="Base" type="Sprite2D" parent="."]

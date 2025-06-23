@@ -3,7 +3,7 @@ extends Enemy
 var gravity: float = 500.0
 
 func _ready():
-	coins_reward = 30  # Recompensa maior
+	coins_reward = 40  # Recompensa maior
 	speed = 30         # Mais lento
 	health_system.max_health = 1000
 	add_to_group("inimigo_tank")

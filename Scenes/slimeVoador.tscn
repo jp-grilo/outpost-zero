@@ -51,6 +51,7 @@ size = Vector2(28, 30)
 
 [node name="slimeVoador" type="CharacterBody2D" groups=["enemies", "flying_enemies"]]
 script = ExtResource("1_pkvpv")
+coins_reward = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
@@ -85,5 +86,5 @@ offset_bottom = -4.0
 show_percentage = false
 script = ExtResource("4_6g6d1")
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]

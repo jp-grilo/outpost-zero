@@ -458,7 +458,7 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Turrets6" parent="Turrets" instance=ExtResource("15_v5w5u")]
 z_index = 10
-position = Vector2(30, -103)
+position = Vector2(30, -101.45)
 scale = Vector2(0.7, 0.7)
 
 [connection signal="timeout" from="Spawner/EnemySpawnTimer" to="Spawner" method="_on_enemy_spawn_timer_timeout"]

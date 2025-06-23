@@ -88,12 +88,16 @@ func get_upgrade_text(attr: String) -> String:
 			label = attr.capitalize()
 	
 	if lvl >= 3:
-		return "%s: %.1f (MAX)" % [label, value_now]
-	
+		if attr == "fire_rate":
+			return "%s: %.2f (MAX)" % [label, value_now]
+		else:
+			return "%s: %.1f (MAX)" % [label, value_now]
 	var next_value = tower_ref.upgrade_stats[attr][lvl + 1]
 	var cost = tower_ref.upgrade_costs[attr][lvl]
-	return "%s: %.1f ➔ %.1f (%d Staris)" % [label, value_now, next_value, cost]
-
+	if attr == "fire_rate":
+		return "%s: %.2f ➔ %.2f (%d Staris)" % [label, value_now, next_value, cost]
+	else:
+		return "%s: %.1f ➔ %.1f (%d Staris)" % [label, value_now, next_value, cost]
 func _apply_button_style(button: Button, type: String):
 	var theme_color = Color("#00ffcc")  # cor base padrão
 	match type:

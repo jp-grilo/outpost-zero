@@ -1,15 +1,40 @@
-[gd_scene load_steps=11 format=3 uid="uid://im5ktgxtw46a"]
+[gd_scene load_steps=15 format=3 uid="uid://im5ktgxtw46a"]
 
 [ext_resource type="Script" uid="uid://tmpiiwt37x8p" path="res://Scripts/TurretsScripts/tower_rt_1.gd" id="1_dsv5p"]
 [ext_resource type="PackedScene" uid="uid://p50jgwji6o2j" path="res://Scenes/Projectile.tscn" id="2_cereu"]
 [ext_resource type="Texture2D" uid="uid://mgplhxhbn28q" path="res://assets/sprites/armas/body_tracks.png" id="2_t07wj"]
-[ext_resource type="Texture2D" uid="uid://ddtinmgalahla" path="res://assets/sprites/armas/turret_01_mk2.PNG" id="3_ah1q5"]
+[ext_resource type="Texture2D" uid="uid://h5tecykaexbo" path="res://assets/sprites/Guns/Blue/Weapons/turret_01_mk2.png" id="4_t07wj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah1q5"]
+atlas = ExtResource("4_t07wj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hosxh"]
+atlas = ExtResource("4_t07wj")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twmy4"]
+atlas = ExtResource("4_t07wj")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8x1w"]
+atlas = ExtResource("4_t07wj")
+region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mlg3v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ah1q5")
+"texture": SubResource("AtlasTexture_ah1q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hosxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twmy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8x1w")
 }],
 "loop": true,
 "name": &"idle",
@@ -48,7 +73,8 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_t07wj")
 
 [node name="Tower" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
+position = Vector2(-4.76837e-07, -2.38419e-07)
+scale = Vector2(0.607292, 0.58125)
 sprite_frames = SubResource("SpriteFrames_mlg3v")
 animation = &"idle"
 autoplay = "idle"

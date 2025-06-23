@@ -8,8 +8,8 @@ var voador_scene = preload("res://Scenes/pernilongo.tscn")
 
 func _ready():
 	speed = 20
-	coins_reward = 100000
-	health_system.max_health = 60000
+	coins_reward = 200000
+	health_system.max_health = 120000
 	add_to_group("boss")
 	add_to_group("inimigo_voador")
 
@@ -34,12 +34,14 @@ func _move_towards_target(delta: float) -> void:
 
 func _on_spawn_timer_timeout():
 	var voador = voador_scene.instantiate()
-	var path = voador_scene.resource_path
-	if path == "res://Scenes/pernilongo.tscn":
-		voador.scale.x = -1
 	voador.global_position = self.global_position + Vector2(randf_range(-10, 10), randf_range(30, 50))
 	get_parent().add_child(voador)
-
+	print("Hello")
+	
+func _deal_base_damage():
+	if is_in_base and base_ref and base_ref.has_method("take_damage"):
+		base_ref.take_damage(20)
+		
 func _on_death():
 	# Spawn voadores ao morrer
 	for i in death_spawn_amount:

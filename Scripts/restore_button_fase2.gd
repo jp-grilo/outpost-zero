@@ -3,7 +3,7 @@ extends Button
 var upgrades = [
 	{ "cost": 150, "action": _unlock_tower },
 	{ "cost": 350, "action": _expand_area },
-	{ "cost": 100000, "action": _finalize_phase }
+	{ "cost": 200000, "action": _finalize_phase }
 ]
 
 var current_stage := 0
@@ -90,7 +90,7 @@ func _finalize_phase():
 	print("Fase concluída!")
 
 	# Atualiza progresso global
-	Global.progresso_fase = 3  # Ou += 1 se for dinâmica
+	Global.progresso_fase = 2  # Ou += 1 se for dinâmica
 
 	# Vai para o menu de seleção
 	get_tree().change_scene_to_file("res://Scenes/menu_selecao_fase.tscn")

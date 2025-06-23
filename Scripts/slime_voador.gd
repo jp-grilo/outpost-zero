@@ -4,7 +4,7 @@ var hover_height: float = 50.0
 var vertical_speed: float = 100.0  # mais ágil verticalmente
 
 func _ready():
-	coins_reward = 10
+	coins_reward = 15
 	speed = 70           # rápido na horizontal
 	health_system.max_health = 50
 	add_to_group("inimigo_voador")

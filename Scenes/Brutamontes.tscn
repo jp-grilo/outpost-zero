@@ -37,6 +37,7 @@ size = Vector2(44.5, 66)
 
 [node name="Brutamontes" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_amyoi")
+coins_reward = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
