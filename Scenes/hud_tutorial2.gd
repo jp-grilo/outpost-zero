@@ -14,11 +14,9 @@ extends Control
 var indice = 0
 
 func _ready():
-	tutorial_hud.visible = true
+	tutorial_hud.visible = false
 	tutorial_image.texture = imagens[indice]
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().paused = true
-
 
 func _on_help_button_pressed() -> void:
 	tutorial_hud.visible = true
